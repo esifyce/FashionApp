@@ -1,0 +1,6 @@
+framework module KMDrawViewSDK {
+  umbrella header "KMDrawViewSDK.h"
+
+  export *
+  module * { export * }
+}
