@@ -13,7 +13,21 @@
 		08C952BE2A7D5628009D501C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C952BC2A7D5628009D501C /* Main.storyboard */; };
 		08C952C02A7D562A009D501C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C952BF2A7D562A009D501C /* Assets.xcassets */; };
 		08C952C32A7D562A009D501C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C952C12A7D562A009D501C /* LaunchScreen.storyboard */; };
+		08C952D22A7D5843009D501C /* KMDrawViewSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C952D12A7D5843009D501C /* KMDrawViewSDK.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		08C952D02A7D574D009D501C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		08C952B32A7D5628009D501C /* FashionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FashionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +38,7 @@
 		08C952BF2A7D562A009D501C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08C952C22A7D562A009D501C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08C952C42A7D562A009D501C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08C952D12A7D5843009D501C /* KMDrawViewSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KMDrawViewSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08C952D22A7D5843009D501C /* KMDrawViewSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +58,7 @@
 			children = (
 				08C952B52A7D5628009D501C /* FashionApp */,
 				08C952B42A7D5628009D501C /* Products */,
+				08C952CC2A7D574C009D501C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +84,14 @@
 			path = FashionApp;
 			sourceTree = "<group>";
 		};
+		08C952CC2A7D574C009D501C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08C952D12A7D5843009D501C /* KMDrawViewSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +102,7 @@
 				08C952AF2A7D5628009D501C /* Sources */,
 				08C952B02A7D5628009D501C /* Frameworks */,
 				08C952B12A7D5628009D501C /* Resources */,
+				08C952D02A7D574D009D501C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,6 +314,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5HDJX97Z93;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FashionApp",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FashionApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -316,6 +347,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5HDJX97Z93;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FashionApp",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FashionApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

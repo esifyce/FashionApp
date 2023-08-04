@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KMDrawViewSDK
 
 class ViewController: UIViewController {
 

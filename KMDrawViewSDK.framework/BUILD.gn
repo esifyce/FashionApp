@@ -1,0 +1,10 @@
+source_set("TinyXML") {
+  sources = [
+    "tinyxml.h",
+    "tinystr.h",
+    "tinystr.cpp",
+    "tinyxmlparser.cpp",
+    "tinyxmlerror.cpp",
+    "tinyxml.cpp"
+  ]
+}
