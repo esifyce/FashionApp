@@ -7,9 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082E5E1B2A7D7F3200CF1776 /* MainPresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E0B2A7D7F3200CF1776 /* MainPresenterInput.swift */; };
+		082E5E1C2A7D7F3200CF1776 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E0C2A7D7F3200CF1776 /* MainPresenter.swift */; };
+		082E5E1D2A7D7F3200CF1776 /* MainRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E0E2A7D7F3200CF1776 /* MainRouterInput.swift */; };
+		082E5E1E2A7D7F3200CF1776 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E0F2A7D7F3200CF1776 /* MainRouter.swift */; };
+		082E5E1F2A7D7F3200CF1776 /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E112A7D7F3200CF1776 /* MainAssembly.swift */; };
+		082E5E202A7D7F3200CF1776 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E132A7D7F3200CF1776 /* MainInteractor.swift */; };
+		082E5E212A7D7F3200CF1776 /* MainInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E142A7D7F3200CF1776 /* MainInteractorInput.swift */; };
+		082E5E242A7D7F3200CF1776 /* MainViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E192A7D7F3200CF1776 /* MainViewControllerInput.swift */; };
+		082E5E252A7D7F3200CF1776 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E1A2A7D7F3200CF1776 /* MainViewController.swift */; };
+		082E5E282A7D81BF00CF1776 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E272A7D81BF00CF1776 /* BaseViewController.swift */; };
+		082E5E372A7D842500CF1776 /* EditorRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E2A2A7D842500CF1776 /* EditorRouterInput.swift */; };
+		082E5E382A7D842500CF1776 /* EditorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E2B2A7D842500CF1776 /* EditorRouter.swift */; };
+		082E5E392A7D842500CF1776 /* EditorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E2D2A7D842500CF1776 /* EditorAssembly.swift */; };
+		082E5E3A2A7D842500CF1776 /* EditorViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E2F2A7D842500CF1776 /* EditorViewControllerInput.swift */; };
+		082E5E3B2A7D842500CF1776 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E302A7D842500CF1776 /* EditorViewController.swift */; };
+		082E5E3C2A7D842500CF1776 /* EditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E322A7D842500CF1776 /* EditorPresenter.swift */; };
+		082E5E3D2A7D842500CF1776 /* EditorPresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E332A7D842500CF1776 /* EditorPresenterInput.swift */; };
+		082E5E3E2A7D842500CF1776 /* EditorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E352A7D842500CF1776 /* EditorInteractor.swift */; };
+		082E5E3F2A7D842500CF1776 /* EditorInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E362A7D842500CF1776 /* EditorInteractorInput.swift */; };
+		082E5E4E2A7D842B00CF1776 /* PaywallPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E412A7D842B00CF1776 /* PaywallPresenter.swift */; };
+		082E5E4F2A7D842B00CF1776 /* PaywallPresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E422A7D842B00CF1776 /* PaywallPresenterInput.swift */; };
+		082E5E502A7D842B00CF1776 /* PaywallAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E442A7D842B00CF1776 /* PaywallAssembly.swift */; };
+		082E5E512A7D842B00CF1776 /* PaywallInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E462A7D842B00CF1776 /* PaywallInteractor.swift */; };
+		082E5E522A7D842B00CF1776 /* PaywallInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E472A7D842B00CF1776 /* PaywallInteractorInput.swift */; };
+		082E5E532A7D842B00CF1776 /* PaywallViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E492A7D842B00CF1776 /* PaywallViewControllerInput.swift */; };
+		082E5E542A7D842B00CF1776 /* PaywallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E4A2A7D842B00CF1776 /* PaywallViewController.swift */; };
+		082E5E552A7D842B00CF1776 /* PaywallRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E4C2A7D842B00CF1776 /* PaywallRouterInput.swift */; };
+		082E5E562A7D842B00CF1776 /* PaywallRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E4D2A7D842B00CF1776 /* PaywallRouter.swift */; };
+		082E5E662A7D851900CF1776 /* TemplateRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E592A7D851900CF1776 /* TemplateRouterInput.swift */; };
+		082E5E672A7D851900CF1776 /* TemplateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E5A2A7D851900CF1776 /* TemplateRouter.swift */; };
+		082E5E682A7D851900CF1776 /* TemplateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E5C2A7D851900CF1776 /* TemplateInteractor.swift */; };
+		082E5E692A7D851900CF1776 /* TemplateInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E5D2A7D851900CF1776 /* TemplateInteractorInput.swift */; };
+		082E5E6A2A7D851900CF1776 /* TemplateViewControllerInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E5F2A7D851900CF1776 /* TemplateViewControllerInput.swift */; };
+		082E5E6B2A7D851900CF1776 /* TemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E602A7D851900CF1776 /* TemplateViewController.swift */; };
+		082E5E6C2A7D851900CF1776 /* TemplateAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E622A7D851900CF1776 /* TemplateAssembly.swift */; };
+		082E5E6D2A7D851900CF1776 /* TemplatePresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E642A7D851900CF1776 /* TemplatePresenterInput.swift */; };
+		082E5E6E2A7D851900CF1776 /* TemplatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E652A7D851900CF1776 /* TemplatePresenter.swift */; };
 		08C952B72A7D5628009D501C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952B62A7D5628009D501C /* AppDelegate.swift */; };
 		08C952B92A7D5628009D501C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952B82A7D5628009D501C /* SceneDelegate.swift */; };
-		08C952BB2A7D5628009D501C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952BA2A7D5628009D501C /* MainViewController.swift */; };
 		08C952BE2A7D5628009D501C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C952BC2A7D5628009D501C /* Main.storyboard */; };
 		08C952C02A7D562A009D501C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C952BF2A7D562A009D501C /* Assets.xcassets */; };
 		08C952C32A7D562A009D501C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C952C12A7D562A009D501C /* LaunchScreen.storyboard */; };
@@ -33,10 +69,46 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		082E5E0B2A7D7F3200CF1776 /* MainPresenterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenterInput.swift; sourceTree = "<group>"; };
+		082E5E0C2A7D7F3200CF1776 /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		082E5E0E2A7D7F3200CF1776 /* MainRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouterInput.swift; sourceTree = "<group>"; };
+		082E5E0F2A7D7F3200CF1776 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		082E5E112A7D7F3200CF1776 /* MainAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
+		082E5E132A7D7F3200CF1776 /* MainInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		082E5E142A7D7F3200CF1776 /* MainInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainInteractorInput.swift; sourceTree = "<group>"; };
+		082E5E192A7D7F3200CF1776 /* MainViewControllerInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewControllerInput.swift; sourceTree = "<group>"; };
+		082E5E1A2A7D7F3200CF1776 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		082E5E272A7D81BF00CF1776 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		082E5E2A2A7D842500CF1776 /* EditorRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorRouterInput.swift; sourceTree = "<group>"; };
+		082E5E2B2A7D842500CF1776 /* EditorRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorRouter.swift; sourceTree = "<group>"; };
+		082E5E2D2A7D842500CF1776 /* EditorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorAssembly.swift; sourceTree = "<group>"; };
+		082E5E2F2A7D842500CF1776 /* EditorViewControllerInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewControllerInput.swift; sourceTree = "<group>"; };
+		082E5E302A7D842500CF1776 /* EditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		082E5E322A7D842500CF1776 /* EditorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorPresenter.swift; sourceTree = "<group>"; };
+		082E5E332A7D842500CF1776 /* EditorPresenterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorPresenterInput.swift; sourceTree = "<group>"; };
+		082E5E352A7D842500CF1776 /* EditorInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorInteractor.swift; sourceTree = "<group>"; };
+		082E5E362A7D842500CF1776 /* EditorInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorInteractorInput.swift; sourceTree = "<group>"; };
+		082E5E412A7D842B00CF1776 /* PaywallPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaywallPresenter.swift; sourceTree = "<group>"; };
+		082E5E422A7D842B00CF1776 /* PaywallPresenterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaywallPresenterInput.swift; sourceTree = "<group>"; };
+		082E5E442A7D842B00CF1776 /* PaywallAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaywallAssembly.swift; sourceTree = "<group>"; };
+		082E5E462A7D842B00CF1776 /* PaywallInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaywallInteractor.swift; sourceTree = "<group>"; };
+		082E5E472A7D842B00CF1776 /* PaywallInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaywallInteractorInput.swift; sourceTree = "<group>"; };
+		082E5E492A7D842B00CF1776 /* PaywallViewControllerInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaywallViewControllerInput.swift; sourceTree = "<group>"; };
+		082E5E4A2A7D842B00CF1776 /* PaywallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaywallViewController.swift; sourceTree = "<group>"; };
+		082E5E4C2A7D842B00CF1776 /* PaywallRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaywallRouterInput.swift; sourceTree = "<group>"; };
+		082E5E4D2A7D842B00CF1776 /* PaywallRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaywallRouter.swift; sourceTree = "<group>"; };
+		082E5E592A7D851900CF1776 /* TemplateRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateRouterInput.swift; sourceTree = "<group>"; };
+		082E5E5A2A7D851900CF1776 /* TemplateRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateRouter.swift; sourceTree = "<group>"; };
+		082E5E5C2A7D851900CF1776 /* TemplateInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateInteractor.swift; sourceTree = "<group>"; };
+		082E5E5D2A7D851900CF1776 /* TemplateInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateInteractorInput.swift; sourceTree = "<group>"; };
+		082E5E5F2A7D851900CF1776 /* TemplateViewControllerInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateViewControllerInput.swift; sourceTree = "<group>"; };
+		082E5E602A7D851900CF1776 /* TemplateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateViewController.swift; sourceTree = "<group>"; };
+		082E5E622A7D851900CF1776 /* TemplateAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateAssembly.swift; sourceTree = "<group>"; };
+		082E5E642A7D851900CF1776 /* TemplatePresenterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplatePresenterInput.swift; sourceTree = "<group>"; };
+		082E5E652A7D851900CF1776 /* TemplatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplatePresenter.swift; sourceTree = "<group>"; };
 		08C952B32A7D5628009D501C /* FashionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FashionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C952B62A7D5628009D501C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08C952B82A7D5628009D501C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		08C952BA2A7D5628009D501C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		08C952BD2A7D5628009D501C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08C952BF2A7D562A009D501C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08C952C22A7D562A009D501C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +131,226 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		082E5E082A7D7E9F00CF1776 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E2C2A7D842500CF1776 /* Assembly */,
+				082E5E342A7D842500CF1776 /* Interactor */,
+				082E5E312A7D842500CF1776 /* Presenter */,
+				082E5E292A7D842500CF1776 /* Router */,
+				082E5E2E2A7D842500CF1776 /* View */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		082E5E092A7D7EA900CF1776 /* Paywall */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E432A7D842B00CF1776 /* Assembly */,
+				082E5E452A7D842B00CF1776 /* Interactor */,
+				082E5E402A7D842B00CF1776 /* Presenter */,
+				082E5E4B2A7D842B00CF1776 /* Router */,
+				082E5E482A7D842B00CF1776 /* View */,
+			);
+			path = Paywall;
+			sourceTree = "<group>";
+		};
+		082E5E0A2A7D7F3200CF1776 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E0B2A7D7F3200CF1776 /* MainPresenterInput.swift */,
+				082E5E0C2A7D7F3200CF1776 /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		082E5E0D2A7D7F3200CF1776 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E0E2A7D7F3200CF1776 /* MainRouterInput.swift */,
+				082E5E0F2A7D7F3200CF1776 /* MainRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		082E5E102A7D7F3200CF1776 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E112A7D7F3200CF1776 /* MainAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		082E5E122A7D7F3200CF1776 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E132A7D7F3200CF1776 /* MainInteractor.swift */,
+				082E5E142A7D7F3200CF1776 /* MainInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		082E5E182A7D7F3200CF1776 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E192A7D7F3200CF1776 /* MainViewControllerInput.swift */,
+				082E5E1A2A7D7F3200CF1776 /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		082E5E262A7D81B000CF1776 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E272A7D81BF00CF1776 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		082E5E292A7D842500CF1776 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E2A2A7D842500CF1776 /* EditorRouterInput.swift */,
+				082E5E2B2A7D842500CF1776 /* EditorRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		082E5E2C2A7D842500CF1776 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E2D2A7D842500CF1776 /* EditorAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		082E5E2E2A7D842500CF1776 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E2F2A7D842500CF1776 /* EditorViewControllerInput.swift */,
+				082E5E302A7D842500CF1776 /* EditorViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		082E5E312A7D842500CF1776 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E322A7D842500CF1776 /* EditorPresenter.swift */,
+				082E5E332A7D842500CF1776 /* EditorPresenterInput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		082E5E342A7D842500CF1776 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E352A7D842500CF1776 /* EditorInteractor.swift */,
+				082E5E362A7D842500CF1776 /* EditorInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		082E5E402A7D842B00CF1776 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E412A7D842B00CF1776 /* PaywallPresenter.swift */,
+				082E5E422A7D842B00CF1776 /* PaywallPresenterInput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		082E5E432A7D842B00CF1776 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E442A7D842B00CF1776 /* PaywallAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		082E5E452A7D842B00CF1776 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E462A7D842B00CF1776 /* PaywallInteractor.swift */,
+				082E5E472A7D842B00CF1776 /* PaywallInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		082E5E482A7D842B00CF1776 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E492A7D842B00CF1776 /* PaywallViewControllerInput.swift */,
+				082E5E4A2A7D842B00CF1776 /* PaywallViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		082E5E4B2A7D842B00CF1776 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E4C2A7D842B00CF1776 /* PaywallRouterInput.swift */,
+				082E5E4D2A7D842B00CF1776 /* PaywallRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		082E5E572A7D84F800CF1776 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E612A7D851900CF1776 /* Assembly */,
+				082E5E5B2A7D851900CF1776 /* Interactor */,
+				082E5E632A7D851900CF1776 /* Presenter */,
+				082E5E582A7D851900CF1776 /* Router */,
+				082E5E5E2A7D851900CF1776 /* View */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		082E5E582A7D851900CF1776 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E592A7D851900CF1776 /* TemplateRouterInput.swift */,
+				082E5E5A2A7D851900CF1776 /* TemplateRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		082E5E5B2A7D851900CF1776 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E5C2A7D851900CF1776 /* TemplateInteractor.swift */,
+				082E5E5D2A7D851900CF1776 /* TemplateInteractorInput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		082E5E5E2A7D851900CF1776 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E5F2A7D851900CF1776 /* TemplateViewControllerInput.swift */,
+				082E5E602A7D851900CF1776 /* TemplateViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		082E5E612A7D851900CF1776 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E622A7D851900CF1776 /* TemplateAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		082E5E632A7D851900CF1776 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E642A7D851900CF1776 /* TemplatePresenterInput.swift */,
+				082E5E652A7D851900CF1776 /* TemplatePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		08C952AA2A7D5628009D501C = {
 			isa = PBXGroup;
 			children = (
@@ -81,7 +373,6 @@
 			children = (
 				558D82FC2A7D63BA003EC291 /* Modules */,
 				558D82FA2A7D6394003EC291 /* Resource */,
-				558D82F92A7D6389003EC291 /* Helpers */,
 				558D82F82A7D6350003EC291 /* Supporting Files */,
 				08C952C42A7D562A009D501C /* Info.plist */,
 			);
@@ -107,14 +398,6 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		558D82F92A7D6389003EC291 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				558D82FB2A7D63A3003EC291 /* Extensions */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		558D82FA2A7D6394003EC291 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,43 +406,28 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		558D82FB2A7D63A3003EC291 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		558D82FC2A7D63BA003EC291 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				558D82FF2A7D640F003EC291 /* Editor */,
+				082E5E572A7D84F800CF1776 /* Template */,
+				082E5E262A7D81B000CF1776 /* Base */,
+				082E5E092A7D7EA900CF1776 /* Paywall */,
+				082E5E082A7D7E9F00CF1776 /* Editor */,
 				558D82FE2A7D63F3003EC291 /* Main */,
-				558D82FD2A7D63C8003EC291 /* PayWall */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		558D82FD2A7D63C8003EC291 /* PayWall */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PayWall;
 			sourceTree = "<group>";
 		};
 		558D82FE2A7D63F3003EC291 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				08C952BA2A7D5628009D501C /* MainViewController.swift */,
+				082E5E102A7D7F3200CF1776 /* Assembly */,
+				082E5E122A7D7F3200CF1776 /* Interactor */,
+				082E5E0A2A7D7F3200CF1776 /* Presenter */,
+				082E5E0D2A7D7F3200CF1776 /* Router */,
+				082E5E182A7D7F3200CF1776 /* View */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		558D82FF2A7D640F003EC291 /* Editor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Editor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,9 +511,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08C952BB2A7D5628009D501C /* MainViewController.swift in Sources */,
+				082E5E252A7D7F3200CF1776 /* MainViewController.swift in Sources */,
+				082E5E382A7D842500CF1776 /* EditorRouter.swift in Sources */,
+				082E5E212A7D7F3200CF1776 /* MainInteractorInput.swift in Sources */,
+				082E5E3F2A7D842500CF1776 /* EditorInteractorInput.swift in Sources */,
+				082E5E6D2A7D851900CF1776 /* TemplatePresenterInput.swift in Sources */,
+				082E5E3E2A7D842500CF1776 /* EditorInteractor.swift in Sources */,
+				082E5E562A7D842B00CF1776 /* PaywallRouter.swift in Sources */,
+				082E5E662A7D851900CF1776 /* TemplateRouterInput.swift in Sources */,
+				082E5E202A7D7F3200CF1776 /* MainInteractor.swift in Sources */,
+				082E5E1F2A7D7F3200CF1776 /* MainAssembly.swift in Sources */,
+				082E5E542A7D842B00CF1776 /* PaywallViewController.swift in Sources */,
 				08C952B72A7D5628009D501C /* AppDelegate.swift in Sources */,
+				082E5E512A7D842B00CF1776 /* PaywallInteractor.swift in Sources */,
+				082E5E282A7D81BF00CF1776 /* BaseViewController.swift in Sources */,
+				082E5E6E2A7D851900CF1776 /* TemplatePresenter.swift in Sources */,
+				082E5E3B2A7D842500CF1776 /* EditorViewController.swift in Sources */,
+				082E5E502A7D842B00CF1776 /* PaywallAssembly.swift in Sources */,
 				08C952B92A7D5628009D501C /* SceneDelegate.swift in Sources */,
+				082E5E1E2A7D7F3200CF1776 /* MainRouter.swift in Sources */,
+				082E5E3D2A7D842500CF1776 /* EditorPresenterInput.swift in Sources */,
+				082E5E1C2A7D7F3200CF1776 /* MainPresenter.swift in Sources */,
+				082E5E6B2A7D851900CF1776 /* TemplateViewController.swift in Sources */,
+				082E5E522A7D842B00CF1776 /* PaywallInteractorInput.swift in Sources */,
+				082E5E4F2A7D842B00CF1776 /* PaywallPresenterInput.swift in Sources */,
+				082E5E672A7D851900CF1776 /* TemplateRouter.swift in Sources */,
+				082E5E392A7D842500CF1776 /* EditorAssembly.swift in Sources */,
+				082E5E1B2A7D7F3200CF1776 /* MainPresenterInput.swift in Sources */,
+				082E5E682A7D851900CF1776 /* TemplateInteractor.swift in Sources */,
+				082E5E3C2A7D842500CF1776 /* EditorPresenter.swift in Sources */,
+				082E5E692A7D851900CF1776 /* TemplateInteractorInput.swift in Sources */,
+				082E5E3A2A7D842500CF1776 /* EditorViewControllerInput.swift in Sources */,
+				082E5E242A7D7F3200CF1776 /* MainViewControllerInput.swift in Sources */,
+				082E5E4E2A7D842B00CF1776 /* PaywallPresenter.swift in Sources */,
+				082E5E6A2A7D851900CF1776 /* TemplateViewControllerInput.swift in Sources */,
+				082E5E6C2A7D851900CF1776 /* TemplateAssembly.swift in Sources */,
+				082E5E552A7D842B00CF1776 /* PaywallRouterInput.swift in Sources */,
+				082E5E1D2A7D7F3200CF1776 /* MainRouterInput.swift in Sources */,
+				082E5E372A7D842500CF1776 /* EditorRouterInput.swift in Sources */,
+				082E5E532A7D842B00CF1776 /* PaywallViewControllerInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
