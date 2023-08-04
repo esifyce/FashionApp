@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		08C952B72A7D5628009D501C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952B62A7D5628009D501C /* AppDelegate.swift */; };
 		08C952B92A7D5628009D501C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952B82A7D5628009D501C /* SceneDelegate.swift */; };
-		08C952BB2A7D5628009D501C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952BA2A7D5628009D501C /* ViewController.swift */; };
+		08C952BB2A7D5628009D501C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952BA2A7D5628009D501C /* MainViewController.swift */; };
 		08C952BE2A7D5628009D501C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C952BC2A7D5628009D501C /* Main.storyboard */; };
 		08C952C02A7D562A009D501C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C952BF2A7D562A009D501C /* Assets.xcassets */; };
 		08C952C32A7D562A009D501C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C952C12A7D562A009D501C /* LaunchScreen.storyboard */; };
 		08C952D22A7D5843009D501C /* KMDrawViewSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C952D12A7D5843009D501C /* KMDrawViewSDK.framework */; };
+		558D83022A7D660A003EC291 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83012A7D660A003EC291 /* SnapKit */; };
+		558D83052A7D677C003EC291 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83042A7D677C003EC291 /* Realm */; };
+		558D83072A7D677C003EC291 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83062A7D677C003EC291 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,7 +36,7 @@
 		08C952B32A7D5628009D501C /* FashionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FashionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C952B62A7D5628009D501C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08C952B82A7D5628009D501C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		08C952BA2A7D5628009D501C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		08C952BA2A7D5628009D501C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		08C952BD2A7D5628009D501C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08C952BF2A7D562A009D501C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08C952C22A7D562A009D501C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,7 +49,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				558D83072A7D677C003EC291 /* RealmSwift in Frameworks */,
+				558D83052A7D677C003EC291 /* Realm in Frameworks */,
 				08C952D22A7D5843009D501C /* KMDrawViewSDK.framework in Frameworks */,
+				558D83022A7D660A003EC291 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,12 +79,10 @@
 		08C952B52A7D5628009D501C /* FashionApp */ = {
 			isa = PBXGroup;
 			children = (
-				08C952B62A7D5628009D501C /* AppDelegate.swift */,
-				08C952B82A7D5628009D501C /* SceneDelegate.swift */,
-				08C952BA2A7D5628009D501C /* ViewController.swift */,
-				08C952BC2A7D5628009D501C /* Main.storyboard */,
-				08C952BF2A7D562A009D501C /* Assets.xcassets */,
-				08C952C12A7D562A009D501C /* LaunchScreen.storyboard */,
+				558D82FC2A7D63BA003EC291 /* Modules */,
+				558D82FA2A7D6394003EC291 /* Resource */,
+				558D82F92A7D6389003EC291 /* Helpers */,
+				558D82F82A7D6350003EC291 /* Supporting Files */,
 				08C952C42A7D562A009D501C /* Info.plist */,
 			);
 			path = FashionApp;
@@ -90,6 +94,72 @@
 				08C952D12A7D5843009D501C /* KMDrawViewSDK.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		558D82F82A7D6350003EC291 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				08C952B82A7D5628009D501C /* SceneDelegate.swift */,
+				08C952B62A7D5628009D501C /* AppDelegate.swift */,
+				08C952BC2A7D5628009D501C /* Main.storyboard */,
+				08C952C12A7D562A009D501C /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		558D82F92A7D6389003EC291 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				558D82FB2A7D63A3003EC291 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		558D82FA2A7D6394003EC291 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				08C952BF2A7D562A009D501C /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		558D82FB2A7D63A3003EC291 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		558D82FC2A7D63BA003EC291 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				558D82FF2A7D640F003EC291 /* Editor */,
+				558D82FE2A7D63F3003EC291 /* Main */,
+				558D82FD2A7D63C8003EC291 /* PayWall */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		558D82FD2A7D63C8003EC291 /* PayWall */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PayWall;
+			sourceTree = "<group>";
+		};
+		558D82FE2A7D63F3003EC291 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				08C952BA2A7D5628009D501C /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		558D82FF2A7D640F003EC291 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Editor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,6 +179,11 @@
 			dependencies = (
 			);
 			name = FashionApp;
+			packageProductDependencies = (
+				558D83012A7D660A003EC291 /* SnapKit */,
+				558D83042A7D677C003EC291 /* Realm */,
+				558D83062A7D677C003EC291 /* RealmSwift */,
+			);
 			productName = FashionApp;
 			productReference = 08C952B32A7D5628009D501C /* FashionApp.app */;
 			productType = "com.apple.product-type.application";
@@ -137,6 +212,10 @@
 				Base,
 			);
 			mainGroup = 08C952AA2A7D5628009D501C;
+			packageReferences = (
+				558D83002A7D660A003EC291 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				558D83032A7D677C003EC291 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 08C952B42A7D5628009D501C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -164,7 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08C952BB2A7D5628009D501C /* ViewController.swift in Sources */,
+				08C952BB2A7D5628009D501C /* MainViewController.swift in Sources */,
 				08C952B72A7D5628009D501C /* AppDelegate.swift in Sources */,
 				08C952B92A7D5628009D501C /* SceneDelegate.swift in Sources */,
 			);
@@ -394,6 +473,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		558D83002A7D660A003EC291 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		558D83032A7D677C003EC291 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		558D83012A7D660A003EC291 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 558D83002A7D660A003EC291 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		558D83042A7D677C003EC291 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 558D83032A7D677C003EC291 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		558D83062A7D677C003EC291 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 558D83032A7D677C003EC291 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 08C952AB2A7D5628009D501C /* Project object */;
 }
