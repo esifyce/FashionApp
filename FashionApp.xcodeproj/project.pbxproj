@@ -53,6 +53,7 @@
 		558D83022A7D660A003EC291 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83012A7D660A003EC291 /* SnapKit */; };
 		558D83052A7D677C003EC291 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83042A7D677C003EC291 /* Realm */; };
 		558D83072A7D677C003EC291 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83062A7D677C003EC291 /* RealmSwift */; };
+		55CA4B7D2A7EAEE800B43191 /* FrameBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 55CA4B7C2A7EAEE800B43191 /* FrameBuilder */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -124,6 +125,7 @@
 				558D83072A7D677C003EC291 /* RealmSwift in Frameworks */,
 				558D83052A7D677C003EC291 /* Realm in Frameworks */,
 				08C952D22A7D5843009D501C /* KMDrawViewSDK.framework in Frameworks */,
+				55CA4B7D2A7EAEE800B43191 /* FrameBuilder in Frameworks */,
 				558D83022A7D660A003EC291 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +453,7 @@
 				558D83012A7D660A003EC291 /* SnapKit */,
 				558D83042A7D677C003EC291 /* Realm */,
 				558D83062A7D677C003EC291 /* RealmSwift */,
+				55CA4B7C2A7EAEE800B43191 /* FrameBuilder */,
 			);
 			productName = FashionApp;
 			productReference = 08C952B32A7D5628009D501C /* FashionApp.app */;
@@ -483,6 +486,7 @@
 			packageReferences = (
 				558D83002A7D660A003EC291 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				558D83032A7D677C003EC291 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				55CA4B7B2A7EAEE800B43191 /* XCRemoteSwiftPackageReference "FrameBuilder" */,
 			);
 			productRefGroup = 08C952B42A7D5628009D501C /* Products */;
 			projectDirPath = "";
@@ -795,6 +799,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		55CA4B7B2A7EAEE800B43191 /* XCRemoteSwiftPackageReference "FrameBuilder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weakvar/FrameBuilder.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -812,6 +824,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 558D83032A7D677C003EC291 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		55CA4B7C2A7EAEE800B43191 /* FrameBuilder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55CA4B7B2A7EAEE800B43191 /* XCRemoteSwiftPackageReference "FrameBuilder" */;
+			productName = FrameBuilder;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
