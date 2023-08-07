@@ -53,10 +53,11 @@
 		082E5E822A7ED7D200CF1776 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E812A7ED7D200CF1776 /* UIImage+Extension.swift */; };
 		08C952B72A7D5628009D501C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952B62A7D5628009D501C /* AppDelegate.swift */; };
 		08C952B92A7D5628009D501C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952B82A7D5628009D501C /* SceneDelegate.swift */; };
-		08C952BE2A7D5628009D501C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C952BC2A7D5628009D501C /* Main.storyboard */; };
 		08C952C02A7D562A009D501C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C952BF2A7D562A009D501C /* Assets.xcassets */; };
 		08C952C32A7D562A009D501C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C952C12A7D562A009D501C /* LaunchScreen.storyboard */; };
 		08C952D22A7D5843009D501C /* KMDrawViewSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C952D12A7D5843009D501C /* KMDrawViewSDK.framework */; };
+		554F30992A814A500077114D /* IphoneCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F30982A814A500077114D /* IphoneCollectionViewLayout.swift */; };
+		554F309B2A814B300077114D /* IpadCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F309A2A814B300077114D /* IpadCollectionViewLayout.swift */; };
 		558D83022A7D660A003EC291 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83012A7D660A003EC291 /* SnapKit */; };
 		558D83052A7D677C003EC291 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83042A7D677C003EC291 /* Realm */; };
 		558D83072A7D677C003EC291 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83062A7D677C003EC291 /* RealmSwift */; };
@@ -124,11 +125,12 @@
 		08C952B32A7D5628009D501C /* FashionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FashionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C952B62A7D5628009D501C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08C952B82A7D5628009D501C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		08C952BD2A7D5628009D501C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08C952BF2A7D562A009D501C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08C952C22A7D562A009D501C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08C952C42A7D562A009D501C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08C952D12A7D5843009D501C /* KMDrawViewSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KMDrawViewSDK.framework; sourceTree = "<group>"; };
+		554F30982A814A500077114D /* IphoneCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneCollectionViewLayout.swift; sourceTree = "<group>"; };
+		554F309A2A814B300077114D /* IpadCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpadCollectionViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,6 +373,8 @@
 			isa = PBXGroup;
 			children = (
 				082E5E712A7EB73200CF1776 /* MainCollectionManager.swift */,
+				554F30982A814A500077114D /* IphoneCollectionViewLayout.swift */,
+				554F309A2A814B300077114D /* IpadCollectionViewLayout.swift */,
 			);
 			path = CollectionManager;
 			sourceTree = "<group>";
@@ -453,7 +457,6 @@
 			children = (
 				08C952B82A7D5628009D501C /* SceneDelegate.swift */,
 				08C952B62A7D5628009D501C /* AppDelegate.swift */,
-				08C952BC2A7D5628009D501C /* Main.storyboard */,
 				08C952C12A7D562A009D501C /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
@@ -565,7 +568,6 @@
 			files = (
 				08C952C32A7D562A009D501C /* LaunchScreen.storyboard in Resources */,
 				08C952C02A7D562A009D501C /* Assets.xcassets in Resources */,
-				08C952BE2A7D5628009D501C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +590,7 @@
 				082E5E822A7ED7D200CF1776 /* UIImage+Extension.swift in Sources */,
 				082E5E202A7D7F3200CF1776 /* MainInteractor.swift in Sources */,
 				082E5E1F2A7D7F3200CF1776 /* MainAssembly.swift in Sources */,
+				554F309B2A814B300077114D /* IpadCollectionViewLayout.swift in Sources */,
 				082E5E542A7D842B00CF1776 /* PaywallViewController.swift in Sources */,
 				082E5E7D2A7EB97D00CF1776 /* TemplateCollectionViewCell.swift in Sources */,
 				08C952B72A7D5628009D501C /* AppDelegate.swift in Sources */,
@@ -622,20 +625,13 @@
 				082E5E1D2A7D7F3200CF1776 /* MainRouterInput.swift in Sources */,
 				082E5E372A7D842500CF1776 /* EditorRouterInput.swift in Sources */,
 				082E5E532A7D842B00CF1776 /* PaywallViewControllerInput.swift in Sources */,
+				554F30992A814A500077114D /* IphoneCollectionViewLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		08C952BC2A7D5628009D501C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				08C952BD2A7D5628009D501C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		08C952C12A7D562A009D501C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -778,9 +774,9 @@
 				INFOPLIST_FILE = FashionApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -811,9 +807,9 @@
 				INFOPLIST_FILE = FashionApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -12,6 +12,7 @@ class TemplateCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Views
     
+    
     // MARK: - Init
     
     override init(frame: CGRect) {

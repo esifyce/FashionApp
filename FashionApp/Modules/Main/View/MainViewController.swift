@@ -12,7 +12,6 @@ final class MainViewController: BaseViewController {
     // MARK: - Property
     var presenter: MainPresenterInput
     
-    
     // MARK: - Init
     
     init(presenter: MainPresenterInput) {
@@ -42,7 +41,12 @@ final class MainViewController: BaseViewController {
         super.viewDidLoad()
         defer { presenter.viewDidLoad() }
         setupUI()
-        
+        presenter.updateCollection(with: traitCollection)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        presenter.updateCollection(with: traitCollection)
     }
 }
 

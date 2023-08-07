@@ -56,6 +56,7 @@ protocol MainCollectionManagerProtocol: AnyObject {
     func injectCollection(_ collectionView: UICollectionView)
     func injectDelegate(_ delegate: MainCollectionManagerDelegate)
     func displaySquareTemplates(_ results: [MainViewModel], isShowAddTemplate: Bool, isShowPaywallTemplate: Bool)
+    func updateLayout(with traitCollection: UITraitCollection)
 }
 
 final class MainCollectionManager: NSObject, MainCollectionManagerProtocol {
@@ -67,12 +68,30 @@ final class MainCollectionManager: NSObject, MainCollectionManagerProtocol {
     // MARK: - Public functions
     func injectCollection(_ collectionView: UICollectionView) {
         self.collectionView = collectionView
-        self.collectionView?.collectionViewLayout = collectionItemLayout()
+        self.collectionView?.collectionViewLayout = UICollectionViewLayout()
         self.collectionView?.dataSource = self
         self.collectionView?.delegate = self
         self.collectionView?.register(AddCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: AddCollectionViewCell.self))
         self.collectionView?.register(PaywallCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: PaywallCollectionViewCell.self))
         self.collectionView?.register(TemplateCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: TemplateCollectionViewCell.self))
+    }
+    
+    func updateLayout(with traitCollection: UITraitCollection) {
+        var layout: UICollectionViewLayout = UICollectionViewLayout()
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            if UIDevice.current.orientation.isLandscape {
+                layout = IpadCollectionViewLayout.createLandscapeLayout()
+            } else {
+                layout = IpadCollectionViewLayout.createPortraitLayout()
+            }
+        } else {
+            layout = IphoneCollectionViewLayout.createLayout()
+        }
+        
+        collectionView?.collectionViewLayout = layout
+        if !configuratorsDataSource.isEmpty {
+            collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+        }
     }
     
     func injectDelegate(_ delegate: MainCollectionManagerDelegate) {
@@ -142,76 +161,4 @@ extension MainCollectionManager: UICollectionViewDelegate, UICollectionViewDataS
             delegate?.templateCellTapped()
         }
     }
-    
-    func collectionItemLayout() -> UICollectionViewLayout {
-        var estimatedHeight: CGFloat = 0
-        var estimatedWidth: CGFloat = 0
-
-        estimatedWidth = CGFloat(175).autoHeightSize
-        estimatedHeight = CGFloat(250).autoHeightSize
-        
-       //estimatedWidth = //CGFloat(160)
-       //estimatedHeight = // CGFloat(230)
-
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .estimated(estimatedWidth),
-            heightDimension: .absolute(estimatedHeight)
-        )
-
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-
-        item.edgeSpacing = NSCollectionLayoutEdgeSpacing(
-            leading: .fixed(8),
-            top: .fixed(8),
-            trailing: .fixed(8),
-            bottom: .fixed(8)
-        )
-
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .estimated(estimatedHeight)
-        )
-        let group = NSCollectionLayoutGroup.horizontal(
-            layoutSize: groupSize,
-            subitems: [item]
-        )
-
-        // Вычислите доступную ширину на экране вычитанием отступов слева и справа из ширины экрана
-        let screenWidth = UIScreen.main.bounds.width
-        let leadingInset: CGFloat = 12
-        let trailingInset: CGFloat = 12
-        let availableWidth = screenWidth - leadingInset - trailingInset
-
-        // Вычтите общую ширину ячеек и промежутков из доступной ширины
-        let cellSpacing: CGFloat = 8 // Промежуток между ячейками
-        let totalCellWidth = estimatedWidth + cellSpacing
-        let numberOfCellsInGroup = Int(availableWidth / totalCellWidth)
-        let remainingWidth = availableWidth - (CGFloat(numberOfCellsInGroup) * totalCellWidth)
-
-        // Измените горизонтальные отступы, чтобы центрировать группу ячеек
-//        let horizontalInset = remainingWidth / 2
-//
-//        group.contentInsets = NSDirectionalEdgeInsets(
-//            top: 0,
-//            leading: horizontalInset,
-//            bottom: 0,
-//            trailing: horizontalInset
-//        )
-        
-        let horizontalInset = (availableWidth - CGFloat(numberOfCellsInGroup) * estimatedWidth - CGFloat(numberOfCellsInGroup - 1) * cellSpacing) / 2
-
-        group.contentInsets = NSDirectionalEdgeInsets(
-            top: 0,
-            leading: horizontalInset,
-            bottom: 0,
-            trailing: horizontalInset
-        )
-
-        let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 8
-
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        return layout
-    }
-
 }

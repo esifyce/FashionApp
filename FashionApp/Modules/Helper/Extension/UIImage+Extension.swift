@@ -15,6 +15,7 @@ extension UIImage {
 }
 
 extension CGFloat {
-    var autoHeightSize: CGFloat { return UIScreen.main.bounds.height * self / 844.0 }
-    var autoWidthSize: CGFloat { return UIScreen.main.bounds.width * self / 390.0 }
+    var autoIpadHeightSize: CGFloat { return UIScreen.main.bounds.height * self / 1194 }
+    var autoIpadHeightLandscapeSize: CGFloat { return UIScreen.main.bounds.width * self / 1194 }
+    var autoIphoneHeightSize: CGFloat { return UIScreen.main.bounds.height * self / 844.0 }
 }

@@ -4,7 +4,7 @@
 //
 //  Created by Krasivo on 04.02.2023.
 //
-
+import UIKit
 
 final class MainPresenter {
     weak var view: MainViewControllerInput?
@@ -27,6 +27,10 @@ extension MainPresenter: MainPresenterInput {
         interactor.getViewModel { [weak self] viewModel in
             self?.collectionManager.displaySquareTemplates(viewModel, isShowAddTemplate: true, isShowPaywallTemplate: true)
         }
+    }
+    
+    func updateCollection(with traitCollection: UITraitCollection) {
+        collectionManager.updateLayout(with: traitCollection)
     }
 }
 
