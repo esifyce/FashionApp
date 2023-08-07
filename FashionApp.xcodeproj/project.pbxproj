@@ -44,6 +44,13 @@
 		082E5E6C2A7D851900CF1776 /* TemplateAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E622A7D851900CF1776 /* TemplateAssembly.swift */; };
 		082E5E6D2A7D851900CF1776 /* TemplatePresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E642A7D851900CF1776 /* TemplatePresenterInput.swift */; };
 		082E5E6E2A7D851900CF1776 /* TemplatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E652A7D851900CF1776 /* TemplatePresenter.swift */; };
+		082E5E722A7EB73200CF1776 /* MainCollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E712A7EB73200CF1776 /* MainCollectionManager.swift */; };
+		082E5E772A7EB8F100CF1776 /* SquareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E762A7EB8F100CF1776 /* SquareModel.swift */; };
+		082E5E792A7EB93F00CF1776 /* AddCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E782A7EB93F00CF1776 /* AddCollectionViewCell.swift */; };
+		082E5E7B2A7EB94D00CF1776 /* PaywallCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E7A2A7EB94D00CF1776 /* PaywallCollectionViewCell.swift */; };
+		082E5E7D2A7EB97D00CF1776 /* TemplateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E7C2A7EB97D00CF1776 /* TemplateCollectionViewCell.swift */; };
+		082E5E7F2A7EBACB00CF1776 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E7E2A7EBACB00CF1776 /* MainViewModel.swift */; };
+		082E5E822A7ED7D200CF1776 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E812A7ED7D200CF1776 /* UIImage+Extension.swift */; };
 		08C952B72A7D5628009D501C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952B62A7D5628009D501C /* AppDelegate.swift */; };
 		08C952B92A7D5628009D501C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952B82A7D5628009D501C /* SceneDelegate.swift */; };
 		08C952BE2A7D5628009D501C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08C952BC2A7D5628009D501C /* Main.storyboard */; };
@@ -107,6 +114,13 @@
 		082E5E622A7D851900CF1776 /* TemplateAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateAssembly.swift; sourceTree = "<group>"; };
 		082E5E642A7D851900CF1776 /* TemplatePresenterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplatePresenterInput.swift; sourceTree = "<group>"; };
 		082E5E652A7D851900CF1776 /* TemplatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplatePresenter.swift; sourceTree = "<group>"; };
+		082E5E712A7EB73200CF1776 /* MainCollectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionManager.swift; sourceTree = "<group>"; };
+		082E5E762A7EB8F100CF1776 /* SquareModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareModel.swift; sourceTree = "<group>"; };
+		082E5E782A7EB93F00CF1776 /* AddCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionViewCell.swift; sourceTree = "<group>"; };
+		082E5E7A2A7EB94D00CF1776 /* PaywallCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallCollectionViewCell.swift; sourceTree = "<group>"; };
+		082E5E7C2A7EB97D00CF1776 /* TemplateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCollectionViewCell.swift; sourceTree = "<group>"; };
+		082E5E7E2A7EBACB00CF1776 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		082E5E812A7ED7D200CF1776 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		08C952B32A7D5628009D501C /* FashionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FashionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C952B62A7D5628009D501C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08C952B82A7D5628009D501C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -353,6 +367,51 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		082E5E702A7EB70E00CF1776 /* CollectionManager */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E712A7EB73200CF1776 /* MainCollectionManager.swift */,
+			);
+			path = CollectionManager;
+			sourceTree = "<group>";
+		};
+		082E5E732A7EB7C100CF1776 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E802A7ED7C300CF1776 /* Extension */,
+				082E5E752A7EB8A200CF1776 /* Model */,
+				082E5E742A7EB7D000CF1776 /* Cells */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		082E5E742A7EB7D000CF1776 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E782A7EB93F00CF1776 /* AddCollectionViewCell.swift */,
+				082E5E7A2A7EB94D00CF1776 /* PaywallCollectionViewCell.swift */,
+				082E5E7C2A7EB97D00CF1776 /* TemplateCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		082E5E752A7EB8A200CF1776 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E762A7EB8F100CF1776 /* SquareModel.swift */,
+				082E5E7E2A7EBACB00CF1776 /* MainViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		082E5E802A7ED7C300CF1776 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				082E5E812A7ED7D200CF1776 /* UIImage+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		08C952AA2A7D5628009D501C = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +470,7 @@
 		558D82FC2A7D63BA003EC291 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				082E5E732A7EB7C100CF1776 /* Helper */,
 				082E5E572A7D84F800CF1776 /* Template */,
 				082E5E262A7D81B000CF1776 /* Base */,
 				082E5E092A7D7EA900CF1776 /* Paywall */,
@@ -423,6 +483,7 @@
 		558D82FE2A7D63F3003EC291 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				082E5E702A7EB70E00CF1776 /* CollectionManager */,
 				082E5E102A7D7F3200CF1776 /* Assembly */,
 				082E5E122A7D7F3200CF1776 /* Interactor */,
 				082E5E0A2A7D7F3200CF1776 /* Presenter */,
@@ -515,6 +576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				082E5E792A7EB93F00CF1776 /* AddCollectionViewCell.swift in Sources */,
 				082E5E252A7D7F3200CF1776 /* MainViewController.swift in Sources */,
 				082E5E382A7D842500CF1776 /* EditorRouter.swift in Sources */,
 				082E5E212A7D7F3200CF1776 /* MainInteractorInput.swift in Sources */,
@@ -523,10 +585,13 @@
 				082E5E3E2A7D842500CF1776 /* EditorInteractor.swift in Sources */,
 				082E5E562A7D842B00CF1776 /* PaywallRouter.swift in Sources */,
 				082E5E662A7D851900CF1776 /* TemplateRouterInput.swift in Sources */,
+				082E5E822A7ED7D200CF1776 /* UIImage+Extension.swift in Sources */,
 				082E5E202A7D7F3200CF1776 /* MainInteractor.swift in Sources */,
 				082E5E1F2A7D7F3200CF1776 /* MainAssembly.swift in Sources */,
 				082E5E542A7D842B00CF1776 /* PaywallViewController.swift in Sources */,
+				082E5E7D2A7EB97D00CF1776 /* TemplateCollectionViewCell.swift in Sources */,
 				08C952B72A7D5628009D501C /* AppDelegate.swift in Sources */,
+				082E5E772A7EB8F100CF1776 /* SquareModel.swift in Sources */,
 				082E5E512A7D842B00CF1776 /* PaywallInteractor.swift in Sources */,
 				082E5E282A7D81BF00CF1776 /* BaseViewController.swift in Sources */,
 				082E5E6E2A7D851900CF1776 /* TemplatePresenter.swift in Sources */,
@@ -536,15 +601,18 @@
 				082E5E1E2A7D7F3200CF1776 /* MainRouter.swift in Sources */,
 				082E5E3D2A7D842500CF1776 /* EditorPresenterInput.swift in Sources */,
 				082E5E1C2A7D7F3200CF1776 /* MainPresenter.swift in Sources */,
+				082E5E7B2A7EB94D00CF1776 /* PaywallCollectionViewCell.swift in Sources */,
 				082E5E6B2A7D851900CF1776 /* TemplateViewController.swift in Sources */,
 				082E5E522A7D842B00CF1776 /* PaywallInteractorInput.swift in Sources */,
 				082E5E4F2A7D842B00CF1776 /* PaywallPresenterInput.swift in Sources */,
 				082E5E672A7D851900CF1776 /* TemplateRouter.swift in Sources */,
 				082E5E392A7D842500CF1776 /* EditorAssembly.swift in Sources */,
+				082E5E722A7EB73200CF1776 /* MainCollectionManager.swift in Sources */,
 				082E5E1B2A7D7F3200CF1776 /* MainPresenterInput.swift in Sources */,
 				082E5E682A7D851900CF1776 /* TemplateInteractor.swift in Sources */,
 				082E5E3C2A7D842500CF1776 /* EditorPresenter.swift in Sources */,
 				082E5E692A7D851900CF1776 /* TemplateInteractorInput.swift in Sources */,
+				082E5E7F2A7EBACB00CF1776 /* MainViewModel.swift in Sources */,
 				082E5E3A2A7D842500CF1776 /* EditorViewControllerInput.swift in Sources */,
 				082E5E242A7D7F3200CF1776 /* MainViewControllerInput.swift in Sources */,
 				082E5E4E2A7D842B00CF1776 /* PaywallPresenter.swift in Sources */,
