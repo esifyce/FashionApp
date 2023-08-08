@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 extension UIImage {
     enum Base {
@@ -144,5 +145,24 @@ extension UITapGestureRecognizer {
         let locationOfTouchInTextContainer = CGPoint(x: locationOfTouchInLabel.x - textContainerOffset.x, y: locationOfTouchInLabel.y - textContainerOffset.y)
         let indexOfCharacter = layoutManager.characterIndex(for: locationOfTouchInTextContainer, in: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
         return NSLocationInRange(indexOfCharacter, targetRange)
+    }
+}
+
+
+extension UIViewController {
+    func showCustomView(view: UIView, inWindow: Bool = true) {
+        if inWindow {
+            let keyWindow: UIWindow? = UIApplication
+                .shared
+                .windows
+                .filter({ $0.isKeyWindow })
+                .first
+            keyWindow?.addSubview(view)
+        } else {
+            self.view.addSubview(view)
+        }
+        view.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
 }

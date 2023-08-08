@@ -9,7 +9,7 @@ import UIKit
 
 extension MenuView {
     struct Appearance {
-        let font: UIFont = UIFont.systemFont(ofSize: 20, weight: .init(600))
+        let font: UIFont = UIFont.systemFont(ofSize: 20, weight: .bold)
         let spacing: CGFloat = 16
         let blackColor = UIColor(rgb: 0x50505)
     }

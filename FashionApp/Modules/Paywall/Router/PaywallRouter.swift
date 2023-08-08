@@ -13,4 +13,8 @@ final class PaywallRouter {
 
 // MARK: - PaywallRouterInput
 extension PaywallRouter: PaywallRouterInput {
+    func showSeeOtherScreen() {
+        let view = SelectPlanView()
+        self.view?.showCustomView(view: view)
+    }
 }

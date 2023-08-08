@@ -59,7 +59,7 @@ final class PaywallViewController: BaseViewController {
     }()
     
     private lazy var secondLabel: UILabel = {
-        makeLabel(font: UIFont.systemFont(ofSize: 28, weight: .init(600)),
+        makeLabel(font: UIFont.systemFont(ofSize: 28, weight: .bold),
                   text: "Try 3 days free, then US $24,99 per year",
                   alignment: .left,
                   textColor: appearance.blackColor)
@@ -70,7 +70,7 @@ final class PaywallViewController: BaseViewController {
     }()
     
     private lazy var trialLabel: UILabel = {
-        makeLabel(font: UIFont.systemFont(ofSize: 28, weight: .init(600)),
+        makeLabel(font: UIFont.systemFont(ofSize: 28, weight: .semibold),
                   text: "How your trial works",
                   alignment: .left,
                   textColor: appearance.blackColor)
@@ -112,9 +112,8 @@ final class PaywallViewController: BaseViewController {
                   text: text,
                   textColor: appearance.grayColor)
         let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 2
-        underlineAttrString.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, underlineAttrString.length))
         label.attributedText = underlineAttrString
+        label.isUserInteractionEnabled = true
         label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(privacyLabelTapped(gesture:))))
         return label
     }()
@@ -137,7 +136,13 @@ final class PaywallViewController: BaseViewController {
         return button
     }()
 
-    let trialView = TrialView()
+    private lazy var trialView: UIView = {
+        let trialView = TrialView()
+        trialView.seeOtherCallBack = { [weak self] in
+            self?.presenter.seeOtherTapped()
+        }
+        return trialView
+    }()
     
     init(presenter: PaywallPresenterInput) {
         self.presenter = presenter
@@ -192,7 +197,7 @@ fileprivate extension PaywallViewController {
         view.addSubview(closeButton)
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
-        scrollView.contentSize = CGSize(width: view.frame.size.width, height: 1800)
+        scrollView.contentSize = CGSize(width: view.frame.size.width, height: 1750)
         contentView.addSubview(titleLabel)
         contentView.addSubview(imageView)
         contentView.addSubview(secondLabel)
