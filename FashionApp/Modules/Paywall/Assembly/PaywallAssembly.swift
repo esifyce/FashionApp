@@ -10,8 +10,8 @@ import UIKit
 final class PaywallAssembly {
     static func assemble() -> UIViewController {
         
-        let viewController = PaywallViewController()
         let presenter = PaywallPresenter()
+        let viewController = PaywallViewController(presenter: presenter)
         let interactor = PaywallInteractor()
         let router = PaywallRouter()
         
