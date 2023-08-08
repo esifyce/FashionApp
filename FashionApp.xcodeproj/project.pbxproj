@@ -58,6 +58,10 @@
 		08C952D22A7D5843009D501C /* KMDrawViewSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C952D12A7D5843009D501C /* KMDrawViewSDK.framework */; };
 		554F30992A814A500077114D /* IphoneCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F30982A814A500077114D /* IphoneCollectionViewLayout.swift */; };
 		554F309B2A814B300077114D /* IpadCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F309A2A814B300077114D /* IpadCollectionViewLayout.swift */; };
+		554F309E2A818C850077114D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F309D2A818C850077114D /* MenuView.swift */; };
+		554F30A02A818FAA0077114D /* PriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F309F2A818FAA0077114D /* PriceView.swift */; };
+		554F30A22A81A6CE0077114D /* CustomLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F30A12A81A6CE0077114D /* CustomLineView.swift */; };
+		554F30A62A81B85C0077114D /* TrialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F30A52A81B85C0077114D /* TrialView.swift */; };
 		558D83022A7D660A003EC291 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83012A7D660A003EC291 /* SnapKit */; };
 		558D83052A7D677C003EC291 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83042A7D677C003EC291 /* Realm */; };
 		558D83072A7D677C003EC291 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83062A7D677C003EC291 /* RealmSwift */; };
@@ -131,6 +135,10 @@
 		08C952D12A7D5843009D501C /* KMDrawViewSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KMDrawViewSDK.framework; sourceTree = "<group>"; };
 		554F30982A814A500077114D /* IphoneCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneCollectionViewLayout.swift; sourceTree = "<group>"; };
 		554F309A2A814B300077114D /* IpadCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpadCollectionViewLayout.swift; sourceTree = "<group>"; };
+		554F309D2A818C850077114D /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		554F309F2A818FAA0077114D /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
+		554F30A12A81A6CE0077114D /* CustomLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLineView.swift; sourceTree = "<group>"; };
+		554F30A52A81B85C0077114D /* TrialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +306,7 @@
 		082E5E482A7D842B00CF1776 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				554F309C2A818C7D0077114D /* Views */,
 				082E5E492A7D842B00CF1776 /* PaywallViewControllerInput.swift */,
 				082E5E4A2A7D842B00CF1776 /* PaywallViewController.swift */,
 			);
@@ -452,6 +461,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		554F309C2A818C7D0077114D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				554F309D2A818C850077114D /* MenuView.swift */,
+				554F309F2A818FAA0077114D /* PriceView.swift */,
+				554F30A12A81A6CE0077114D /* CustomLineView.swift */,
+				554F30A52A81B85C0077114D /* TrialView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		558D82F82A7D6350003EC291 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,12 +602,16 @@
 				082E5E252A7D7F3200CF1776 /* MainViewController.swift in Sources */,
 				082E5E382A7D842500CF1776 /* EditorRouter.swift in Sources */,
 				082E5E212A7D7F3200CF1776 /* MainInteractorInput.swift in Sources */,
+				554F30A02A818FAA0077114D /* PriceView.swift in Sources */,
 				082E5E3F2A7D842500CF1776 /* EditorInteractorInput.swift in Sources */,
 				082E5E6D2A7D851900CF1776 /* TemplatePresenterInput.swift in Sources */,
 				082E5E3E2A7D842500CF1776 /* EditorInteractor.swift in Sources */,
+				554F309E2A818C850077114D /* MenuView.swift in Sources */,
 				082E5E562A7D842B00CF1776 /* PaywallRouter.swift in Sources */,
+				554F30A22A81A6CE0077114D /* CustomLineView.swift in Sources */,
 				082E5E662A7D851900CF1776 /* TemplateRouterInput.swift in Sources */,
 				082E5E822A7ED7D200CF1776 /* UIImage+Extension.swift in Sources */,
+				554F30A62A81B85C0077114D /* TrialView.swift in Sources */,
 				082E5E202A7D7F3200CF1776 /* MainInteractor.swift in Sources */,
 				082E5E1F2A7D7F3200CF1776 /* MainAssembly.swift in Sources */,
 				554F309B2A814B300077114D /* IpadCollectionViewLayout.swift in Sources */,
