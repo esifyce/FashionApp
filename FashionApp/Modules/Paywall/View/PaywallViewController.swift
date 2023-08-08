@@ -12,10 +12,13 @@ extension PaywallViewController {
     struct Appearance {
         let closeImage: UIImage = UIImage.PayWall.closeIcon
         let logoImage: UIImage = UIImage.PayWall.logo
+        let clockwise: UIImage = UIImage.PayWall.clockwise
+        let upgradeList: UIImage = UIImage.PayWall.upgradeList
         let blackColor: UIColor = UIColor(rgb: 0x50505)
         let grayColor: UIColor = UIColor(rgb: 0x66676B)
         let blueColor: UIColor = UIColor(rgb: 0x1777F0)
         let shadowColor: UIColor = UIColor(rgb: 0x031833).withAlphaComponent(0.12)
+        let privacyText: String = "Please read our Privacy Policy and Terms of Use before joining"
     }
 }
 
@@ -56,7 +59,7 @@ final class PaywallViewController: BaseViewController {
     }()
     
     private lazy var secondLabel: UILabel = {
-        makeLabel(font: UIFont.systemFont(ofSize: 28, weight: .init(600)),
+        makeLabel(font: UIFont.systemFont(ofSize: 28, weight: .bold),
                   text: "Try 3 days free, then US $24,99 per year",
                   alignment: .left,
                   textColor: appearance.blackColor)
@@ -67,10 +70,18 @@ final class PaywallViewController: BaseViewController {
     }()
     
     private lazy var trialLabel: UILabel = {
-        makeLabel(font: UIFont.systemFont(ofSize: 28, weight: .init(600)),
+        makeLabel(font: UIFont.systemFont(ofSize: 28, weight: .semibold),
                   text: "How your trial works",
                   alignment: .left,
                   textColor: appearance.blackColor)
+    }()
+    
+    private lazy var upgradeImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.image = appearance.upgradeList
+        iv.contentMode = .scaleAspectFill
+        
+        return iv
     }()
     
     private lazy var priceView: PriceView = {
@@ -85,12 +96,26 @@ final class PaywallViewController: BaseViewController {
         makeLabel(font: UIFont.systemFont(ofSize: 18, weight: .medium),
                   text: "High quality templates, brushes, and tips our team adds every week means that your illustrations are constantly improving.",
                   textColor: appearance.blackColor)
+        
     }()
     
     private lazy var privacyLabel: UILabel = {
-        makeLabel(font: UIFont.systemFont(ofSize: 13, weight: .regular),
-                  text: "Please read our Privacy Policy and Terms of Use before joining",
+        let text = appearance.privacyText
+        let underlineAttrString = NSMutableAttributedString(string: text)
+        let range1 = (text as NSString).range(of: "Privacy Policy")
+        underlineAttrString.addAttributes([.font: UIFont.systemFont(ofSize: 13, weight: .semibold), .underlineStyle: NSUnderlineStyle.single.rawValue], range: range1)
+        
+        let range2 = (text as NSString).range(of: "Terms of Use")
+        underlineAttrString.addAttributes([.font: UIFont.systemFont(ofSize: 13, weight: .semibold), .underlineStyle: NSUnderlineStyle.single.rawValue], range: range2)
+        
+        let label = makeLabel(font: UIFont.systemFont(ofSize: 13, weight: .medium),
+                  text: text,
                   textColor: appearance.grayColor)
+        let paragraphStyle = NSMutableParagraphStyle()
+        label.attributedText = underlineAttrString
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(privacyLabelTapped(gesture:))))
+        return label
     }()
     
     private lazy var highStackView: UIStackView = {
@@ -106,16 +131,18 @@ final class PaywallViewController: BaseViewController {
     
     private lazy var restoreButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setAttributedTitle(NSAttributedString(string: "􀅉 restore", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .regular), .foregroundColor: appearance.blueColor]), for: .normal)
-        button.backgroundColor = .green
+        button.setImage(appearance.clockwise, for: .normal)
+        button.setAttributedTitle(NSAttributedString(string: " Restore", attributes: [.font : UIFont.systemFont(ofSize: 18, weight: .bold), .foregroundColor: appearance.blueColor]), for: .normal)
         return button
     }()
-    
-    private lazy var alreadyStackView: UIStackView = {
-        [alreadyLabel, restoreButton].toStackView(axis: .horizontal, spacing: 20, distibution: .fillProportionally, alignment: .leading)
+
+    private lazy var trialView: UIView = {
+        let trialView = TrialView()
+        trialView.seeOtherCallBack = { [weak self] in
+            self?.presenter.seeOtherTapped()
+        }
+        return trialView
     }()
-    
-    let trialView = TrialView()
     
     init(presenter: PaywallPresenterInput) {
         self.presenter = presenter
@@ -170,7 +197,7 @@ fileprivate extension PaywallViewController {
         view.addSubview(closeButton)
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
-        scrollView.contentSize = CGSize(width: view.frame.size.width, height: 1800)
+        scrollView.contentSize = CGSize(width: view.frame.size.width, height: 1750)
         contentView.addSubview(titleLabel)
         contentView.addSubview(imageView)
         contentView.addSubview(secondLabel)
@@ -178,8 +205,10 @@ fileprivate extension PaywallViewController {
         contentView.addSubview(menuView)
         contentView.addSubview(priceView)
         contentView.addSubview(lineView)
+        contentView.addSubview(upgradeImageView)
         contentView.addSubview(highStackView)
-        contentView.addSubview(alreadyStackView)
+        contentView.addSubview(alreadyLabel)
+        contentView.addSubview(restoreButton)
         contentView.addSubview(trialView)
     }
     
@@ -261,23 +290,23 @@ fileprivate extension PaywallViewController {
                 .height(242)
         )
         
-        highQualityLabel.buildFrame(
-             FrameBuilder()
-                .x(32)
-                .top(equalTo: .bottom, ofView: lineView, withOffset: 40)
-                .width(contentView.frame.width - 64)
-                .height(96)
+        upgradeImageView.buildFrame(
+            FrameBuilder()
+                .centerXToCenterX(ofView: view, offset: -92)
+                .top(equalTo: .bottom, ofView: lineView, withOffset: 48)
+                .width(184)
+                .height(40)
         )
         
         highStackView.buildFrame(
              FrameBuilder()
                 .x(32)
-                .top(equalTo: .bottom, ofView: highQualityLabel, withOffset: 32)
+                .top(equalTo: .bottom, ofView: upgradeImageView, withOffset: 32)
                 .width(contentView.frame.width - 64)
                 .height(172)
         )
         
-        alreadyStackView.buildFrame(
+        alreadyLabel.buildFrame(
             FrameBuilder()
                 .x(32)
                 .top(equalTo: .bottom, ofView: highStackView, withOffset: 24)
@@ -285,33 +314,38 @@ fileprivate extension PaywallViewController {
                 .height(24)
         )
         
+        restoreButton.buildFrame(
+            FrameBuilder()
+                .x(contentView.frame.width - 126)
+                .top(equalTo: .bottom, ofView: highStackView, withOffset: 24)
+                .width(94)
+                .height(24)
+        )
+        
         trialView.buildFrame(
             FrameBuilder()
                 .x(0)
-                .top(equalTo: .bottom, ofView: alreadyStackView, withOffset: 24)
+                .top(equalTo: .bottom, ofView: alreadyLabel, withOffset: 24)
                 .width(contentView.frame.width)
                 .height(178)
         )
-        
-//        closeButton.snp.makeConstraints { make in
-//            make.trailing.equalToSuperview().offset(-16)
-//            make.top.equalToSuperview().offset(16)
-//            make.size.equalTo(30)
-//        }
     }
     
     func applyShadow() {
-        trialView.layer.shadowColor = UIColor.black.cgColor
-        trialView.layer.shadowOpacity = 0.5
-        trialView.layer.shadowOffset = CGSize(width: 0, height: 8)
-        trialView.layer.shadowRadius = 5.0
-        trialView.layer.cornerRadius = 0.0
-        trialView.clipsToBounds = false
+        trialView.layer.applyFigmaShadow(color: UIColor(rgb:0x031833), alpha: 0.12, x: 0, y: -8, blur: 32, spread: 0)
     }
 }
 
 private extension PaywallViewController {
     func configureNavBar() {
         navigationController?.navigationBar.isHidden = true
+    }
+    
+    @objc func privacyLabelTapped(gesture: UITapGestureRecognizer) {
+        let text = appearance.privacyText
+        let range1 = (text as NSString).range(of: "Privacy Policy")
+        if gesture.didTapAttributedTextInLabel(label: privacyLabel, inRange: range1) {
+            print("Privacy Policy")
+        }
     }
 }

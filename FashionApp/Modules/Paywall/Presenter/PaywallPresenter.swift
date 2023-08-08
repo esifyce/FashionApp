@@ -16,6 +16,10 @@ final class PaywallPresenter {
 extension PaywallPresenter: PaywallPresenterInput {
     func viewDidLoad() {
     }
+    
+    func seeOtherTapped() {
+        router?.showSeeOtherScreen()
+    }
 }
 
 // MARK: - PaywallPresenter

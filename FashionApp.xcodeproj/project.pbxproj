@@ -65,7 +65,10 @@
 		558D83022A7D660A003EC291 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83012A7D660A003EC291 /* SnapKit */; };
 		558D83052A7D677C003EC291 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83042A7D677C003EC291 /* Realm */; };
 		558D83072A7D677C003EC291 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83062A7D677C003EC291 /* RealmSwift */; };
+		55A243242A82813400288046 /* WeeklyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A243232A82813400288046 /* WeeklyView.swift */; };
+		55A243262A82834F00288046 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A243252A82834F00288046 /* File.swift */; };
 		55CA4B7D2A7EAEE800B43191 /* FrameBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 55CA4B7C2A7EAEE800B43191 /* FrameBuilder */; };
+		55FEB5A82A826F9400D82B25 /* SelectPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FEB5A72A826F9400D82B25 /* SelectPlanView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -139,6 +142,9 @@
 		554F309F2A818FAA0077114D /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
 		554F30A12A81A6CE0077114D /* CustomLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLineView.swift; sourceTree = "<group>"; };
 		554F30A52A81B85C0077114D /* TrialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialView.swift; sourceTree = "<group>"; };
+		55A243232A82813400288046 /* WeeklyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyView.swift; sourceTree = "<group>"; };
+		55A243252A82834F00288046 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		55FEB5A72A826F9400D82B25 /* SelectPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlanView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,9 +312,9 @@
 		082E5E482A7D842B00CF1776 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				554F309C2A818C7D0077114D /* Views */,
-				082E5E492A7D842B00CF1776 /* PaywallViewControllerInput.swift */,
 				082E5E4A2A7D842B00CF1776 /* PaywallViewController.swift */,
+				082E5E492A7D842B00CF1776 /* PaywallViewControllerInput.swift */,
+				554F309C2A818C7D0077114D /* Views */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -464,6 +470,7 @@
 		554F309C2A818C7D0077114D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				55A243222A82811900288046 /* SelectPlan */,
 				554F309D2A818C850077114D /* MenuView.swift */,
 				554F309F2A818FAA0077114D /* PriceView.swift */,
 				554F30A12A81A6CE0077114D /* CustomLineView.swift */,
@@ -514,6 +521,16 @@
 				082E5E182A7D7F3200CF1776 /* View */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		55A243222A82811900288046 /* SelectPlan */ = {
+			isa = PBXGroup;
+			children = (
+				55FEB5A72A826F9400D82B25 /* SelectPlanView.swift */,
+				55A243232A82813400288046 /* WeeklyView.swift */,
+				55A243252A82834F00288046 /* File.swift */,
+			);
+			path = SelectPlan;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -608,6 +625,7 @@
 				082E5E3E2A7D842500CF1776 /* EditorInteractor.swift in Sources */,
 				554F309E2A818C850077114D /* MenuView.swift in Sources */,
 				082E5E562A7D842B00CF1776 /* PaywallRouter.swift in Sources */,
+				55FEB5A82A826F9400D82B25 /* SelectPlanView.swift in Sources */,
 				554F30A22A81A6CE0077114D /* CustomLineView.swift in Sources */,
 				082E5E662A7D851900CF1776 /* TemplateRouterInput.swift in Sources */,
 				082E5E822A7ED7D200CF1776 /* UIImage+Extension.swift in Sources */,
@@ -617,6 +635,7 @@
 				554F309B2A814B300077114D /* IpadCollectionViewLayout.swift in Sources */,
 				082E5E542A7D842B00CF1776 /* PaywallViewController.swift in Sources */,
 				082E5E7D2A7EB97D00CF1776 /* TemplateCollectionViewCell.swift in Sources */,
+				55A243262A82834F00288046 /* File.swift in Sources */,
 				08C952B72A7D5628009D501C /* AppDelegate.swift in Sources */,
 				082E5E772A7EB8F100CF1776 /* SquareModel.swift in Sources */,
 				082E5E512A7D842B00CF1776 /* PaywallInteractor.swift in Sources */,
@@ -650,6 +669,7 @@
 				082E5E372A7D842500CF1776 /* EditorRouterInput.swift in Sources */,
 				082E5E532A7D842B00CF1776 /* PaywallViewControllerInput.swift in Sources */,
 				554F30992A814A500077114D /* IphoneCollectionViewLayout.swift in Sources */,
+				55A243242A82813400288046 /* WeeklyView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

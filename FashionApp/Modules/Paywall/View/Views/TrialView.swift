@@ -15,8 +15,9 @@ final class TrialView: UIView {
     
     private lazy var startButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Start 3-Day Free Trial", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        let attributedString = NSMutableAttributedString(string: "Start 3-Day Free Trial")
+        attributedString.addAttributes([.font: UIFont.systemFont(ofSize: 16, weight: .bold), NSAttributedString.Key.foregroundColor: UIColor.white], range: NSMakeRange(0, attributedString.length))
+        button.setAttributedTitle(attributedString, for: .normal)
         button.backgroundColor = UIColor(rgb: 0x1777F0)
         button.layer.cornerRadius = 16
         button.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
@@ -25,8 +26,10 @@ final class TrialView: UIView {
     
     private lazy var seeOtherButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("See other plan", for: .normal)
-        button.setTitleColor(UIColor(rgb: 0xCACBD0), for: .normal)
+        
+        let attributedString = NSMutableAttributedString(string: "See other plan")
+        attributedString.addAttributes([.font: UIFont.systemFont(ofSize: 16, weight: .bold), .foregroundColor: UIColor(rgb: 0xCACBD0)], range: NSMakeRange(0, attributedString.length))
+        button.setAttributedTitle(attributedString, for: .normal)
         button.backgroundColor = .clear
         button.addTarget(self, action: #selector(seeOtherButtonTapped), for: .touchUpInside)
         return button
@@ -48,14 +51,13 @@ final class TrialView: UIView {
 
 private extension TrialView {
     func setupUI() {
+        backgroundColor = .white
         addSubviews()
         makeLayout()
-        
-        layer.applyFigmaShadow(color: .red, alpha: 1, x: 0, y: -8, blur: 32, spread: 0)
     }
     
     func addSubviews() {
-        //[seeOtherButton].forEach({ addSubview($0) })
+        [startButton, seeOtherButton].forEach({ addSubview($0) })
     }
     
     func makeLayout() {
@@ -70,8 +72,8 @@ private extension TrialView {
         seeOtherButton.buildFrame(
             FrameBuilder()
                 .top(equalTo: .bottom, ofView: startButton, withOffset: 24)
-                .centerXToCenterX(ofView: self, offset: -50)
-                .width(100)
+                .centerXToCenterX(ofView: self, offset: -56.5)
+                .width(113)
                 .height(24)
         )
     }

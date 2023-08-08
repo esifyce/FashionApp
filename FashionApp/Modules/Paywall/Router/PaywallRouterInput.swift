@@ -8,4 +8,5 @@
 import Foundation
 
 protocol PaywallRouterInput: AnyObject {
+    func showSeeOtherScreen()
 }

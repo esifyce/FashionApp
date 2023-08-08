@@ -9,4 +9,5 @@ import Foundation
 
 protocol PaywallPresenterInput: AnyObject {
     func viewDidLoad()
+    func seeOtherTapped()
 }
