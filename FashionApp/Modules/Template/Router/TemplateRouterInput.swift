@@ -8,4 +8,5 @@
 import Foundation
 
 protocol TemplateRouterInput: AnyObject {
+    func openMore()
 }

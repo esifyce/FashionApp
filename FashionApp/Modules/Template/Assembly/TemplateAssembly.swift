@@ -10,16 +10,19 @@ import UIKit
 final class TemplateAssembly {
     static func assemble() -> UIViewController {
         
-        let viewController = TemplateViewController()
-        let presenter = TemplatePresenter()
+        let collectionManager: TemplateCollectionManagerProtocol = TemplateCollectionManager()
         let interactor = TemplateInteractor()
         let router = TemplateRouter()
+        let presenter = TemplatePresenter(router: router,
+                                          interactor: interactor,
+                                          collectionManager: collectionManager)
+        let viewController = TemplateViewController(presenter: presenter)
+
+        collectionManager.injectCollection(viewController.collectionView)
+        collectionManager.injectDelegate(presenter)
         
-        viewController.presenter = presenter
+        
         router.view = viewController
-        
-        presenter.router = router
-        presenter.interactor = interactor
         presenter.view = viewController
         
         return viewController

@@ -12,6 +12,16 @@ extension UIImage {
     enum Base {
         public static var infoIcon: UIImage = .init(named: "infoBar")!
         public static var settingIcon: UIImage = .init(named: "settingBar")!
+        public static var dotsIcon: UIImage = .init(named: "threeDots")!
+        public static var plusIcon: UIImage = .init(named: "plus")!
+    }
+    
+    enum Iphone {
+        public static var upgradeListIcon: UIImage = .init(named: "phoneUpgradeList")!
+    }
+    
+    enum Ipad {
+        public static var upgradeListIcon: UIImage = .init(named: "ipadUpgradeList")!
     }
     
     enum PayWall {

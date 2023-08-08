@@ -1,41 +1,25 @@
 //
-//  MainCollectionManager.swift
+//  TemplateCollectionManager.swift
 //  FashionApp
 //
-//  Created by Krasivo on 05.08.2023.
+//  Created by Krasivo on 08.08.2023.
 //
 
 import UIKit
 
-enum MainCollectionCellType {
-    case addSquare
-    case paywallSquare
+enum TemplateCollectionCellType {
     case templateSquare
 }
 
-protocol MainCollectionConfiguratorProtocol {
+protocol TemplateCollectionConfiguratorProtocol {
     var reuseId: String { get } // переменная для ячейки с reuse id
-    var cellType: MainCollectionCellType { get } // тип ячейки для отработки нажатия
+    var cellType: TemplateCollectionCellType { get } // тип ячейки для отработки нажатия
     func setupCell(_ cell: UIView) // конфиг ячейки
 }
 
-final class MainAddSquareConfigurator: MainCollectionConfiguratorProtocol {
-    var reuseId: String { String(describing: AddCollectionViewCell.self) }
-    var cellType: MainCollectionCellType = .addSquare
-
-    func setupCell(_ cell: UIView) {}
-}
-
-final class MainPaywallSquareConfigurator: MainCollectionConfiguratorProtocol {
-    var reuseId: String { String(describing: PaywallCollectionViewCell.self) }
-    var cellType: MainCollectionCellType = .paywallSquare
-    
-    func setupCell(_ cell: UIView) {}
-}
-
-final class MainTemplateSquareConfigurator: MainCollectionConfiguratorProtocol {
+final class TemplateSquareConfigurator: TemplateCollectionConfiguratorProtocol {
     var reuseId: String { String(describing: TemplateCollectionViewCell.self) }
-    var cellType: MainCollectionCellType = .templateSquare
+    var cellType: TemplateCollectionCellType = .templateSquare
     var model: MainViewModel?
     var showActionSheetCallback: (() -> Void)?
 
@@ -45,25 +29,23 @@ final class MainTemplateSquareConfigurator: MainCollectionConfiguratorProtocol {
     }
 }
 
-protocol MainCollectionManagerDelegate: AnyObject {
-    func addCellTapped()
-    func paywallCellTapped()
+protocol TemplateCollectionManagerDelegate: AnyObject {
     func templateCellTapped()
     func moreTapped()
 }
 
-protocol MainCollectionManagerProtocol: AnyObject {
+protocol TemplateCollectionManagerProtocol: AnyObject {
     func injectCollection(_ collectionView: UICollectionView)
-    func injectDelegate(_ delegate: MainCollectionManagerDelegate)
-    func displaySquareTemplates(_ results: [MainViewModel], isShowAddTemplate: Bool, isShowPaywallTemplate: Bool)
+    func injectDelegate(_ delegate: TemplateCollectionManagerDelegate)
+    func displaySquareTemplates(_ results: [MainViewModel])
     func updateLayout(with traitCollection: UITraitCollection)
 }
 
-final class MainCollectionManager: NSObject, MainCollectionManagerProtocol {
+final class TemplateCollectionManager: NSObject, TemplateCollectionManagerProtocol {
     // MARK: - Private properties
     private var collectionView: UICollectionView?
-    private var configuratorsDataSource: [MainCollectionConfiguratorProtocol] = []
-    weak var delegate: MainCollectionManagerDelegate?
+    private var configuratorsDataSource: [TemplateCollectionConfiguratorProtocol] = []
+    weak var delegate: TemplateCollectionManagerDelegate?
     
     // MARK: - Public functions
     func injectCollection(_ collectionView: UICollectionView) {
@@ -94,20 +76,12 @@ final class MainCollectionManager: NSObject, MainCollectionManagerProtocol {
         }
     }
     
-    func injectDelegate(_ delegate: MainCollectionManagerDelegate) {
+    func injectDelegate(_ delegate: TemplateCollectionManagerDelegate) {
         self.delegate = delegate
     }
     
-    func displaySquareTemplates(_ results: [MainViewModel], isShowAddTemplate: Bool, isShowPaywallTemplate: Bool) {
-        var output: [MainCollectionConfiguratorProtocol] = []
-        
-        if isShowAddTemplate {
-            output.append(addTemplatesConfigurator())
-        }
-        
-        if isShowAddTemplate {
-            output.append(paywallConfigurator())
-        }
+    func displaySquareTemplates(_ results: [MainViewModel]) {
+        var output: [TemplateCollectionConfiguratorProtocol] = []
         
         results.forEach({ viewModel in
             output.append(templatesListConfigurator(with: viewModel))
@@ -119,18 +93,8 @@ final class MainCollectionManager: NSObject, MainCollectionManagerProtocol {
     
     // MARK: - Private functions
     
-    private func addTemplatesConfigurator() -> MainCollectionConfiguratorProtocol {
-        let configurator = MainAddSquareConfigurator()
-        return configurator
-    }
-    
-    private func paywallConfigurator() -> MainCollectionConfiguratorProtocol {
-        let configurator = MainPaywallSquareConfigurator()
-        return configurator
-    }
-    
-    private func templatesListConfigurator(with model: MainViewModel) -> MainCollectionConfiguratorProtocol {
-        let configurator = MainTemplateSquareConfigurator()
+    private func templatesListConfigurator(with model: MainViewModel) -> TemplateCollectionConfiguratorProtocol {
+        let configurator = TemplateSquareConfigurator()
         configurator.model = model
         configurator.showActionSheetCallback = { [weak self] in
             self?.delegate?.moreTapped()
@@ -139,15 +103,14 @@ final class MainCollectionManager: NSObject, MainCollectionManagerProtocol {
     }
 }
 
-extension MainCollectionManager: UICollectionViewDelegate, UICollectionViewDataSource {
+extension TemplateCollectionManager: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         configuratorsDataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let configurator = configuratorsDataSource[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: configurator.reuseId,
-                                                      for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: configurator.reuseId, for: indexPath)
         configurator.setupCell(cell)
         return cell
     }
@@ -155,10 +118,6 @@ extension MainCollectionManager: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let configurator = configuratorsDataSource[indexPath.row]
         switch configurator.cellType {
-        case .addSquare:
-            delegate?.addCellTapped()
-        case .paywallSquare:
-            delegate?.paywallCellTapped()
         case .templateSquare:
             delegate?.templateCellTapped()
         }
