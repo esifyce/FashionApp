@@ -13,4 +13,7 @@ final class EditorRouter {
 
 // MARK: - EditorRouterInput
 extension EditorRouter: EditorRouterInput {
+    func popViewController() {
+        view?.navigationController?.popViewController(animated: true)
+    }
 }

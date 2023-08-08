@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "framebuilder",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/weakvar/FrameBuilder.git",
+      "state" : {
+        "revision" : "cc3d851841b79a2aa3a9e66331f74e94532c7e13",
+        "version" : "1.0.0"
+      }
+    },
+    {
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-core.git",
