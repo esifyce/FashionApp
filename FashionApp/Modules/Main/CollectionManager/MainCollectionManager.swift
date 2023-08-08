@@ -16,22 +16,20 @@ enum MainCollectionCellType {
 protocol MainCollectionConfiguratorProtocol {
     var reuseId: String { get } // переменная для ячейки с reuse id
     var cellType: MainCollectionCellType { get } // тип ячейки для отработки нажатия
-    var model: MainViewModel? { get set } // моделька ячейки
     func setupCell(_ cell: UIView) // конфиг ячейки
 }
 
 final class MainAddSquareConfigurator: MainCollectionConfiguratorProtocol {
     var reuseId: String { String(describing: AddCollectionViewCell.self) }
     var cellType: MainCollectionCellType = .addSquare
-    var model: MainViewModel?
-    
+
     func setupCell(_ cell: UIView) {}
 }
 
 final class MainPaywallSquareConfigurator: MainCollectionConfiguratorProtocol {
     var reuseId: String { String(describing: PaywallCollectionViewCell.self) }
     var cellType: MainCollectionCellType = .paywallSquare
-    var model: MainViewModel?
+    
     func setupCell(_ cell: UIView) {}
 }
 
@@ -39,10 +37,11 @@ final class MainTemplateSquareConfigurator: MainCollectionConfiguratorProtocol {
     var reuseId: String { String(describing: TemplateCollectionViewCell.self) }
     var cellType: MainCollectionCellType = .templateSquare
     var model: MainViewModel?
-    
+    var showActionSheetCallback: (() -> Void)?
+
     func setupCell(_ cell: UIView) {
-//        guard let cell = cell as? TemplateCollectionViewCell,
-//              let sectionModel = model else { return }
+        guard let cell = cell as? TemplateCollectionViewCell else { return }
+        cell.showActionSheetCallback = showActionSheetCallback
     }
 }
 
@@ -50,6 +49,7 @@ protocol MainCollectionManagerDelegate: AnyObject {
     func addCellTapped()
     func paywallCellTapped()
     func templateCellTapped()
+    func moreTapped()
 }
 
 protocol MainCollectionManagerProtocol: AnyObject {
@@ -132,7 +132,9 @@ final class MainCollectionManager: NSObject, MainCollectionManagerProtocol {
     private func templatesListConfigurator(with model: MainViewModel) -> MainCollectionConfiguratorProtocol {
         let configurator = MainTemplateSquareConfigurator()
         configurator.model = model
-        
+        configurator.showActionSheetCallback = { [weak self] in
+            self?.delegate?.moreTapped()
+        }
         return configurator
     }
 }

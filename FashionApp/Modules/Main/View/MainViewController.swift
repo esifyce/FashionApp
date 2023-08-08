@@ -26,6 +26,12 @@ final class MainViewController: BaseViewController {
     
     // MARK: - Views
     
+    lazy var divaderView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.separatorColor
+        return view
+    }()
+    
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -42,6 +48,11 @@ final class MainViewController: BaseViewController {
         defer { presenter.viewDidLoad() }
         setupUI()
         presenter.updateCollection(with: traitCollection)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -66,12 +77,19 @@ fileprivate extension MainViewController {
     }
     
     func addSubviews() {
-        [collectionView].forEach({ view.addSubview($0) })
+        [divaderView, collectionView].forEach({ view.addSubview($0) })
     }
     
     func setConstraints() {
+        divaderView.snp.makeConstraints { make in
+            make.height.equalTo(0.5)
+            make.directionalHorizontalEdges.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide)
+        }
+        
         collectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.directionalHorizontalEdges.bottom.equalToSuperview()
+            make.top.equalTo(divaderView.snp.bottom)
         }
     }
     
@@ -91,9 +109,19 @@ fileprivate extension MainViewController {
         infoButton.addAction(.init(handler: { _ in
             print("Info tapped")
         }), for: .touchUpInside)
+//
+//        settingButton.addAction(.init(handler: { _ in
+//            print("Setting tapped")
+//        }), for: .touchUpInside)
         
-        settingButton.addAction(.init(handler: { _ in
-            print("Setting tapped")
-        }), for: .touchUpInside)
+        let menuOption1 = UIAction(title: "Subscribe Now") { _ in }
+        let menuOption2 = UIAction(title: "Community") { _ in }
+        let menuOption3 = UIAction(title: "Terms") { _ in }
+        let menuOption4 = UIAction(title: "Contact us") { _ in }
+        let menuOption5 = UIAction(title: "Import") { _ in }
+
+        let menu = UIMenu(title: "", options: .displayInline, children: [menuOption1, menuOption2, menuOption3, menuOption4, menuOption5])
+        settingButton.showsMenuAsPrimaryAction = true
+        settingButton.menu = menu
     }
 }

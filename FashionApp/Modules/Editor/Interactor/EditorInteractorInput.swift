@@ -8,5 +8,5 @@
 import Foundation
 
 protocol EditorInteractorInput: AnyObject {
-    
+    func getViewModel(completion: ([EditorViewModel]) -> Void)
 }

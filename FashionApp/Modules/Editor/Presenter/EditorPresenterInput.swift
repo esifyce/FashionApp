@@ -9,4 +9,5 @@ import Foundation
 
 protocol EditorPresenterInput: AnyObject {
     func viewDidLoad()
+    func popViewController()
 }

@@ -40,8 +40,12 @@ fileprivate extension MainPresenter {
 
 // MARK: - MainCollectionManagerDelegate
 extension MainPresenter: MainCollectionManagerDelegate {
+    func moreTapped() {
+        router.openMore()
+    }
+    
     func addCellTapped() {
-        
+        router.goToAddTemplate()
     }
     
     func paywallCellTapped() {
