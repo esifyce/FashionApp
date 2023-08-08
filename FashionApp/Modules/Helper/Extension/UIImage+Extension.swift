@@ -16,6 +16,8 @@ extension UIImage {
     enum PayWall {
         public static var closeIcon: UIImage = .init(named: "close")!
         public static var logo: UIImage = .init(named: "payWallLogo")!
+        public static var clockwise: UIImage = .init(named: "clockwise")!
+        public static var upgradeList: UIImage = .init(named: "upgradeList")!
     }
 }
 
@@ -75,6 +77,18 @@ extension Array where Element: UIView {
     }
 }
 
+extension UIView {
+    func addShadow() {
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 12
+        layer.shadowOffset = CGSize(width: 0, height: -8)
+        layer.shadowRadius = 16
+        layer.shouldRasterize = true
+        layer.rasterizationScale =  UIScreen.main.scale
+    }
+}
+
 extension CALayer {
   func applyFigmaShadow(
     color: UIColor = .black,
@@ -84,7 +98,7 @@ extension CALayer {
     blur: CGFloat = 4,
     spread: CGFloat = 0)
   {
-    masksToBounds = true
+    masksToBounds = false
     shadowColor = color.cgColor
     shadowOpacity = alpha
     shadowOffset = CGSize(width: x, height: y)
@@ -97,4 +111,38 @@ extension CALayer {
       shadowPath = UIBezierPath(rect: rect).cgPath
     }
   }
+}
+
+extension UITapGestureRecognizer {
+
+    func didTapAttributedTextInLabel(label: UILabel, inRange targetRange: NSRange) -> Bool {
+        // Create instances of NSLayoutManager, NSTextContainer and NSTextStorage
+        let layoutManager = NSLayoutManager()
+        let textContainer = NSTextContainer(size: CGSize.zero)
+        let textStorage = NSTextStorage(attributedString: label.attributedText!)
+
+        // Configure layoutManager and textStorage
+        layoutManager.addTextContainer(textContainer)
+        textStorage.addLayoutManager(layoutManager)
+
+        // Configure textContainer
+        textContainer.lineFragmentPadding = 0.0
+        textContainer.lineBreakMode = label.lineBreakMode
+        textContainer.maximumNumberOfLines = label.numberOfLines
+        let labelSize = label.bounds.size
+        textContainer.size = labelSize
+
+        // Find the tapped character location and compare it to the specified range
+        let locationOfTouchInLabel = self.location(in: label)
+        let textBoundingBox = layoutManager.usedRect(for: textContainer)
+        //let textContainerOffset = CGPointMake((labelSize.width - textBoundingBox.size.width) * 0.5 - textBoundingBox.origin.x,
+        //(labelSize.height - textBoundingBox.size.height) * 0.5 - textBoundingBox.origin.y);
+        let textContainerOffset = CGPoint(x: (labelSize.width - textBoundingBox.size.width) * 0.5 - textBoundingBox.origin.x, y: (labelSize.height - textBoundingBox.size.height) * 0.5 - textBoundingBox.origin.y)
+
+        //let locationOfTouchInTextContainer = CGPointMake(locationOfTouchInLabel.x - textContainerOffset.x,
+        // locationOfTouchInLabel.y - textContainerOffset.y);
+        let locationOfTouchInTextContainer = CGPoint(x: locationOfTouchInLabel.x - textContainerOffset.x, y: locationOfTouchInLabel.y - textContainerOffset.y)
+        let indexOfCharacter = layoutManager.characterIndex(for: locationOfTouchInTextContainer, in: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
+        return NSLocationInRange(indexOfCharacter, targetRange)
+    }
 }

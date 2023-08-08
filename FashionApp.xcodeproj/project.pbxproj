@@ -306,9 +306,9 @@
 		082E5E482A7D842B00CF1776 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				554F309C2A818C7D0077114D /* Views */,
-				082E5E492A7D842B00CF1776 /* PaywallViewControllerInput.swift */,
 				082E5E4A2A7D842B00CF1776 /* PaywallViewController.swift */,
+				082E5E492A7D842B00CF1776 /* PaywallViewControllerInput.swift */,
+				554F309C2A818C7D0077114D /* Views */,
 			);
 			path = View;
 			sourceTree = "<group>";

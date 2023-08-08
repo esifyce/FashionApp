@@ -48,14 +48,13 @@ final class TrialView: UIView {
 
 private extension TrialView {
     func setupUI() {
+        backgroundColor = .white
         addSubviews()
         makeLayout()
-        
-        layer.applyFigmaShadow(color: .red, alpha: 1, x: 0, y: -8, blur: 32, spread: 0)
     }
     
     func addSubviews() {
-        //[seeOtherButton].forEach({ addSubview($0) })
+        [startButton, seeOtherButton].forEach({ addSubview($0) })
     }
     
     func makeLayout() {
