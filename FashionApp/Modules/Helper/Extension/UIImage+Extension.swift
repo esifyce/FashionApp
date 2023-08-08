@@ -33,7 +33,7 @@ extension UIImage {
         public static var closeIcon: UIImage = .init(named: "close")!
         public static var logo: UIImage = .init(named: "payWallLogo")!
         public static var clockwise: UIImage = .init(named: "clockwise")!
-        public static var upgradeList: UIImage = .init(named: "upgradeList")!
+        public static var upgradeList: UIImage = .init(named: "phoneUpgradeList")!
     }
 }
 

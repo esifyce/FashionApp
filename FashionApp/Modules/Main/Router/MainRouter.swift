@@ -41,4 +41,10 @@ extension MainRouter: MainRouterInput {
         let controller = TemplateAssembly.assemble()
         view?.navigationController?.pushViewController(controller, animated: true)
     }
+    
+    func goToPaywall() {
+        let controller = PaywallAssembly.assemble()
+        controller.modalPresentationStyle = .overFullScreen
+        view?.present(controller, animated: true)
+    }
 }

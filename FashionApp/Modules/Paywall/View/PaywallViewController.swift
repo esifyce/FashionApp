@@ -210,13 +210,17 @@ fileprivate extension PaywallViewController {
         contentView.addSubview(alreadyLabel)
         contentView.addSubview(restoreButton)
         contentView.addSubview(trialView)
+        
+        closeButton.addAction(UIAction(handler: { _ in
+            self.dismiss(animated: true)
+        }), for: .touchUpInside)
     }
     
     func setConstraints() {
         closeButton.buildFrame(
             FrameBuilder()
-                .top(equalTo: .top, ofView: view, withOffset: 19)
-                .trailing(equalTo: .trailing, ofView: view, withOffset: 32)
+                .top(equalTo: .top, ofView: view, withOffset: 30)
+                .trailing(equalTo: .trailing, ofView: view, withOffset: 46)
                 .width(30)
                 .height(30)
         )

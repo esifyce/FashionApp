@@ -49,7 +49,7 @@ extension MainPresenter: MainCollectionManagerDelegate {
     }
     
     func paywallCellTapped() {
-        
+        router.goToPaywall()
     }
     
     func templateCellTapped() {
