@@ -33,6 +33,14 @@ extension TemplatePresenter: TemplatePresenterInput {
     func updateCollection(with traitCollection: UITraitCollection) {
         collectionManager.updateLayout(with: traitCollection)
     }
+    
+    func popViewController() {
+        router.popViewController()
+    }
+    
+    func goToEditor() {
+        router.goToEditor()
+    }
 }
 
 // MARK: - TemplatePresenter

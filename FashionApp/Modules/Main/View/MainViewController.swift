@@ -50,6 +50,11 @@ final class MainViewController: BaseViewController {
         presenter.updateCollection(with: traitCollection)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         presenter.updateCollection(with: traitCollection)

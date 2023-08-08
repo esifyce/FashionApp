@@ -9,4 +9,6 @@ import Foundation
 
 protocol TemplateRouterInput: AnyObject {
     func openMore()
+    func popViewController()
+    func goToEditor()
 }

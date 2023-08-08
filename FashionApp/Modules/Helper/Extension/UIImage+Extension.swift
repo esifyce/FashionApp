@@ -14,6 +14,11 @@ extension UIImage {
         public static var settingIcon: UIImage = .init(named: "settingBar")!
         public static var dotsIcon: UIImage = .init(named: "threeDots")!
         public static var plusIcon: UIImage = .init(named: "plus")!
+        public static var skinIcon: UIImage = .init(named: "skinTemplate")!
+        public static var leftStepIcon: UIImage = .init(named: "leftStep")!
+        public static var rightStepIcon: UIImage = .init(named: "rightStep")!
+        public static var stackIcon: UIImage = .init(named: "stack")!
+        public static var backDrawingIcon: UIImage = .init(named: "backDrawing")!
     }
     
     enum Iphone {

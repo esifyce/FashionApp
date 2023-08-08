@@ -36,4 +36,13 @@ extension TemplateRouter: TemplateRouterInput {
             print("completion block")
         })
     }
+    
+    func popViewController() {
+        view?.navigationController?.popViewController(animated: true)
+    }
+    
+    func goToEditor() {
+        let controller = EditorAssembly.assemble()
+        view?.navigationController?.pushViewController(controller, animated: true)
+    }
 }

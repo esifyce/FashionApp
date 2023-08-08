@@ -8,16 +8,37 @@
 
 final class EditorPresenter {
     weak var view: EditorViewControllerInput?
-    var router: EditorRouterInput?
-    var interactor: EditorInteractorInput?
+    private let router: EditorRouterInput
+    private let interactor: EditorInteractorInput
+    private let collectionManager: EditorCollectionManagerProtocol
+    
+    init(router: EditorRouterInput,
+         interactor: EditorInteractorInput,
+         collectionManager: EditorCollectionManagerProtocol) {
+        self.router = router
+        self.interactor = interactor
+        self.collectionManager = collectionManager
+    }
 }
 
 // MARK: - EditorPresenterInput
 extension EditorPresenter: EditorPresenterInput {
     func viewDidLoad() {
+        interactor.getViewModel { [weak self] viewModel in
+            self?.collectionManager.displaySquareEditors(viewModel)
+        }
+    }
+    
+    func popViewController() {
+        router.popViewController()
     }
 }
 
-// MARK: - EditorPresenter
-fileprivate extension EditorPresenter {
+// MARK: - private EditorPresenter
+private extension EditorPresenter {
+}
+
+// MARK: - EditorCollectionManagerDelegate
+extension EditorPresenter: EditorCollectionManagerDelegate {
+    
 }
