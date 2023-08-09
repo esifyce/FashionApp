@@ -14,6 +14,7 @@ class StatusBar: UIView {
     
     var items = [UIButton]()
     var selectedItem = UIButton()
+    var didTapCallBack: ((UIImage.Clothes) -> Void)?
     
     // MARK: - Views
     
@@ -50,6 +51,7 @@ class StatusBar: UIView {
     private func configureUI() {
         addSubview(scrollView)
         scrollView.addSubview(stackView)
+        backgroundColor = .lightGrayColor
     }
     
     private func setupConstraints() {
@@ -59,18 +61,20 @@ class StatusBar: UIView {
          }
         
         stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.directionalVerticalEdges.equalToSuperview().inset(4)
+            make.directionalHorizontalEdges.equalToSuperview()
         }
     }
     
     // MARK: - Selectors
     
     @objc func tapped(_ sender: UIButton) {
-        selectedItem.setStatusBar(backgroundColor: .white, titleColor: .mainColor, borderWidth: 1)
+        selectedItem.setStatusBar(backgroundColor: .clear, titleColor: .black, borderWidth: 1)
         selectedItem = sender
         sender.setStatusBar(backgroundColor: .white, titleColor: .mainColor, borderWidth: 0)
         let buttonFrame = sender.superview?.convert(sender.frame, from: scrollView)
         scrollView.scrollRectToVisible(buttonFrame ?? .zero, animated: true)
+        didTapCallBack?(UIImage.Clothes(rawValue: sender.tag) ?? .hair)
     }
     
     // MARK: - Helpers
@@ -83,7 +87,7 @@ class StatusBar: UIView {
             button.setTitle(style.name, for: .normal)
             button.tag = style.id
             button.addTarget(self, action: #selector(tapped(_:)), for: .touchUpInside)
-            button.setStatusBar(backgroundColor: .white, titleColor: .black, borderWidth: 1)
+            button.setStatusBar(backgroundColor: .clear, titleColor: .black, borderWidth: 1)
             items.append(button)
             stackView.addArrangedSubview(button)
         }
@@ -110,13 +114,13 @@ class StatusBar: UIView {
 
 extension UIButton {
     func setStatusBar(backgroundColor: UIColor, titleColor: UIColor, borderWidth: CGFloat) {
-        contentEdgeInsets = UIEdgeInsets(top: 10, left: 14, bottom: 10, right: 14)
+        contentEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
         titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         self.backgroundColor = backgroundColor
         layer.borderWidth = borderWidth
         layer.borderColor = UIColor.lightGrayColor.cgColor
         setTitleColor(titleColor, for: .normal)
-        layer.cornerRadius = 18
+        layer.cornerRadius = 8
         translatesAutoresizingMaskIntoConstraints = false
         heightAnchor.constraint(equalToConstant: 37).isActive = true
     }

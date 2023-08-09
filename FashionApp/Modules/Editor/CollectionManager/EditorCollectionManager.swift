@@ -14,17 +14,25 @@ enum EditorCollectionCellType {
 protocol EditorCollectionConfiguratorProtocol {
     var reuseId: String { get } // переменная для ячейки с reuse id
     var cellType: EditorCollectionCellType { get } // тип ячейки для отработки нажатия
+    var model: EditorViewModel? { get set } // моделька
     func setupCell(_ cell: UIView) // конфиг ячейки
 }
 
 final class EditorSquareConfigurator: EditorCollectionConfiguratorProtocol {
     var reuseId: String { String(describing: EditorCollectionViewCell.self) }
     var cellType: EditorCollectionCellType = .editorSquare
-
-    func setupCell(_ cell: UIView) {}
+    var model: EditorViewModel?
+    
+    func setupCell(_ cell: UIView) {
+        guard let cell = cell as? EditorCollectionViewCell,
+              let sectionModel = model else { return }
+        cell.configureCell(model: sectionModel)
+    }
 }
 
-protocol EditorCollectionManagerDelegate: AnyObject {}
+protocol EditorCollectionManagerDelegate: AnyObject {
+    func addedItemToManiquen(dressName: String)
+}
 
 protocol EditorCollectionManagerProtocol: AnyObject {
     func injectCollection(_ collectionView: UICollectionView)
@@ -66,6 +74,7 @@ final class EditorCollectionManager: NSObject, EditorCollectionManagerProtocol {
     
     private func editorsListConfigurator(with model: EditorViewModel) -> EditorCollectionConfiguratorProtocol {
         let configurator = EditorSquareConfigurator()
+        configurator.model = model
         return configurator
     }
 }
@@ -86,7 +95,7 @@ extension EditorCollectionManager: UICollectionViewDelegate, UICollectionViewDat
         let configurator = configuratorsDataSource[indexPath.row]
         switch configurator.cellType {
         case .editorSquare:
-            break
+            delegate?.addedItemToManiquen(dressName: configurator.model?.dressName ?? "")
         }
     }
 }
