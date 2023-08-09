@@ -13,6 +13,11 @@ class EditorCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Views
     
+    private lazy var dressImage: UIImageView = {
+       let imageView = UIImageView()
+        return imageView
+    }()
+    
     // MARK: - Init
     
     override init(frame: CGRect) {
@@ -22,6 +27,11 @@ class EditorCollectionViewCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configureCell(model: EditorViewModel) {
+        dressImage.image = UIImage(named: model.dressName)
+        dressImage.contentMode = .scaleToFill
     }
 }
 
@@ -35,10 +45,15 @@ private extension EditorCollectionViewCell {
     }
     
     func addViews() {
-        [].forEach({ contentView.addSubview($0) })
+        [dressImage].forEach({ contentView.addSubview($0) })
     }
     
     func addContraints() {
+        dressImage.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(4)
+            make.width.equalTo(contentView.bounds.width)
+            make.height.equalTo(contentView.bounds.height)
+        }
     }
     
     func configStyle() {

@@ -8,4 +8,5 @@
 import Foundation
 
 protocol EditorViewControllerInput: AnyObject {
+    func addedItemToManiquen(dressName: String)
 }

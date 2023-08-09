@@ -8,14 +8,7 @@
 import Foundation
 
 final class EditorInteractor {
-    private let viewModel: [EditorViewModel] = [
-        .init(dressName: "Project Name"),
-        .init(dressName: "Project Name"),
-        .init(dressName: "Project Name"),
-        .init(dressName: "Project Name"),
-        .init(dressName: "Project Name"),
-        .init(dressName: "Project Name"),
-    ]
+    private let viewModel: [EditorViewModel] = []
 }
 
 // MARK: - EditorInteractorInput

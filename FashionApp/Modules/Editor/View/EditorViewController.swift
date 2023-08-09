@@ -109,7 +109,14 @@ final class EditorViewController: BaseViewController {
 
 // MARK: - EditorViewControllerInput
 extension EditorViewController: EditorViewControllerInput {
-
+    func addedItemToManiquen(dressName: String) {
+        skinImageView.subviews.forEach({ $0.removeFromSuperview() })
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: dressName)
+        skinImageView.addSubview(imageView)
+        
+        imageView.frame = CGRect(x: 15, y: 0, width: Int(UIScreen.main.bounds.width), height: 500)
+    }
 }
 
 // MARK: - fileprivate EditorViewController
@@ -120,13 +127,13 @@ fileprivate extension EditorViewController {
         configStyle()
         addTargets()
         
-        let temp = ["Shoes", "Bodice", "Bodice","Bodice","Bodice","Bodice","Bodice","Bodice","Bodice"]
+        let temp: [UIImage.Clothes] = [.hair, .pants, .shoes]
         
         var viewModel: [StatusBarViewModel] = []
         
-        temp.forEach({
-            viewModel.append(StatusBarViewModel(name: $0, id: .zero))
-        })
+        temp.enumerated().forEach { index, element in
+            viewModel.append(StatusBarViewModel(name: element.getCategoryNames, id: index))
+        }
         
         controlBar.setup(models: viewModel, index: .zero)
     }
@@ -197,7 +204,7 @@ fileprivate extension EditorViewController {
         
         controlBar.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(36)
-            make.height.equalTo(44)
+            make.height.equalTo(45)
             make.directionalHorizontalEdges.equalToSuperview()
         }
     }
@@ -226,5 +233,9 @@ fileprivate extension EditorViewController {
         layersButton.addAction(UIAction(handler: { _ in
             print("Did tap layers")
         }), for: .touchUpInside)
+        
+        controlBar.didTapCallBack = { [weak self] index in
+            self?.presenter.updateCollectionByCategory(index: index)
+        }
     }
 }

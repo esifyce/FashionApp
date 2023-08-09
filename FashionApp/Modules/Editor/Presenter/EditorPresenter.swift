@@ -5,6 +5,8 @@
 //  Created by Krasivo on 04.02.2023.
 //
 
+import UIKit
+
 
 final class EditorPresenter {
     weak var view: EditorViewControllerInput?
@@ -23,14 +25,15 @@ final class EditorPresenter {
 
 // MARK: - EditorPresenterInput
 extension EditorPresenter: EditorPresenterInput {
-    func viewDidLoad() {
-        interactor.getViewModel { [weak self] viewModel in
-            self?.collectionManager.displaySquareEditors(viewModel)
-        }
-    }
+    func viewDidLoad() {}
     
     func popViewController() {
         router.popViewController()
+    }
+    
+    func updateCollectionByCategory(index: UIImage.Clothes) {
+        let viewModel = index.getClothes.map({ EditorViewModel(dressName: $0) })
+        collectionManager.displaySquareEditors(viewModel)
     }
 }
 
@@ -40,5 +43,7 @@ private extension EditorPresenter {
 
 // MARK: - EditorCollectionManagerDelegate
 extension EditorPresenter: EditorCollectionManagerDelegate {
-    
+    func addedItemToManiquen(dressName: String) {
+        view?.addedItemToManiquen(dressName: dressName)
+    }
 }
