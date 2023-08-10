@@ -16,6 +16,7 @@ final class PaywallAssembly {
         let router = PaywallRouter()
         
         viewController.presenter = presenter
+        viewController.modalPresentationStyle = .overFullScreen
         router.view = viewController
         
         presenter.router = router

@@ -9,8 +9,6 @@ import UIKit
 import SnapKit
 
 class AddCollectionViewCell: UICollectionViewCell {
-    // MARK: - Property
-    
     // MARK: - Views
     
     private lazy var plusImageView: UIImageView = {
