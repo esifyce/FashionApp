@@ -8,6 +8,7 @@
 import UIKit
 import FrameBuilder
 
+
 extension PaywallViewController {
     struct Appearance {
         let closeImage: UIImage = UIImage.PayWall.closeIcon
@@ -19,6 +20,7 @@ extension PaywallViewController {
         let blueColor: UIColor = UIColor(rgb: 0x1777F0)
         let shadowColor: UIColor = UIColor(rgb: 0x031833).withAlphaComponent(0.12)
         let privacyText: String = "Please read our Privacy Policy and Terms of Use before joining"
+        let isIpad = UIDevice.current.userInterfaceIdiom == .pad
     }
 }
 
@@ -36,6 +38,7 @@ final class PaywallViewController: BaseViewController {
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
+        scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
     
@@ -159,11 +162,29 @@ final class PaywallViewController: BaseViewController {
         view.backgroundColor = .white
         defer { presenter.viewDidLoad() }
         configureNavBar()
+        addSubviews()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        setupUI()
+        applyShadow()
+        setupLayout(with: traitCollection)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        adjustContentOffsetForOrientation()
+    }
+    
+    func adjustContentOffsetForOrientation() {
+        let currentOffset = scrollView.contentOffset
+        let contentHeight = scrollView.contentSize.height
+        let frameHeight = scrollView.bounds.size.height
+        
+        // Calculate the new content offset based on the orientation change
+        let newYOffset = min(0, max(contentHeight - frameHeight, currentOffset.y))
+
+        scrollView.contentOffset = CGPoint(x: currentOffset.x, y: newYOffset)
     }
 }
 
@@ -187,36 +208,35 @@ extension PaywallViewController: PaywallViewControllerInput {
 
 // MARK: - fileprivate PaywallViewController
 fileprivate extension PaywallViewController {
-    func setupUI() {
-        addSubviews()
-        setConstraints()
-        applyShadow()
-    }
-    
     func addSubviews() {
         view.addSubview(closeButton)
         view.addSubview(scrollView)
+        view.addSubview(trialView)
         scrollView.addSubview(contentView)
-        scrollView.contentSize = CGSize(width: view.frame.size.width, height: 1750)
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(imageView)
-        contentView.addSubview(secondLabel)
-        contentView.addSubview(trialLabel)
-        contentView.addSubview(menuView)
-        contentView.addSubview(priceView)
-        contentView.addSubview(lineView)
-        contentView.addSubview(upgradeImageView)
-        contentView.addSubview(highStackView)
-        contentView.addSubview(alreadyLabel)
-        contentView.addSubview(restoreButton)
-        contentView.addSubview(trialView)
+        [titleLabel, imageView, secondLabel, trialLabel, menuView, priceView, lineView, upgradeImageView, highStackView, alreadyLabel, restoreButton].forEach({contentView.addSubview($0)})
+        
         
         closeButton.addAction(UIAction(handler: { _ in
             self.dismiss(animated: true)
         }), for: .touchUpInside)
     }
     
-    func setConstraints() {
+    func setupLayout(with traitCollection: UITraitCollection) {
+        
+        var contentWidth = view.frame.width
+        var xPoint: CGFloat = 0
+        
+        // check if ipad
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            if UIApplication.shared.isLandscape {
+                contentWidth = view.frame.width * 0.4
+                xPoint = view.frame.width * 0.3
+            } else {
+                contentWidth = view.frame.width * 0.5
+                xPoint = view.frame.width * 0.25
+            }
+        }
+        
         closeButton.buildFrame(
             FrameBuilder()
                 .top(equalTo: .top, ofView: view, withOffset: 30)
@@ -227,9 +247,10 @@ fileprivate extension PaywallViewController {
         
         scrollView.buildFrame(
             FrameBuilder()
+                .x(xPoint)
                 .top(equalTo: .bottom, ofView: closeButton, withOffset: 19)
-                .width(view.frame.width)
-                .height(view.frame.height)
+                .width(contentWidth)
+                .height(view.frame.size.height - 257)
         )
         
         contentView.buildFrame(
@@ -241,9 +262,9 @@ fileprivate extension PaywallViewController {
         
         titleLabel.buildFrame(
             FrameBuilder()
-                .x(30)
+                .width(appearance.isIpad ? contentWidth - 20 : contentWidth - 59)
                 .top(equalTo: .top, ofView: contentView, withOffset: 8)
-                .width(contentView.frame.width - 59)
+                .centerXToCenterX(ofView: contentView)
                 .height(82)
         )
         
@@ -251,14 +272,14 @@ fileprivate extension PaywallViewController {
             FrameBuilder()
                 .top(equalTo: .bottom, ofView: titleLabel, withOffset: 16)
                 .height(260)
-                .width(contentView.frame.width)
+                .width(contentWidth)
         )
         
         secondLabel.buildFrame(
             FrameBuilder()
                 .x(30)
                 .top(equalTo: .bottom, ofView: imageView, withOffset: 16)
-                .width(contentView.frame.width - 64)
+                .width(contentWidth - 64)
                 .height(84)
         )
         
@@ -266,23 +287,23 @@ fileprivate extension PaywallViewController {
             FrameBuilder()
                 .x(32)
                 .top(equalTo: .bottom, ofView: secondLabel, withOffset: 24)
-                .width(contentView.frame.width - 64)
+                .width(contentWidth - 64)
                 .height(184)
         )
         
         trialLabel.buildFrame(
             FrameBuilder()
-                .x(32)
                 .top(equalTo: .bottom, ofView: menuView, withOffset: 48)
-                .width(contentView.frame.width - 64)
+                .width(contentWidth - 64)
+                .centerXToCenterX(ofView: contentView)
                 .height(42)
         )
 
         priceView.buildFrame(
             FrameBuilder()
-                .x(32)
+                .width(contentWidth - 64)
                 .top(equalTo: .bottom, ofView: trialLabel, withOffset: 48)
-                .width(contentView.frame.width - 64)
+                .centerXToCenterX(ofView: contentView)
                 .height(66)
         )
         
@@ -296,9 +317,9 @@ fileprivate extension PaywallViewController {
         
         upgradeImageView.buildFrame(
             FrameBuilder()
-                .centerXToCenterX(ofView: view, offset: -92)
                 .top(equalTo: .bottom, ofView: lineView, withOffset: 48)
                 .width(184)
+                .centerXToCenterX(ofView: contentView)
                 .height(40)
         )
         
@@ -306,7 +327,7 @@ fileprivate extension PaywallViewController {
              FrameBuilder()
                 .x(32)
                 .top(equalTo: .bottom, ofView: upgradeImageView, withOffset: 32)
-                .width(contentView.frame.width - 64)
+                .width(contentWidth - 64)
                 .height(172)
         )
         
@@ -314,13 +335,13 @@ fileprivate extension PaywallViewController {
             FrameBuilder()
                 .x(32)
                 .top(equalTo: .bottom, ofView: highStackView, withOffset: 24)
-                .width(contentView.frame.width - 64)
+                .width(contentWidth - 64)
                 .height(24)
         )
         
         restoreButton.buildFrame(
             FrameBuilder()
-                .x(contentView.frame.width - 126)
+                .x(contentWidth - 126)
                 .top(equalTo: .bottom, ofView: highStackView, withOffset: 24)
                 .width(94)
                 .height(24)
@@ -329,20 +350,23 @@ fileprivate extension PaywallViewController {
         trialView.buildFrame(
             FrameBuilder()
                 .x(0)
-                .top(equalTo: .bottom, ofView: alreadyLabel, withOffset: 24)
-                .width(contentView.frame.width)
+                .y(view.frame.height - 178)
+                .width(view.frame.width)
                 .height(178)
         )
-    }
-    
-    func applyShadow() {
-        trialView.layer.applyFigmaShadow(color: UIColor(rgb:0x031833), alpha: 0.12, x: 0, y: -8, blur: 32, spread: 0)
+        
+        scrollView.contentSize = CGSize(width: contentWidth, height: 1540)
+        adjustContentOffsetForOrientation()
     }
 }
 
 private extension PaywallViewController {
     func configureNavBar() {
         navigationController?.navigationBar.isHidden = true
+    }
+    
+    func applyShadow() {
+        trialView.layer.applyFigmaShadow(color: UIColor(rgb:0x031833), alpha: 0.12, x: 0, y: -8, blur: 32, spread: 0)
     }
     
     @objc func privacyLabelTapped(gesture: UITapGestureRecognizer) {

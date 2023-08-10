@@ -73,8 +73,15 @@
 		558D83022A7D660A003EC291 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83012A7D660A003EC291 /* SnapKit */; };
 		558D83052A7D677C003EC291 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83042A7D677C003EC291 /* Realm */; };
 		558D83072A7D677C003EC291 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83062A7D677C003EC291 /* RealmSwift */; };
-		55A243242A82813400288046 /* WeeklyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A243232A82813400288046 /* WeeklyView.swift */; };
-		55A243262A82834F00288046 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A243252A82834F00288046 /* File.swift */; };
+		55A243242A82813400288046 /* CurrentPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A243232A82813400288046 /* CurrentPlanView.swift */; };
+		55A243262A82834F00288046 /* CircleWithInnerCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A243252A82834F00288046 /* CircleWithInnerCircleView.swift */; };
+		55A243282A82B6F900288046 /* UITapGestureRecoginzer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A243272A82B6F900288046 /* UITapGestureRecoginzer+Extension.swift */; };
+		55A2432A2A82B71800288046 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A243292A82B71800288046 /* UIViewController+Extension.swift */; };
+		55A2432C2A82B73900288046 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2432B2A82B73900288046 /* CALayer+Extension.swift */; };
+		55A2432E2A82B75700288046 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2432D2A82B75700288046 /* Array+Extension.swift */; };
+		55A243302A82B77900288046 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2432F2A82B77900288046 /* String+Extension.swift */; };
+		55A243322A82B7D400288046 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A243312A82B7D400288046 /* CGFloat+Extension.swift */; };
+		55A243362A82D26000288046 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A243352A82D26000288046 /* UIApplication+Extension.swift */; };
 		55CA4B7D2A7EAEE800B43191 /* FrameBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 55CA4B7C2A7EAEE800B43191 /* FrameBuilder */; };
 		55FEB5A82A826F9400D82B25 /* SelectPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FEB5A72A826F9400D82B25 /* SelectPlanView.swift */; };
 /* End PBXBuildFile section */
@@ -158,8 +165,15 @@
 		554F309F2A818FAA0077114D /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
 		554F30A12A81A6CE0077114D /* CustomLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLineView.swift; sourceTree = "<group>"; };
 		554F30A52A81B85C0077114D /* TrialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialView.swift; sourceTree = "<group>"; };
-		55A243232A82813400288046 /* WeeklyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyView.swift; sourceTree = "<group>"; };
-		55A243252A82834F00288046 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		55A243232A82813400288046 /* CurrentPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPlanView.swift; sourceTree = "<group>"; };
+		55A243252A82834F00288046 /* CircleWithInnerCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWithInnerCircleView.swift; sourceTree = "<group>"; };
+		55A243272A82B6F900288046 /* UITapGestureRecoginzer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecoginzer+Extension.swift"; sourceTree = "<group>"; };
+		55A243292A82B71800288046 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		55A2432B2A82B73900288046 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
+		55A2432D2A82B75700288046 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		55A2432F2A82B77900288046 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		55A243312A82B7D400288046 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
+		55A243352A82D26000288046 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		55FEB5A72A826F9400D82B25 /* SelectPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlanView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -329,8 +343,8 @@
 		082E5E482A7D842B00CF1776 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				082E5E4A2A7D842B00CF1776 /* PaywallViewController.swift */,
 				082E5E492A7D842B00CF1776 /* PaywallViewControllerInput.swift */,
+				082E5E4A2A7D842B00CF1776 /* PaywallViewController.swift */,
 				554F309C2A818C7D0077114D /* Views */,
 			);
 			path = View;
@@ -450,6 +464,13 @@
 			children = (
 				082E5E812A7ED7D200CF1776 /* UIImage+Extension.swift */,
 				08EECAF32A81721F00EE8385 /* UIColor+Extension.swift */,
+				55A243272A82B6F900288046 /* UITapGestureRecoginzer+Extension.swift */,
+				55A243292A82B71800288046 /* UIViewController+Extension.swift */,
+				55A2432B2A82B73900288046 /* CALayer+Extension.swift */,
+				55A2432D2A82B75700288046 /* Array+Extension.swift */,
+				55A2432F2A82B77900288046 /* String+Extension.swift */,
+				55A243312A82B7D400288046 /* CGFloat+Extension.swift */,
+				55A243352A82D26000288046 /* UIApplication+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -575,8 +596,8 @@
 			isa = PBXGroup;
 			children = (
 				55FEB5A72A826F9400D82B25 /* SelectPlanView.swift */,
-				55A243232A82813400288046 /* WeeklyView.swift */,
-				55A243252A82834F00288046 /* File.swift */,
+				55A243232A82813400288046 /* CurrentPlanView.swift */,
+				55A243252A82834F00288046 /* CircleWithInnerCircleView.swift */,
 			);
 			path = SelectPlan;
 			sourceTree = "<group>";
@@ -665,11 +686,13 @@
 			files = (
 				08EECAF42A81721F00EE8385 /* UIColor+Extension.swift in Sources */,
 				082E5E792A7EB93F00CF1776 /* AddCollectionViewCell.swift in Sources */,
+				55A2432E2A82B75700288046 /* Array+Extension.swift in Sources */,
 				082E5E252A7D7F3200CF1776 /* MainViewController.swift in Sources */,
 				0889287E2A82859500DA8230 /* EditorCollectionViewCell.swift in Sources */,
 				082E5E382A7D842500CF1776 /* EditorRouter.swift in Sources */,
 				082E5E212A7D7F3200CF1776 /* MainInteractorInput.swift in Sources */,
 				554F30A02A818FAA0077114D /* PriceView.swift in Sources */,
+				55A243302A82B77900288046 /* String+Extension.swift in Sources */,
 				0889287C2A82856A00DA8230 /* EditorCollectionManager.swift in Sources */,
 				08844E802A819E630031F78C /* TemplateCollectionManager.swift in Sources */,
 				088928872A828D7100DA8230 /* StatusBarViewModel.swift in Sources */,
@@ -689,7 +712,7 @@
 				554F309B2A814B300077114D /* IpadCollectionViewLayout.swift in Sources */,
 				082E5E542A7D842B00CF1776 /* PaywallViewController.swift in Sources */,
 				082E5E7D2A7EB97D00CF1776 /* TemplateCollectionViewCell.swift in Sources */,
-				55A243262A82834F00288046 /* File.swift in Sources */,
+				55A243262A82834F00288046 /* CircleWithInnerCircleView.swift in Sources */,
 				08C952B72A7D5628009D501C /* AppDelegate.swift in Sources */,
 				088928822A82883600DA8230 /* EditorCollectionViewLayout.swift in Sources */,
 				082E5E772A7EB8F100CF1776 /* SquareModel.swift in Sources */,
@@ -698,6 +721,7 @@
 				082E5E6E2A7D851900CF1776 /* TemplatePresenter.swift in Sources */,
 				082E5E3B2A7D842500CF1776 /* EditorViewController.swift in Sources */,
 				082E5E502A7D842B00CF1776 /* PaywallAssembly.swift in Sources */,
+				55A243282A82B6F900288046 /* UITapGestureRecoginzer+Extension.swift in Sources */,
 				08C952B92A7D5628009D501C /* SceneDelegate.swift in Sources */,
 				082E5E1E2A7D7F3200CF1776 /* MainRouter.swift in Sources */,
 				082E5E3D2A7D842500CF1776 /* EditorPresenterInput.swift in Sources */,
@@ -715,6 +739,8 @@
 				082E5E3C2A7D842500CF1776 /* EditorPresenter.swift in Sources */,
 				082E5E692A7D851900CF1776 /* TemplateInteractorInput.swift in Sources */,
 				082E5E7F2A7EBACB00CF1776 /* MainViewModel.swift in Sources */,
+				55A2432C2A82B73900288046 /* CALayer+Extension.swift in Sources */,
+				55A2432A2A82B71800288046 /* UIViewController+Extension.swift in Sources */,
 				082E5E3A2A7D842500CF1776 /* EditorViewControllerInput.swift in Sources */,
 				082E5E242A7D7F3200CF1776 /* MainViewControllerInput.swift in Sources */,
 				082E5E4E2A7D842B00CF1776 /* PaywallPresenter.swift in Sources */,
@@ -723,9 +749,11 @@
 				082E5E552A7D842B00CF1776 /* PaywallRouterInput.swift in Sources */,
 				082E5E1D2A7D7F3200CF1776 /* MainRouterInput.swift in Sources */,
 				082E5E372A7D842500CF1776 /* EditorRouterInput.swift in Sources */,
+				55A243362A82D26000288046 /* UIApplication+Extension.swift in Sources */,
 				082E5E532A7D842B00CF1776 /* PaywallViewControllerInput.swift in Sources */,
 				554F30992A814A500077114D /* IphoneCollectionViewLayout.swift in Sources */,
-				55A243242A82813400288046 /* WeeklyView.swift in Sources */,
+				55A243242A82813400288046 /* CurrentPlanView.swift in Sources */,
+				55A243322A82B7D400288046 /* CGFloat+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

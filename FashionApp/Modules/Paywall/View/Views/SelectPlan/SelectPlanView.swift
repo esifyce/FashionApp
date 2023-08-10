@@ -7,7 +7,12 @@
 
 import UIKit
 import SnapKit
+import FrameBuilder
 
+enum SelectSubscription {
+    case weekly
+    case lifetime
+}
 
 extension SelectPlanView {
     struct Appearance {
@@ -23,7 +28,7 @@ extension SelectPlanView {
 class SelectPlanView: UIView {
     let appearance = Appearance()
     
-    var selectedView: UIView?
+    var selectedSubscription: SelectSubscription = .weekly
     
     private lazy var backgroundView: UIView = {
         let view = UIView()
@@ -73,17 +78,17 @@ class SelectPlanView: UIView {
         return button
     }()
     
-    private lazy var weeklyView: WeeklyView = {
-        let view = WeeklyView()
+    private lazy var weeklyView: CurrentPlanView = {
+        let view = CurrentPlanView()
         view.update(text: "Weekly", price: "4,99 USD/week")
-        view.customize()
+        view.customize(true)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped(_:))))
         
         return view
     }()
     
-    private lazy var lifeTimeView: WeeklyView = {
-        let view = WeeklyView()
+    private lazy var lifeTimeView: CurrentPlanView = {
+        let view = CurrentPlanView()
         view.update(text: "Lifetime", price: "99,99 USD")
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewTapped(_:))))
         
@@ -99,6 +104,7 @@ class SelectPlanView: UIView {
         super.init(frame: frame)
         setupUI()
         appearAnimation()
+        setupObserver()
     }
 
     required init?(coder: NSCoder) {
@@ -108,6 +114,19 @@ class SelectPlanView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         makeRounded()
+    }
+    
+    func setupObserver() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(traitCollectionChanged(_:)),
+                                               name: NSNotification.Name("traitCollectionDidChangeNotification"),
+                                               object: nil)
+    }
+    
+    @objc func traitCollectionChanged(_ notification: Notification) {
+        if let traitCollection = notification.object as? UITraitCollection {
+            print("hello")
+        }
     }
 }
 
@@ -131,7 +150,7 @@ private extension SelectPlanView {
         }
         
         containerView.snp.makeConstraints { make in
-            make.directionalHorizontalEdges.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
             make.height.equalTo(400)
             make.bottom.equalToSuperview().offset(400)
         }
@@ -143,13 +162,13 @@ private extension SelectPlanView {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(closeButton.snp.top)
+            make.centerY.equalTo(closeButton.snp.centerY)
             make.leading.equalToSuperview().offset(24)
         }
-        
+
         containerStack.snp.makeConstraints { make in
             make.top.equalTo(closeButton.snp.bottom).offset(16)
-            make.directionalHorizontalEdges.equalToSuperview().inset(32)
+            make.leading.trailing.equalToSuperview().inset(32)
             make.bottom.equalToSuperview().offset(-90)
         }
     }
@@ -179,9 +198,6 @@ private extension SelectPlanView {
         self.containerView.snp.updateConstraints { make in
             make.bottom.equalToSuperview().offset(400)
         }
-        UIView.animate(withDuration: 0.4) {
-            
-        }
         
         UIView.animate(withDuration: 0.4) {
             self.backgroundView.alpha = 0
@@ -192,23 +208,10 @@ private extension SelectPlanView {
     }
     
     @objc func viewTapped(_ gestureRecognizer: UITapGestureRecognizer) {
-        if let tappedView = gestureRecognizer.view {
-            if tappedView != selectedView {
-                // Update selected view appearance
-                // Set the tapped view as the selected view
-                selectedView = tappedView
-                (selectedView as? WeeklyView)?.uncustomize()
-                
-                print("Selected view: \(tappedView)")
-            } else {
-                // Deselect the currently selected view if tapped again
-                
-                (selectedView as? WeeklyView)?.customize()
-                selectedView = nil
-                
-                print("View deselected.")
-            }
-        }
+        guard let tappedView = gestureRecognizer.view else { return }
+        weeklyView.customize(tappedView == weeklyView)
+        lifeTimeView.customize(tappedView == lifeTimeView)
+        selectedSubscription = tappedView == weeklyView ? .weekly : .lifetime
     }
 }
 

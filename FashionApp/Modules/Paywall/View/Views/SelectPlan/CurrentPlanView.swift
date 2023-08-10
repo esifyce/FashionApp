@@ -12,8 +12,7 @@ enum Plan {
     case lifetime
 }
 
-class WeeklyView: UIView {
-    
+class CurrentPlanView: UIView {
     
     private lazy var circleView: CircleWithInnerCircleView = {
         let circleView = CircleWithInnerCircleView()
@@ -50,16 +49,16 @@ class WeeklyView: UIView {
         applyShadow()
     }
     
-    func setupUI() {
+    private func setupUI() {
         addSubviews()
         makeConstraints()
     }
     
-    func addSubviews() {
+    private func addSubviews() {
         [circleView, boldLabel, priceLabel].forEach({addSubview($0)})
     }
     
-    func makeConstraints() {
+    private func makeConstraints() {
         circleView.snp.makeConstraints { make in
             make.size.equalTo(16)
             make.centerY.equalToSuperview()
@@ -77,11 +76,11 @@ class WeeklyView: UIView {
         }
     }
     
-    func makeRounded() {
+    private func makeRounded() {
         layer.cornerRadius = 16
     }
     
-    func applyShadow() {
+    private func applyShadow() {
         layer.applyFigmaShadow(color: UIColor(rgb: 0x1C1C1C), alpha: 0.12, x: 0, y: 0, blur: 16, spread: 0)
     }
     
@@ -90,15 +89,9 @@ class WeeklyView: UIView {
         priceLabel.text = price
     }
     
-    func customize() {
-        layer.borderColor = UIColor(rgb: 0x1777F0).cgColor
-        layer.borderWidth = 2
-        circleView.hasInnerCircle = true
-    }
-    
-    func uncustomize() {
-        layer.borderColor = nil
-        layer.borderWidth = 0
-        circleView.hasInnerCircle = false
+    func customize(_ should: Bool) {
+        layer.borderColor = should ? UIColor(rgb: 0x1777F0).cgColor : nil
+        layer.borderWidth = should ? 2 : 0
+        circleView.hasInnerCircle = should
     }
 }

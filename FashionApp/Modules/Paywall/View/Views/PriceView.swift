@@ -29,6 +29,7 @@ final class PriceView: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 13)
         label.textColor = appearance.grayColor
+        label.textAlignment = .center
         label.text = "Then US $24,99/year. Billed yearly, Cancel anytime"
         return label
     }()
@@ -72,17 +73,17 @@ private extension PriceView {
     func makeConstraints() {
         titleLabel.buildFrame(
             FrameBuilder()
-                .x(46)
+                .width(bounds.size.width - 92)
                 .top(equalTo: .top, ofView: self, withOffset: 8)
-                .width(frame.size.width - 92)
+                .centerXToCenterX(ofView: self)
                 .height(24)
         )
 
         subtitleLabel.buildFrame(
             FrameBuilder()
-                .x(11.5)
                 .top(equalTo: .bottom, ofView: titleLabel, withOffset: 4)
-                .width(frame.size.width - 23)
+                .width(bounds.size.width - 23)
+                .centerXToCenterX(ofView: self)
                 .height(22)
         )
     }

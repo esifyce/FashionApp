@@ -7,65 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AC357D27-CC3E-428C-A8BF-5C98ED93F4A9"
+            uuid = "ADD3170F-7DED-451B-A98B-67F9F0FFA2D9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Main/CollectionManager/IpadCollectionViewLayout.swift"
+            filePath = "FashionApp/Modules/Paywall/View/Views/SelectPlan/WeeklyView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "createLandscapeLayout()"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "customize(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7A5D4C58-39DE-4151-8F8F-091B1182114D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Main/CollectionManager/MainCollectionManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "updateLayout(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DDD524AA-2B44-4735-A8A2-DD1359B5CA80"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Paywall/View/Views/TrialView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "seeOtherButtonTapped()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8C84CD49-BC6F-4E23-8040-F58FEBB56AE7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Paywall/View/PaywallViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "trialView"
-            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "ADD3170F-7DED-451B-A98B-67F9F0FFA2D9 - 446df8fbbd21efc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FashionApp.WeeklyView.customize(Swift.Bool) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Paywall/View/Views/SelectPlan/WeeklyView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  uuid = "ADD3170F-7DED-451B-A98B-67F9F0FFA2D9 - 446df8fbbd21efc3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FashionApp.WeeklyView.customize(Swift.Bool) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Paywall/View/Views/SelectPlan/WeeklyView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "370">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

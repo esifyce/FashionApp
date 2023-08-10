@@ -8,7 +8,6 @@
 import UIKit
 import FrameBuilder
 
-
 final class TrialView: UIView {
     var startCallBack: (() -> ())?
     var seeOtherCallBack: (() -> ())?
@@ -61,19 +60,27 @@ private extension TrialView {
     }
     
     func makeLayout() {
+        var startButtonWidth: CGFloat = bounds.size.width - 48
+        var xPoint: CGFloat = 24
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            let multiplier = UIApplication.shared.isLandscape ?  0.5 :  0.4
+            startButtonWidth = bounds.size.width * multiplier
+            xPoint = UIApplication.shared.isLandscape ? bounds.size.width * 0.25 : bounds.size.width * 0.3
+        }
+        
         startButton.buildFrame(
             FrameBuilder()
-                .x(24)
+                .x(xPoint)
                 .top(equalTo: .top, ofView: self, withOffset: 16)
-                .width(bounds.size.width - 48)
+                .width(startButtonWidth)
                 .height(56)
         )
 
         seeOtherButton.buildFrame(
             FrameBuilder()
                 .top(equalTo: .bottom, ofView: startButton, withOffset: 24)
-                .centerXToCenterX(ofView: self, offset: -56.5)
                 .width(113)
+                .centerXToCenterX(ofView: self)
                 .height(24)
         )
     }
