@@ -82,6 +82,7 @@
 		55A243302A82B77900288046 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2432F2A82B77900288046 /* String+Extension.swift */; };
 		55A243322A82B7D400288046 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A243312A82B7D400288046 /* CGFloat+Extension.swift */; };
 		55A243362A82D26000288046 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A243352A82D26000288046 /* UIApplication+Extension.swift */; };
+		55A857DA2A85840F001CA72A /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A857D92A85840F001CA72A /* DescriptionView.swift */; };
 		55CA4B7D2A7EAEE800B43191 /* FrameBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 55CA4B7C2A7EAEE800B43191 /* FrameBuilder */; };
 		55FEB5A82A826F9400D82B25 /* SelectPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FEB5A72A826F9400D82B25 /* SelectPlanView.swift */; };
 /* End PBXBuildFile section */
@@ -174,6 +175,7 @@
 		55A2432F2A82B77900288046 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		55A243312A82B7D400288046 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		55A243352A82D26000288046 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		55A857D92A85840F001CA72A /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		55FEB5A72A826F9400D82B25 /* SelectPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlanView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -544,6 +546,7 @@
 				554F309F2A818FAA0077114D /* PriceView.swift */,
 				554F30A12A81A6CE0077114D /* CustomLineView.swift */,
 				554F30A52A81B85C0077114D /* TrialView.swift */,
+				55A857D92A85840F001CA72A /* DescriptionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				08C952B72A7D5628009D501C /* AppDelegate.swift in Sources */,
 				088928822A82883600DA8230 /* EditorCollectionViewLayout.swift in Sources */,
 				082E5E772A7EB8F100CF1776 /* SquareModel.swift in Sources */,
+				55A857DA2A85840F001CA72A /* DescriptionView.swift in Sources */,
 				082E5E512A7D842B00CF1776 /* PaywallInteractor.swift in Sources */,
 				082E5E282A7D81BF00CF1776 /* BaseViewController.swift in Sources */,
 				082E5E6E2A7D851900CF1776 /* TemplatePresenter.swift in Sources */,

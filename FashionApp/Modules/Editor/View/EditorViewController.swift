@@ -68,7 +68,7 @@ final class EditorViewController: BaseViewController {
 
     private lazy var skinImageView: UIImageView = {
        let imageView = UIImageView()
-        imageView.image = .Base.skinIcon
+        imageView.image = .Base.skinIcon2
         return imageView
     }()
     
@@ -114,8 +114,9 @@ extension EditorViewController: EditorViewControllerInput {
         let imageView = UIImageView()
         imageView.image = UIImage(named: dressName)
         skinImageView.addSubview(imageView)
-        
-        imageView.frame = CGRect(x: 15, y: 0, width: Int(UIScreen.main.bounds.width), height: 500)
+        let width = skinImageView.frame.width
+        let height = skinImageView.frame.height
+        imageView.frame = CGRect(x: 0, y: 0, width: width, height: height)
     }
 }
 
@@ -127,12 +128,12 @@ fileprivate extension EditorViewController {
         configStyle()
         addTargets()
         
-        let temp: [UIImage.Clothes] = [.hair, .pants, .shoes]
+        let temp: [UIImage.Clothes] = [.hair, .pants, .shoes, .dress]
         
         var viewModel: [StatusBarViewModel] = []
         
         temp.enumerated().forEach { index, element in
-            viewModel.append(StatusBarViewModel(name: element.getCategoryNames, id: index))
+            viewModel.append(StatusBarViewModel(name: element.description, id: index))
         }
         
         controlBar.setup(models: viewModel, index: .zero)

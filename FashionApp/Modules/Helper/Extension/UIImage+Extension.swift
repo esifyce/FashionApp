@@ -15,6 +15,7 @@ extension UIImage {
         public static var dotsIcon: UIImage = .init(named: "threeDots")!
         public static var plusIcon: UIImage = .init(named: "plus")!
         public static var skinIcon: UIImage = .init(named: "skinTemplate")!
+        public static var skinIcon2: UIImage = .init(named: "skinTemplate2")!
         public static var leftStepIcon: UIImage = .init(named: "leftStep")!
         public static var rightStepIcon: UIImage = .init(named: "rightStep")!
         public static var stackIcon: UIImage = .init(named: "stack")!
@@ -37,10 +38,11 @@ extension UIImage {
         public static var upgradeList: UIImage = .init(named: "phoneUpgradeList")!
     }
     
-    enum Clothes: Int {
+    enum Clothes: Int, CustomStringConvertible {
         case hair = 0
-        case pants = 1
-        case shoes = 2
+        case pants
+        case shoes
+        case dress
         
         var getClothes: [String] {
             switch self {
@@ -49,11 +51,13 @@ extension UIImage {
             case .hair:
                 return ["hair1", "hair2", "hair3", "hair4", "hair5"]
             case .pants:
-                return ["pants1", "pants2", "pants3", "pants4",]
+                return ["pants1", "pants2", "pants3", "pants4"]
+            case .dress:
+                return ["dress1", "dress2", "dress3", "dress4"]
             }
         }
         
-        var getCategoryNames: String {
+        var description: String {
             switch self {
             case .shoes:
                 return "Shoes"
@@ -61,6 +65,8 @@ extension UIImage {
                 return "Hair"
             case .pants:
                 return "Pants"
+            case .dress:
+                return "Dress"
             }
         }
     }

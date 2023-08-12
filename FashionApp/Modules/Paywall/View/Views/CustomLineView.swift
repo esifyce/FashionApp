@@ -33,9 +33,9 @@ final class CustomLineView: UIView {
         addSubview(rectangle)
         rectangle.buildFrame(
             FrameBuilder()
-                .x(5)
+                .x(bounds.size.width / 2 - 3)
                 .top(equalTo: .top, ofView: self)
-                .width(bounds.size.width - 10)
+                .width(6)
                 .height(bounds.size.height)
         )
         
@@ -44,7 +44,7 @@ final class CustomLineView: UIView {
         addSubview(view1)
         view1.buildFrame(
             FrameBuilder()
-                .x(0)
+                .x(bounds.size.width / 2 - 8)
                 .top(equalTo: .top, ofView: self, withOffset: 17)
                 .width(16)
                 .height(16)
@@ -56,7 +56,7 @@ final class CustomLineView: UIView {
         addSubview(view2)
         view2.buildFrame(
             FrameBuilder()
-                .x(0)
+                .x(bounds.size.width / 2 - 8)
                 .top(equalTo: .bottom, ofView: view1, withOffset: 69)
                 .width(16)
                 .height(16)
@@ -68,7 +68,7 @@ final class CustomLineView: UIView {
         addSubview(view3)
         view3.buildFrame(
             FrameBuilder()
-                .x(0)
+                .x(bounds.size.width / 2 - 8)
                 .top(equalTo: .bottom, ofView: view2, withOffset: 80)
                 .width(16)
                 .height(16)

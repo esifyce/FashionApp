@@ -95,6 +95,8 @@ final class PaywallViewController: BaseViewController {
         CustomLineView()
     }()
     
+    let descriptionView = DescriptionView()
+    
     private lazy var highQualityLabel: UILabel = {
         makeLabel(font: UIFont.systemFont(ofSize: 18, weight: .medium),
                   text: "High quality templates, brushes, and tips our team adds every week means that your illustrations are constantly improving.",
@@ -213,7 +215,7 @@ fileprivate extension PaywallViewController {
         view.addSubview(scrollView)
         view.addSubview(trialView)
         scrollView.addSubview(contentView)
-        [titleLabel, imageView, secondLabel, trialLabel, menuView, priceView, lineView, upgradeImageView, highStackView, alreadyLabel, restoreButton].forEach({contentView.addSubview($0)})
+        [titleLabel, imageView, secondLabel, trialLabel, menuView, priceView, lineView, descriptionView, upgradeImageView, highStackView, alreadyLabel, restoreButton].forEach({contentView.addSubview($0)})
         
         
         closeButton.addAction(UIAction(handler: { _ in
@@ -309,9 +311,17 @@ fileprivate extension PaywallViewController {
         
         lineView.buildFrame(
             FrameBuilder()
-                .x(40)
+                .x(32)
                 .top(equalTo: .bottom, ofView: priceView, withOffset: 48)
-                .width(16)
+                .width(32)
+                .height(242)
+        )
+        
+        descriptionView.buildFrame(
+            FrameBuilder()
+                .x(64)
+                .top(equalTo: .bottom, ofView: priceView, withOffset: 48)
+                .width(contentWidth - 50)
                 .height(242)
         )
         

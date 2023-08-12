@@ -31,7 +31,7 @@ class EditorCollectionViewCell: UICollectionViewCell {
     
     func configureCell(model: EditorViewModel) {
         dressImage.image = UIImage(named: model.dressName)
-        dressImage.contentMode = .scaleToFill
+        dressImage.contentMode = .scaleAspectFill
     }
 }
 
