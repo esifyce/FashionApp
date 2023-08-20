@@ -126,6 +126,21 @@
                   endingLineNumber = "115"
                   offsetFromSymbolStart = "295">
                </Location>
+               <Location
+                  uuid = "17F88485-133A-44B2-A366-46A3F4719C96 - e62a84ca66223195"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FashionApp.EditorViewController.addedItemToManiquen(dressName: Swift.String) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krasivo/Desktop/FashionApp/FashionApp/Modules/Editor/View/EditorViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "264">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
