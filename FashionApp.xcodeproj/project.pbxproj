@@ -63,6 +63,10 @@
 		08A83F862A923A3800F180C3 /* blackPNG.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A83F852A923A3800F180C3 /* blackPNG.png */; };
 		08A83F882A923E4200F180C3 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A83F872A923E4200F180C3 /* list.png */; };
 		08A83F8A2A923EC900F180C3 /* Test2.png in Resources */ = {isa = PBXBuildFile; fileRef = 08A83F892A923EC900F180C3 /* Test2.png */; };
+		08A83F8C2A9242D500F180C3 /* test3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08A83F8B2A9242D500F180C3 /* test3.jpg */; };
+		08A83F8E2A92494500F180C3 /* Unknown.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 08A83F8D2A92494500F180C3 /* Unknown.jpeg */; };
+		08A83F902A9249AA00F180C3 /* test5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08A83F8F2A9249AA00F180C3 /* test5.jpg */; };
+		08A83F922A924B0E00F180C3 /* 312.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08A83F912A924B0E00F180C3 /* 312.jpg */; };
 		08C952B72A7D5628009D501C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952B62A7D5628009D501C /* AppDelegate.swift */; };
 		08C952B92A7D5628009D501C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952B82A7D5628009D501C /* SceneDelegate.swift */; };
 		08C952C02A7D562A009D501C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C952BF2A7D562A009D501C /* Assets.xcassets */; };
@@ -163,6 +167,10 @@
 		08A83F852A923A3800F180C3 /* blackPNG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackPNG.png; sourceTree = "<group>"; };
 		08A83F872A923E4200F180C3 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
 		08A83F892A923EC900F180C3 /* Test2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Test2.png; sourceTree = "<group>"; };
+		08A83F8B2A9242D500F180C3 /* test3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test3.jpg; sourceTree = "<group>"; };
+		08A83F8D2A92494500F180C3 /* Unknown.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Unknown.jpeg; sourceTree = "<group>"; };
+		08A83F8F2A9249AA00F180C3 /* test5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test5.jpg; sourceTree = "<group>"; };
+		08A83F912A924B0E00F180C3 /* 312.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 312.jpg; sourceTree = "<group>"; };
 		08C952B32A7D5628009D501C /* FashionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FashionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C952B62A7D5628009D501C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08C952B82A7D5628009D501C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -644,7 +652,11 @@
 			isa = PBXGroup;
 			children = (
 				08A83F892A923EC900F180C3 /* Test2.png */,
+				08A83F8D2A92494500F180C3 /* Unknown.jpeg */,
 				08A83F852A923A3800F180C3 /* blackPNG.png */,
+				08A83F8F2A9249AA00F180C3 /* test5.jpg */,
+				08A83F8B2A9242D500F180C3 /* test3.jpg */,
+				08A83F912A924B0E00F180C3 /* 312.jpg */,
 				08A83F872A923E4200F180C3 /* list.png */,
 				08A83F7F2A92362400F180C3 /* purpleSmokeBG.png */,
 				08A83F812A9236D200F180C3 /* test.png */,
@@ -762,7 +774,11 @@
 			files = (
 				08A83F802A92362400F180C3 /* purpleSmokeBG.png in Resources */,
 				08A83F862A923A3800F180C3 /* blackPNG.png in Resources */,
+				08A83F8E2A92494500F180C3 /* Unknown.jpeg in Resources */,
 				08C952C32A7D562A009D501C /* LaunchScreen.storyboard in Resources */,
+				08A83F8C2A9242D500F180C3 /* test3.jpg in Resources */,
+				08A83F902A9249AA00F180C3 /* test5.jpg in Resources */,
+				08A83F922A924B0E00F180C3 /* 312.jpg in Resources */,
 				08C952C02A7D562A009D501C /* Assets.xcassets in Resources */,
 				08A83F822A9236D200F180C3 /* test.png in Resources */,
 				08A83F8A2A923EC900F180C3 /* Test2.png in Resources */,

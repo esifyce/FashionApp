@@ -35,12 +35,15 @@ final class BrushViewController: UIViewController {
     func setupUI() {
         drawView.resetParams()
         drawView.brushType = ESBrushTypeNormal
-        drawView.blendType = ESLayerBlendTypeNormal
+        drawView.blendType = ESLayerBlendTypeDissolution
         drawView.pointsDistanceEnabled = true
-        drawView.pointsDistance = 1
+        drawView.pointsDistance = 0.01
+        drawView.autoMark = true
+        drawView.needCancelLine = true
+        drawView.repeatedlyRenderEnabled = false
         drawView.smoothEnabled = true
-        
-        drawView.textureImages = [UIImage(named: "Test2.png") as Any]
+        drawView.colorFul = true
+        drawView.textureImages = [UIImage(named: "test3.jpg") as Any]
         drawView.minRadius = 0.08
         drawView.maxRadius = 1
 
@@ -50,7 +53,7 @@ final class BrushViewController: UIViewController {
         drawView.minFlow = 0.02
         drawView.maxFlow = 1
 
-        drawView.radius = 50
+        drawView.radius = 20
 //        let brushName = "lushkin"
 //        let documentDirectory = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
 //                let fileURL = documentDirectory.appendingPathComponent("\(brushName).kbr")
