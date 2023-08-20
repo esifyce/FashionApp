@@ -14,7 +14,7 @@ class EditorCollectionViewLayout: UICollectionViewLayout{
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                    heightDimension: .estimated(CGFloat(72).autoIphoneHeightSize))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 1)
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
           //  group.interItemSpacing = .fixed(8)
 
             let section = NSCollectionLayoutSection(group: group)
