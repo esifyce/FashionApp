@@ -14,7 +14,7 @@ class IphoneCollectionViewLayout: UICollectionViewLayout{
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                    heightDimension: .estimated(CGFloat(250)))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item, item])
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
             group.interItemSpacing = .fixed(8)
 
             let section = NSCollectionLayoutSection(group: group)

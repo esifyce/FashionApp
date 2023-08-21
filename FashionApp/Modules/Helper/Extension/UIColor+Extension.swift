@@ -15,8 +15,9 @@ extension UIColor {
     static var redColor: UIColor = UIColor(rgb: 0xFF3B30)
     static var lightGrayColor: UIColor = UIColor(rgb: 0xE4E5EA)
     static var separatorColor: UIColor = UIColor(rgb: 0x3C3C43).withAlphaComponent(0.36)
+    static var borderColor: UIColor = UIColor(rgb: 0xCACBD0)
+    static var shadowColor: UIColor = UIColor(rgb: 0x051C39)
 
-    
     convenience init(rgb: UInt) {
         self.init(
             red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,

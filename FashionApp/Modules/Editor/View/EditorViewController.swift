@@ -8,14 +8,28 @@
 import UIKit
 import SnapKit
 
+extension EditorViewController {
+    struct Appearance {
+        let isIpad = UIDevice.current.userInterfaceIdiom == .pad
+        let topOffset: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? -16 : -36
+        let trailingOffset: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? -10 : -7
+        let widthValue: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 241 : 151
+        let heightValue: CGFloat = 620
+        let stackClickedIcon: UIImage = UIImage.Base.stackClickedIcon.withRenderingMode(.alwaysOriginal)
+        let stackIcon: UIImage = UIImage.Base.stackIcon.withRenderingMode(.alwaysOriginal)
+    }
+}
+
 final class EditorViewController: BaseViewController {
     // MARK: - Property
     private var presenter: EditorPresenterInput
-    
+    private var appearance: Appearance
+    private var stackIsClicked: Bool = false
     // MARK: - Init
     
     init(presenter: EditorPresenterInput) {
         self.presenter = presenter
+        self.appearance = Appearance()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -95,8 +109,12 @@ final class EditorViewController: BaseViewController {
         return collectionView
     }()
     
-    let controlBar: StatusBar = {
+    private let controlBar: StatusBar = {
         StatusBar()
+    }()
+    
+    private lazy var layersView: LayersView = {
+       LayersView()
     }()
     
     // MARK: - Lifecycle
@@ -104,6 +122,7 @@ final class EditorViewController: BaseViewController {
         super.viewDidLoad()
         defer { presenter.viewDidLoad() }
         setupUI()
+        addObservers()
     }
 }
 
@@ -139,11 +158,20 @@ fileprivate extension EditorViewController {
         controlBar.setup(models: viewModel, index: .zero)
     }
     
+    func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
+    }
+    
     func addSubviews() {
-        [skinImageView, headerView, layersButton, collectionView, controlBar].forEach({ view.addSubview($0) })
+        [skinImageView, headerView,
+         layersButton, collectionView,
+         controlBar, layersView].forEach({ view.addSubview($0) })
+        
         [backButton, backTitle,
         stepStackView, doneButton].forEach({ headerView.addSubview($0) })
-        [headerView, layersButton, collectionView, controlBar].forEach({ view.bringSubviewToFront($0) })
+        
+        [headerView, layersButton,
+         collectionView, controlBar, layersView].forEach({ view.bringSubviewToFront($0) })
     }
     
     func setConstraints() {
@@ -208,6 +236,13 @@ fileprivate extension EditorViewController {
             make.height.equalTo(45)
             make.directionalHorizontalEdges.equalToSuperview()
         }
+        
+        layersView.snp.makeConstraints { make in
+            make.top.equalTo(headerView.snp.bottom).offset(appearance.topOffset)
+            make.trailing.equalTo(layersButton.snp.leading).offset(appearance.trailingOffset)
+            make.width.equalTo(appearance.widthValue)
+            make.height.equalTo(appearance.heightValue.autoIphoneHeightSize)
+        }
     }
     
     func configStyle() {
@@ -231,12 +266,40 @@ fileprivate extension EditorViewController {
             self?.presenter.popViewController()
         }), for: .touchUpInside)
         
-        layersButton.addAction(UIAction(handler: { _ in
-            print("Did tap layers")
+        layersButton.addAction(UIAction(handler: { [weak self] _ in
+            guard let self else { return }
+            self.stackIsClicked.toggle()
+            self.layersButton.setImage(self.stackIsClicked
+                                        ? self.appearance.stackClickedIcon
+                                        : self.appearance.stackIcon,
+                                        for: .normal)
+            self.layersView.show(self.stackIsClicked)
         }), for: .touchUpInside)
         
         controlBar.didTapCallBack = { [weak self] index in
             self?.presenter.updateCollectionByCategory(index: index)
+        }
+    }
+    
+    @objc func orientationChanged() {
+        guard appearance.isIpad else { return }
+        
+        var heightValue = appearance.heightValue
+        
+        switch UIDevice.current.orientation {
+        case .portrait, .portraitUpsideDown:
+            heightValue = heightValue.autoIphoneWidthSize
+        case .landscapeLeft, .landscapeRight:
+            heightValue = heightValue.autoIpadHeightLandscapeSize
+        default:
+            break
+        }
+        
+        layersView.snp.remakeConstraints { make in
+            make.top.equalTo(headerView.snp.bottom).offset(appearance.topOffset)
+            make.trailing.equalTo(layersButton.snp.leading).offset(appearance.trailingOffset)
+            make.width.equalTo(appearance.widthValue)
+            make.height.equalTo(heightValue)
         }
     }
 }
