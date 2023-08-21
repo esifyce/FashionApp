@@ -19,8 +19,12 @@ extension UIImage {
         public static var leftStepIcon: UIImage = .init(named: "leftStep")!
         public static var rightStepIcon: UIImage = .init(named: "rightStep")!
         public static var stackIcon: UIImage = .init(named: "stack")!
+        public static var stackClickedIcon: UIImage = .init(named: "stackClick")!
         public static var backDrawingIcon: UIImage = .init(named: "backDrawing")!
         public static var ckeckmarkYesIcon: UIImage = .init(named: "ckeckmarkYes")!
+        public static var cornerIcon: UIImage = .init(named: "corner")!
+        public static var eyeIcon: UIImage = .init(named: "eyeIcon")!
+        public static var lineIcon: UIImage = .init(named: "lineIcon")!
     }
     
     enum Iphone {

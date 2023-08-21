@@ -67,6 +67,11 @@
 		08A83F8E2A92494500F180C3 /* Unknown.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 08A83F8D2A92494500F180C3 /* Unknown.jpeg */; };
 		08A83F902A9249AA00F180C3 /* test5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08A83F8F2A9249AA00F180C3 /* test5.jpg */; };
 		08A83F922A924B0E00F180C3 /* 312.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 08A83F912A924B0E00F180C3 /* 312.jpg */; };
+		08A83F942A9270BB00F180C3 /* LayersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A83F932A9270BB00F180C3 /* LayersView.swift */; };
+		08A83F962A92A6A700F180C3 /* LayersCollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A83F952A92A6A700F180C3 /* LayersCollectionManager.swift */; };
+		08A83F982A92A6BB00F180C3 /* LayersCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A83F972A92A6BB00F180C3 /* LayersCollectionViewLayout.swift */; };
+		08A83F9A2A92A83100F180C3 /* LayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A83F992A92A83100F180C3 /* LayerViewModel.swift */; };
+		08A83F9C2A92A91100F180C3 /* LayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A83F9B2A92A91100F180C3 /* LayerCollectionViewCell.swift */; };
 		08C952B72A7D5628009D501C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952B62A7D5628009D501C /* AppDelegate.swift */; };
 		08C952B92A7D5628009D501C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952B82A7D5628009D501C /* SceneDelegate.swift */; };
 		08C952C02A7D562A009D501C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C952BF2A7D562A009D501C /* Assets.xcassets */; };
@@ -171,6 +176,11 @@
 		08A83F8D2A92494500F180C3 /* Unknown.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Unknown.jpeg; sourceTree = "<group>"; };
 		08A83F8F2A9249AA00F180C3 /* test5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test5.jpg; sourceTree = "<group>"; };
 		08A83F912A924B0E00F180C3 /* 312.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 312.jpg; sourceTree = "<group>"; };
+		08A83F932A9270BB00F180C3 /* LayersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayersView.swift; sourceTree = "<group>"; };
+		08A83F952A92A6A700F180C3 /* LayersCollectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayersCollectionManager.swift; sourceTree = "<group>"; };
+		08A83F972A92A6BB00F180C3 /* LayersCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayersCollectionViewLayout.swift; sourceTree = "<group>"; };
+		08A83F992A92A83100F180C3 /* LayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerViewModel.swift; sourceTree = "<group>"; };
+		08A83F9B2A92A91100F180C3 /* LayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerCollectionViewCell.swift; sourceTree = "<group>"; };
 		08C952B32A7D5628009D501C /* FashionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FashionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C952B62A7D5628009D501C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08C952B82A7D5628009D501C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -495,6 +505,7 @@
 				082E5E7A2A7EB94D00CF1776 /* PaywallCollectionViewCell.swift */,
 				082E5E7C2A7EB97D00CF1776 /* TemplateCollectionViewCell.swift */,
 				0889287D2A82859500DA8230 /* EditorCollectionViewCell.swift */,
+				08A83F9B2A92A91100F180C3 /* LayerCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -506,6 +517,7 @@
 				082E5E7E2A7EBACB00CF1776 /* MainViewModel.swift */,
 				0889287F2A82860B00DA8230 /* EditorViewModel.swift */,
 				088928862A828D7100DA8230 /* StatusBarViewModel.swift */,
+				08A83F992A92A83100F180C3 /* LayerViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -539,6 +551,8 @@
 			children = (
 				0889287B2A82856A00DA8230 /* EditorCollectionManager.swift */,
 				088928812A82883600DA8230 /* EditorCollectionViewLayout.swift */,
+				08A83F952A92A6A700F180C3 /* LayersCollectionManager.swift */,
+				08A83F972A92A6BB00F180C3 /* LayersCollectionViewLayout.swift */,
 			);
 			path = CollectionManager;
 			sourceTree = "<group>";
@@ -547,6 +561,7 @@
 			isa = PBXGroup;
 			children = (
 				088928842A828CE500DA8230 /* StatusBar.swift */,
+				08A83F932A9270BB00F180C3 /* LayersView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -827,20 +842,25 @@
 				082E5E772A7EB8F100CF1776 /* SquareModel.swift in Sources */,
 				55A857DA2A85840F001CA72A /* DescriptionView.swift in Sources */,
 				082E5E512A7D842B00CF1776 /* PaywallInteractor.swift in Sources */,
+				08A83F942A9270BB00F180C3 /* LayersView.swift in Sources */,
 				082E5E282A7D81BF00CF1776 /* BaseViewController.swift in Sources */,
 				082E5E6E2A7D851900CF1776 /* TemplatePresenter.swift in Sources */,
+				08A83F9C2A92A91100F180C3 /* LayerCollectionViewCell.swift in Sources */,
 				082E5E3B2A7D842500CF1776 /* EditorViewController.swift in Sources */,
 				082E5E502A7D842B00CF1776 /* PaywallAssembly.swift in Sources */,
 				55A243282A82B6F900288046 /* UITapGestureRecoginzer+Extension.swift in Sources */,
 				08C952B92A7D5628009D501C /* SceneDelegate.swift in Sources */,
+				08A83F982A92A6BB00F180C3 /* LayersCollectionViewLayout.swift in Sources */,
 				082E5E1E2A7D7F3200CF1776 /* MainRouter.swift in Sources */,
 				082E5E3D2A7D842500CF1776 /* EditorPresenterInput.swift in Sources */,
+				08A83F9A2A92A83100F180C3 /* LayerViewModel.swift in Sources */,
 				082E5E1C2A7D7F3200CF1776 /* MainPresenter.swift in Sources */,
 				082E5E7B2A7EB94D00CF1776 /* PaywallCollectionViewCell.swift in Sources */,
 				082E5E6B2A7D851900CF1776 /* TemplateViewController.swift in Sources */,
 				082E5E522A7D842B00CF1776 /* PaywallInteractorInput.swift in Sources */,
 				088928802A82860B00DA8230 /* EditorViewModel.swift in Sources */,
 				082E5E4F2A7D842B00CF1776 /* PaywallPresenterInput.swift in Sources */,
+				08A83F962A92A6A700F180C3 /* LayersCollectionManager.swift in Sources */,
 				082E5E672A7D851900CF1776 /* TemplateRouter.swift in Sources */,
 				082E5E392A7D842500CF1776 /* EditorAssembly.swift in Sources */,
 				082E5E722A7EB73200CF1776 /* MainCollectionManager.swift in Sources */,
@@ -932,7 +952,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -987,7 +1007,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

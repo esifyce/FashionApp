@@ -11,4 +11,5 @@ extension CGFloat {
     var autoIpadHeightSize: CGFloat { return UIScreen.main.bounds.height * self / 1194 }
     var autoIpadHeightLandscapeSize: CGFloat { return UIScreen.main.bounds.width * self / 1194 }
     var autoIphoneHeightSize: CGFloat { return UIScreen.main.bounds.height * self / 844.0 }
+    var autoIphoneWidthSize: CGFloat { return UIScreen.main.bounds.width * self / 844.0 }
 }

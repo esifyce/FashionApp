@@ -15,7 +15,7 @@ class IpadCollectionViewLayout: UICollectionViewLayout {
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                heightDimension: .estimated(CGFloat(355).autoIpadHeightSize))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item, item, item])
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 3)
         
         group.interItemSpacing = .fixed(24)
         let section = NSCollectionLayoutSection(group: group)
@@ -33,7 +33,7 @@ class IpadCollectionViewLayout: UICollectionViewLayout {
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                heightDimension: .estimated(CGFloat(355).autoIpadHeightLandscapeSize))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item, item, item, item])
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 4)
         
         group.interItemSpacing = .fixed(22)
         let section = NSCollectionLayoutSection(group: group)

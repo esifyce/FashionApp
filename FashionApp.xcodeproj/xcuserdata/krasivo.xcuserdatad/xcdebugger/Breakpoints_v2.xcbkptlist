@@ -91,13 +91,13 @@
             filePath = "FashionApp/Modules/Editor/View/EditorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "addedItemToManiquen(dressName:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "17F88485-133A-44B2-A366-46A3F4719C96 - e62a84ca662231f2"
+                  uuid = "17F88485-133A-44B2-A366-46A3F4719C96 - e62a84ca662237e3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -107,12 +107,12 @@
                   urlString = "file:///Users/krasivo/Desktop/FashionApp/FashionApp/Modules/Editor/View/EditorViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "114"
-                  endingLineNumber = "114"
-                  offsetFromSymbolStart = "136">
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "429">
                </Location>
                <Location
-                  uuid = "17F88485-133A-44B2-A366-46A3F4719C96 - e62a84ca66223195"
+                  uuid = "17F88485-133A-44B2-A366-46A3F4719C96 - e62a84ca662237e3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -122,12 +122,12 @@
                   urlString = "file:///Users/krasivo/Desktop/FashionApp/FashionApp/Modules/Editor/View/EditorViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "115"
-                  endingLineNumber = "115"
-                  offsetFromSymbolStart = "295">
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "336">
                </Location>
                <Location
-                  uuid = "17F88485-133A-44B2-A366-46A3F4719C96 - e62a84ca66223195"
+                  uuid = "17F88485-133A-44B2-A366-46A3F4719C96 - e62a84ca662237e3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -137,9 +137,24 @@
                   urlString = "file:///Users/krasivo/Desktop/FashionApp/FashionApp/Modules/Editor/View/EditorViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "115"
-                  endingLineNumber = "115"
-                  offsetFromSymbolStart = "264">
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "338">
+               </Location>
+               <Location
+                  uuid = "17F88485-133A-44B2-A366-46A3F4719C96 - e62a84ca66223767"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FashionApp.EditorViewController.addedItemToManiquen(dressName: Swift.String) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krasivo/Desktop/FashionApp/FashionApp/Modules/Editor/View/EditorViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "133"
+                  endingLineNumber = "133"
+                  offsetFromSymbolStart = "338">
                </Location>
             </Locations>
          </BreakpointContent>
