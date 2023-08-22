@@ -117,6 +117,14 @@ final class EditorViewController: BaseViewController {
        LayersView()
     }()
     
+    private lazy var menuListView: MenuListView = {
+       MenuListView()
+    }()
+    
+    private lazy var brushListView: BrushListView = {
+        BrushListView()
+    }()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -156,6 +164,9 @@ fileprivate extension EditorViewController {
         }
         
         controlBar.setup(models: viewModel, index: .zero)
+        collectionView.isHidden = true
+        controlBar.isHidden = true
+        menuListView.isHidden = true
     }
     
     func addObservers() {
@@ -165,13 +176,15 @@ fileprivate extension EditorViewController {
     func addSubviews() {
         [skinImageView, headerView,
          layersButton, collectionView,
-         controlBar, layersView].forEach({ view.addSubview($0) })
+         controlBar, layersView,
+         menuListView, brushListView].forEach({ view.addSubview($0) })
         
         [backButton, backTitle,
         stepStackView, doneButton].forEach({ headerView.addSubview($0) })
         
         [headerView, layersButton,
-         collectionView, controlBar, layersView].forEach({ view.bringSubviewToFront($0) })
+         collectionView, controlBar,
+         layersView, menuListView, brushListView].forEach({ view.bringSubviewToFront($0) })
     }
     
     func setConstraints() {
@@ -242,6 +255,20 @@ fileprivate extension EditorViewController {
             make.trailing.equalTo(layersButton.snp.leading).offset(appearance.trailingOffset)
             make.width.equalTo(appearance.widthValue)
             make.height.equalTo(appearance.heightValue.autoIphoneHeightSize)
+        }
+        
+        menuListView.snp.makeConstraints { make in
+            make.height.equalTo(44)
+            make.width.equalTo(44 * 3 + 16 * 2)
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().inset(44)
+        }
+        
+        brushListView.snp.makeConstraints { make in
+            make.height.equalTo(44)
+            make.width.equalTo(44 * 5 + 16 * 4)
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().inset(44)
         }
     }
     

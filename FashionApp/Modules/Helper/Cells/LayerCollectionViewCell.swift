@@ -17,6 +17,7 @@ extension LayerCollectionViewCell {
 
 final class LayerCollectionViewCell: UICollectionViewCell {
     // MARK: - Property
+    
     var eyeTapCallBack: (() -> Void)?
     let appearance: Appearance
     
