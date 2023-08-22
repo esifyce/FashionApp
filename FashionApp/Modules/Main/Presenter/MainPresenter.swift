@@ -32,6 +32,10 @@ extension MainPresenter: MainPresenterInput {
     func updateCollection(with traitCollection: UITraitCollection) {
         collectionManager.updateLayout(with: traitCollection)
     }
+    
+    func settingTapped() {
+        router.settingTapped()
+    }
 }
 
 // MARK: - MainPresenter

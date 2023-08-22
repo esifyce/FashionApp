@@ -47,4 +47,9 @@ extension MainRouter: MainRouterInput {
         controller.modalPresentationStyle = .overFullScreen
         view?.present(controller, animated: true)
     }
+    
+    func settingTapped() {
+        let settingView = IphoneSettingsView()
+        view?.showCustomView(view: settingView)
+    }
 }

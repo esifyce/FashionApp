@@ -17,6 +17,4 @@ extension PaywallRouter: PaywallRouterInput {
         let view = SelectPlanView()
         self.view?.showCustomView(view: view)
     }
-    
-    
 }

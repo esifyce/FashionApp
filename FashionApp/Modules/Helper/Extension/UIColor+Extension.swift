@@ -17,6 +17,11 @@ extension UIColor {
     static var separatorColor: UIColor = UIColor(rgb: 0x3C3C43).withAlphaComponent(0.36)
     static var borderColor: UIColor = UIColor(rgb: 0xCACBD0)
     static var shadowColor: UIColor = UIColor(rgb: 0x051C39)
+    static var secondGrayColor: UIColor = UIColor(rgb: 0x3C3C43).withAlphaComponent(0.60)
+    static var thirdGrayColor: UIColor = UIColor(rgb: 0xD1D1D6)
+    static var darkBlueColor: UIColor = UIColor(rgb: 0x0E4790)
+    static var blackShadowColor: UIColor = UIColor(rgb: 0x051C39)
+    static var systemWhiteColor: UIColor = UIColor(rgb: 0xF2F2F7)
 
     convenience init(rgb: UInt) {
         self.init(

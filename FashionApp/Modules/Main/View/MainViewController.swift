@@ -114,14 +114,18 @@ fileprivate extension MainViewController {
 //            print("Setting tapped")
 //        }), for: .touchUpInside)
         
-        let menuOption1 = UIAction(title: "Subscribe Now") { _ in }
-        let menuOption2 = UIAction(title: "Community") { _ in }
-        let menuOption3 = UIAction(title: "Terms") { _ in }
-        let menuOption4 = UIAction(title: "Contact us") { _ in }
-        let menuOption5 = UIAction(title: "Import") { _ in }
-
-        let menu = UIMenu(title: "", options: .displayInline, children: [menuOption1, menuOption2, menuOption3, menuOption4, menuOption5])
-        settingButton.showsMenuAsPrimaryAction = true
-        settingButton.menu = menu
+//        let menuOption1 = UIAction(title: "Subscribe Now") { _ in }
+//        let menuOption2 = UIAction(title: "Community") { _ in }
+//        let menuOption3 = UIAction(title: "Terms") { _ in }
+//        let menuOption4 = UIAction(title: "Contact us") { _ in }
+//        let menuOption5 = UIAction(title: "Import") { _ in }
+//
+//        let menu = UIMenu(title: "", options: .displayInline, children: [menuOption1, menuOption2, menuOption3, menuOption4, menuOption5])
+//        settingButton.showsMenuAsPrimaryAction = true
+//        settingButton.menu = menu
+        
+        settingButton.addAction(.init(handler: { [weak self] _ in
+            self?.presenter.settingTapped()
+        }), for: .touchUpInside)
     }
 }

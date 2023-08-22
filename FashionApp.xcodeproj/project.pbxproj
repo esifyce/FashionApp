@@ -85,6 +85,14 @@
 		08C952D22A7D5843009D501C /* KMDrawViewSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C952D12A7D5843009D501C /* KMDrawViewSDK.framework */; };
 		08D6EEE62A8815570017768A /* BrushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6EEE52A8815570017768A /* BrushViewController.swift */; };
 		08EECAF42A81721F00EE8385 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EECAF32A81721F00EE8385 /* UIColor+Extension.swift */; };
+		5511A5972A926AEE00DC9A8F /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A5962A926AEE00DC9A8F /* CustomSlider.swift */; };
+		5511A5992A926B0900DC9A8F /* ThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A5982A926B0900DC9A8F /* ThumbView.swift */; };
+		5511A59B2A926CDF00DC9A8F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A59A2A926CDF00DC9A8F /* UIView+Extension.swift */; };
+		5511A59D2A927FB000DC9A8F /* LayerCustomizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A59C2A927FB000DC9A8F /* LayerCustomizeView.swift */; };
+		5511A5A02A92841300DC9A8F /* LayerActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A59F2A92841300DC9A8F /* LayerActionView.swift */; };
+		5511A5A22A92A08200DC9A8F /* PercentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A5A12A92A08200DC9A8F /* PercentLabel.swift */; };
+		5511A5A52A92BB5300DC9A8F /* IphoneSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A5A42A92BB5300DC9A8F /* IphoneSettingsView.swift */; };
+		5511A5A72A92BB5D00DC9A8F /* IpadSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A5A62A92BB5D00DC9A8F /* IpadSettingsView.swift */; };
 		554F30992A814A500077114D /* IphoneCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F30982A814A500077114D /* IphoneCollectionViewLayout.swift */; };
 		554F309B2A814B300077114D /* IpadCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F309A2A814B300077114D /* IpadCollectionViewLayout.swift */; };
 		554F309E2A818C850077114D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F309D2A818C850077114D /* MenuView.swift */; };
@@ -231,6 +239,14 @@
 		08D6EF062A881DEE0017768A /* T1PogoDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T1PogoDelegate.h; sourceTree = "<group>"; };
 		08D6EF072A881DEE0017768A /* ImageRenderFSHs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageRenderFSHs.h; sourceTree = "<group>"; };
 		08EECAF32A81721F00EE8385 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		5511A5962A926AEE00DC9A8F /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		5511A5982A926B0900DC9A8F /* ThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbView.swift; sourceTree = "<group>"; };
+		5511A59A2A926CDF00DC9A8F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		5511A59C2A927FB000DC9A8F /* LayerCustomizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerCustomizeView.swift; sourceTree = "<group>"; };
+		5511A59F2A92841300DC9A8F /* LayerActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerActionView.swift; sourceTree = "<group>"; };
+		5511A5A12A92A08200DC9A8F /* PercentLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentLabel.swift; sourceTree = "<group>"; };
+		5511A5A42A92BB5300DC9A8F /* IphoneSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneSettingsView.swift; sourceTree = "<group>"; };
+		5511A5A62A92BB5D00DC9A8F /* IpadSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpadSettingsView.swift; sourceTree = "<group>"; };
 		554F30982A814A500077114D /* IphoneCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneCollectionViewLayout.swift; sourceTree = "<group>"; };
 		554F309A2A814B300077114D /* IpadCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpadCollectionViewLayout.swift; sourceTree = "<group>"; };
 		554F309D2A818C850077114D /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -548,6 +564,7 @@
 				55A2432F2A82B77900288046 /* String+Extension.swift */,
 				55A243312A82B7D400288046 /* CGFloat+Extension.swift */,
 				55A243352A82D26000288046 /* UIApplication+Extension.swift */,
+				5511A59A2A926CDF00DC9A8F /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -576,10 +593,14 @@
 		088928832A828CD900DA8230 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5511A5A32A92BB4200DC9A8F /* SettingsView */,
+				5511A59E2A927FC100DC9A8F /* LayerCustomizeView */,
 				088928842A828CE500DA8230 /* StatusBar.swift */,
 				08A83F932A9270BB00F180C3 /* LayersView.swift */,
 				08A83F9D2A93F16000F180C3 /* MenuListView.swift */,
 				08A83F9F2A94695900F180C3 /* BrushListView.swift */,
+				5511A5962A926AEE00DC9A8F /* CustomSlider.swift */,
+				5511A5982A926B0900DC9A8F /* ThumbView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -656,6 +677,25 @@
 				08D6EEFF2A881DEE0017768A /* Tools.h */,
 			);
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		5511A59E2A927FC100DC9A8F /* LayerCustomizeView */ = {
+			isa = PBXGroup;
+			children = (
+				5511A59C2A927FB000DC9A8F /* LayerCustomizeView.swift */,
+				5511A59F2A92841300DC9A8F /* LayerActionView.swift */,
+				5511A5A12A92A08200DC9A8F /* PercentLabel.swift */,
+			);
+			path = LayerCustomizeView;
+			sourceTree = "<group>";
+		};
+		5511A5A32A92BB4200DC9A8F /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				5511A5A42A92BB5300DC9A8F /* IphoneSettingsView.swift */,
+				5511A5A62A92BB5D00DC9A8F /* IpadSettingsView.swift */,
+			);
+			path = SettingsView;
 			sourceTree = "<group>";
 		};
 		554F309C2A818C7D0077114D /* Views */ = {
@@ -832,11 +872,15 @@
 				08A83FA42A946E8700F180C3 /* BrushCollectionViewLayout.swift in Sources */,
 				082E5E252A7D7F3200CF1776 /* MainViewController.swift in Sources */,
 				0889287E2A82859500DA8230 /* EditorCollectionViewCell.swift in Sources */,
+				5511A5992A926B0900DC9A8F /* ThumbView.swift in Sources */,
+				5511A5A22A92A08200DC9A8F /* PercentLabel.swift in Sources */,
 				082E5E382A7D842500CF1776 /* EditorRouter.swift in Sources */,
 				082E5E212A7D7F3200CF1776 /* MainInteractorInput.swift in Sources */,
 				08A83F9E2A93F16000F180C3 /* MenuListView.swift in Sources */,
+				5511A5A02A92841300DC9A8F /* LayerActionView.swift in Sources */,
 				554F30A02A818FAA0077114D /* PriceView.swift in Sources */,
 				55A243302A82B77900288046 /* String+Extension.swift in Sources */,
+				5511A5972A926AEE00DC9A8F /* CustomSlider.swift in Sources */,
 				0889287C2A82856A00DA8230 /* EditorCollectionManager.swift in Sources */,
 				08844E802A819E630031F78C /* TemplateCollectionManager.swift in Sources */,
 				088928872A828D7100DA8230 /* StatusBarViewModel.swift in Sources */,
@@ -882,16 +926,20 @@
 				082E5E7B2A7EB94D00CF1776 /* PaywallCollectionViewCell.swift in Sources */,
 				082E5E6B2A7D851900CF1776 /* TemplateViewController.swift in Sources */,
 				082E5E522A7D842B00CF1776 /* PaywallInteractorInput.swift in Sources */,
+				5511A59B2A926CDF00DC9A8F /* UIView+Extension.swift in Sources */,
 				088928802A82860B00DA8230 /* EditorViewModel.swift in Sources */,
 				082E5E4F2A7D842B00CF1776 /* PaywallPresenterInput.swift in Sources */,
 				08A83F962A92A6A700F180C3 /* LayersCollectionManager.swift in Sources */,
+				5511A5A52A92BB5300DC9A8F /* IphoneSettingsView.swift in Sources */,
 				082E5E672A7D851900CF1776 /* TemplateRouter.swift in Sources */,
 				082E5E392A7D842500CF1776 /* EditorAssembly.swift in Sources */,
 				082E5E722A7EB73200CF1776 /* MainCollectionManager.swift in Sources */,
 				08D6EEE62A8815570017768A /* BrushViewController.swift in Sources */,
 				082E5E1B2A7D7F3200CF1776 /* MainPresenterInput.swift in Sources */,
+				5511A5A72A92BB5D00DC9A8F /* IpadSettingsView.swift in Sources */,
 				082E5E682A7D851900CF1776 /* TemplateInteractor.swift in Sources */,
 				082E5E3C2A7D842500CF1776 /* EditorPresenter.swift in Sources */,
+				5511A59D2A927FB000DC9A8F /* LayerCustomizeView.swift in Sources */,
 				082E5E692A7D851900CF1776 /* TemplateInteractorInput.swift in Sources */,
 				082E5E7F2A7EBACB00CF1776 /* MainViewModel.swift in Sources */,
 				55A2432C2A82B73900288046 /* CALayer+Extension.swift in Sources */,
@@ -1050,7 +1098,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5HDJX97Z93;
+				DEVELOPMENT_TEAM = 49SWRDXJLL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FashionApp",
@@ -1063,12 +1111,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.esifyce.FashionApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.zhegalik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "FashionApp/FashionApp-Bridging-Header.h";
@@ -1086,7 +1135,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5HDJX97Z93;
+				DEVELOPMENT_TEAM = 49SWRDXJLL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FashionApp",
@@ -1099,12 +1148,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.esifyce.FashionApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.zhegalik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "FashionApp/FashionApp-Bridging-Header.h";

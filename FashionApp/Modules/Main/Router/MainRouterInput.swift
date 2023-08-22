@@ -11,4 +11,5 @@ protocol MainRouterInput: AnyObject {
     func openMore()
     func goToAddTemplate()
     func goToPaywall()
+    func settingTapped() 
 }

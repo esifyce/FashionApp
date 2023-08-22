@@ -10,4 +10,5 @@ import UIKit
 protocol MainPresenterInput: AnyObject {
     func viewDidLoad()
     func updateCollection(with traitCollection: UITraitCollection)
+    func settingTapped()
 }

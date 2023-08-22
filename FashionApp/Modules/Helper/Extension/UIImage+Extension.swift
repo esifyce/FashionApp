@@ -25,6 +25,9 @@ extension UIImage {
         public static var cornerIcon: UIImage = .init(named: "corner")!
         public static var eyeIcon: UIImage = .init(named: "eyeIcon")!
         public static var lineIcon: UIImage = .init(named: "lineIcon")!
+        public static var track: UIImage = .init(named: "track")!
+        public static var trackLong: UIImage = .init(named: "trackLong")!
+        public static var scrubber: UIImage = .init(named: "scrubber")!
     }
     
     enum Iphone {
@@ -49,12 +52,22 @@ extension UIImage {
         public static var upgradeList: UIImage = .init(named: "phoneUpgradeList")!
     }
     
+
     enum Pen {
         public static var penMenu: UIImage = .init(named: "penMenu")!
         public static var pencilMenu: UIImage = .init(named: "pencilMenu")!
         public static var markerMenu: UIImage = .init(named: "markerMenu")!
         public static var feltMenu: UIImage = .init(named: "feltMenu")!
         public static var easicMenu: UIImage = .init(named: "easicMenu")!
+    }
+    
+    enum LayerAction {
+        public static var hide: UIImage = .init(named: "hideBlack")!
+        public static var lock: UIImage = .init(named: "lockBlack")!
+        public static var duplicate: UIImage = .init(named: "duplicateBlack")!
+        public static var mergeAll: UIImage = .init(named: "mergeAll")!
+        public static var mergePrevious: UIImage = .init(named: "mergePrevious")!
+        public static var delete: UIImage = .init(named: "deleteBlack")!
     }
     
     enum Clothes: Int, CustomStringConvertible {
