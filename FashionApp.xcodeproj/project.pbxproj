@@ -72,6 +72,12 @@
 		08A83F982A92A6BB00F180C3 /* LayersCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A83F972A92A6BB00F180C3 /* LayersCollectionViewLayout.swift */; };
 		08A83F9A2A92A83100F180C3 /* LayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A83F992A92A83100F180C3 /* LayerViewModel.swift */; };
 		08A83F9C2A92A91100F180C3 /* LayerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A83F9B2A92A91100F180C3 /* LayerCollectionViewCell.swift */; };
+		08A83F9E2A93F16000F180C3 /* MenuListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A83F9D2A93F16000F180C3 /* MenuListView.swift */; };
+		08A83FA02A94695900F180C3 /* BrushListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A83F9F2A94695900F180C3 /* BrushListView.swift */; };
+		08A83FA22A946E7800F180C3 /* BrushCollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A83FA12A946E7800F180C3 /* BrushCollectionManager.swift */; };
+		08A83FA42A946E8700F180C3 /* BrushCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A83FA32A946E8700F180C3 /* BrushCollectionViewLayout.swift */; };
+		08A83FA62A946EF800F180C3 /* BrushCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A83FA52A946EF800F180C3 /* BrushCollectionViewCell.swift */; };
+		08A83FA82A94708500F180C3 /* BrushViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A83FA72A94708500F180C3 /* BrushViewModel.swift */; };
 		08C952B72A7D5628009D501C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952B62A7D5628009D501C /* AppDelegate.swift */; };
 		08C952B92A7D5628009D501C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C952B82A7D5628009D501C /* SceneDelegate.swift */; };
 		08C952C02A7D562A009D501C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08C952BF2A7D562A009D501C /* Assets.xcassets */; };
@@ -181,6 +187,12 @@
 		08A83F972A92A6BB00F180C3 /* LayersCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayersCollectionViewLayout.swift; sourceTree = "<group>"; };
 		08A83F992A92A83100F180C3 /* LayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerViewModel.swift; sourceTree = "<group>"; };
 		08A83F9B2A92A91100F180C3 /* LayerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerCollectionViewCell.swift; sourceTree = "<group>"; };
+		08A83F9D2A93F16000F180C3 /* MenuListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListView.swift; sourceTree = "<group>"; };
+		08A83F9F2A94695900F180C3 /* BrushListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushListView.swift; sourceTree = "<group>"; };
+		08A83FA12A946E7800F180C3 /* BrushCollectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushCollectionManager.swift; sourceTree = "<group>"; };
+		08A83FA32A946E8700F180C3 /* BrushCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushCollectionViewLayout.swift; sourceTree = "<group>"; };
+		08A83FA52A946EF800F180C3 /* BrushCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushCollectionViewCell.swift; sourceTree = "<group>"; };
+		08A83FA72A94708500F180C3 /* BrushViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrushViewModel.swift; sourceTree = "<group>"; };
 		08C952B32A7D5628009D501C /* FashionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FashionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C952B62A7D5628009D501C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08C952B82A7D5628009D501C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -506,6 +518,7 @@
 				082E5E7C2A7EB97D00CF1776 /* TemplateCollectionViewCell.swift */,
 				0889287D2A82859500DA8230 /* EditorCollectionViewCell.swift */,
 				08A83F9B2A92A91100F180C3 /* LayerCollectionViewCell.swift */,
+				08A83FA52A946EF800F180C3 /* BrushCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -518,6 +531,7 @@
 				0889287F2A82860B00DA8230 /* EditorViewModel.swift */,
 				088928862A828D7100DA8230 /* StatusBarViewModel.swift */,
 				08A83F992A92A83100F180C3 /* LayerViewModel.swift */,
+				08A83FA72A94708500F180C3 /* BrushViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -553,6 +567,8 @@
 				088928812A82883600DA8230 /* EditorCollectionViewLayout.swift */,
 				08A83F952A92A6A700F180C3 /* LayersCollectionManager.swift */,
 				08A83F972A92A6BB00F180C3 /* LayersCollectionViewLayout.swift */,
+				08A83FA12A946E7800F180C3 /* BrushCollectionManager.swift */,
+				08A83FA32A946E8700F180C3 /* BrushCollectionViewLayout.swift */,
 			);
 			path = CollectionManager;
 			sourceTree = "<group>";
@@ -562,6 +578,8 @@
 			children = (
 				088928842A828CE500DA8230 /* StatusBar.swift */,
 				08A83F932A9270BB00F180C3 /* LayersView.swift */,
+				08A83F9D2A93F16000F180C3 /* MenuListView.swift */,
+				08A83F9F2A94695900F180C3 /* BrushListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -811,10 +829,12 @@
 				08EECAF42A81721F00EE8385 /* UIColor+Extension.swift in Sources */,
 				082E5E792A7EB93F00CF1776 /* AddCollectionViewCell.swift in Sources */,
 				55A2432E2A82B75700288046 /* Array+Extension.swift in Sources */,
+				08A83FA42A946E8700F180C3 /* BrushCollectionViewLayout.swift in Sources */,
 				082E5E252A7D7F3200CF1776 /* MainViewController.swift in Sources */,
 				0889287E2A82859500DA8230 /* EditorCollectionViewCell.swift in Sources */,
 				082E5E382A7D842500CF1776 /* EditorRouter.swift in Sources */,
 				082E5E212A7D7F3200CF1776 /* MainInteractorInput.swift in Sources */,
+				08A83F9E2A93F16000F180C3 /* MenuListView.swift in Sources */,
 				554F30A02A818FAA0077114D /* PriceView.swift in Sources */,
 				55A243302A82B77900288046 /* String+Extension.swift in Sources */,
 				0889287C2A82856A00DA8230 /* EditorCollectionManager.swift in Sources */,
@@ -823,8 +843,10 @@
 				082E5E3F2A7D842500CF1776 /* EditorInteractorInput.swift in Sources */,
 				082E5E6D2A7D851900CF1776 /* TemplatePresenterInput.swift in Sources */,
 				088928852A828CE500DA8230 /* StatusBar.swift in Sources */,
+				08A83FA62A946EF800F180C3 /* BrushCollectionViewCell.swift in Sources */,
 				082E5E3E2A7D842500CF1776 /* EditorInteractor.swift in Sources */,
 				554F309E2A818C850077114D /* MenuView.swift in Sources */,
+				08A83FA22A946E7800F180C3 /* BrushCollectionManager.swift in Sources */,
 				082E5E562A7D842B00CF1776 /* PaywallRouter.swift in Sources */,
 				55FEB5A82A826F9400D82B25 /* SelectPlanView.swift in Sources */,
 				554F30A22A81A6CE0077114D /* CustomLineView.swift in Sources */,
@@ -841,6 +863,7 @@
 				088928822A82883600DA8230 /* EditorCollectionViewLayout.swift in Sources */,
 				082E5E772A7EB8F100CF1776 /* SquareModel.swift in Sources */,
 				55A857DA2A85840F001CA72A /* DescriptionView.swift in Sources */,
+				08A83FA82A94708500F180C3 /* BrushViewModel.swift in Sources */,
 				082E5E512A7D842B00CF1776 /* PaywallInteractor.swift in Sources */,
 				08A83F942A9270BB00F180C3 /* LayersView.swift in Sources */,
 				082E5E282A7D81BF00CF1776 /* BaseViewController.swift in Sources */,
@@ -849,6 +872,7 @@
 				082E5E3B2A7D842500CF1776 /* EditorViewController.swift in Sources */,
 				082E5E502A7D842B00CF1776 /* PaywallAssembly.swift in Sources */,
 				55A243282A82B6F900288046 /* UITapGestureRecoginzer+Extension.swift in Sources */,
+				08A83FA02A94695900F180C3 /* BrushListView.swift in Sources */,
 				08C952B92A7D5628009D501C /* SceneDelegate.swift in Sources */,
 				08A83F982A92A6BB00F180C3 /* LayersCollectionViewLayout.swift in Sources */,
 				082E5E1E2A7D7F3200CF1776 /* MainRouter.swift in Sources */,

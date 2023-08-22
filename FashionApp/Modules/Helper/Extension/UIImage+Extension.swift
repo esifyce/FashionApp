@@ -35,11 +35,26 @@ extension UIImage {
         public static var upgradeListIcon: UIImage = .init(named: "ipadUpgradeList")!
     }
     
+    enum Menu {
+        public static var standartBrushMenu: UIImage = .init(named: "standartBrushMenu")!
+        public static var customBrushMenu: UIImage = .init(named: "customBrushMenu")!
+        public static var clothesMenu: UIImage = .init(named: "clothesMenu")!
+        public static var closeMenu: UIImage = .init(named: "closeMenu")!
+    }
+    
     enum PayWall {
         public static var closeIcon: UIImage = .init(named: "close")!
         public static var logo: UIImage = .init(named: "payWallLogo")!
         public static var clockwise: UIImage = .init(named: "clockwise")!
         public static var upgradeList: UIImage = .init(named: "phoneUpgradeList")!
+    }
+    
+    enum Pen {
+        public static var penMenu: UIImage = .init(named: "penMenu")!
+        public static var pencilMenu: UIImage = .init(named: "pencilMenu")!
+        public static var markerMenu: UIImage = .init(named: "markerMenu")!
+        public static var feltMenu: UIImage = .init(named: "feltMenu")!
+        public static var easicMenu: UIImage = .init(named: "easicMenu")!
     }
     
     enum Clothes: Int, CustomStringConvertible {
