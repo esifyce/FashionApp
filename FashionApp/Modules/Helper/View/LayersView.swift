@@ -14,12 +14,22 @@ extension LayersView {
     }
 }
 
+protocol LayersViewProtocol: AnyObject {
+    func update(with viewModels: [LayerViewModel], isShow: Bool)
+    func hide()
+}
+
+protocol LayersViewDelegate: AnyObject {
+    func didSelect(at index: Int)
+}
+
 final class LayersView: UIView {
     
     // MARK: - Property
     
     private let appearance: Appearance
     private let collectionManager: LayersCollectionManagerProtocol
+    weak var delegate: LayersViewDelegate?
     
     // MARK: - Views
     
@@ -61,11 +71,6 @@ final class LayersView: UIView {
         super.init(frame: frame)
         injectCollection()
         configureUI()
-        collectionManager.displaySquareEditors([.init(layerName: "Layers 445"),
-                                                .init(layerName: "Layers 445"),
-                                                .init(layerName: "Layers 445"),
-                                                .init(layerName: "Layers 445"),
-                                                .init(layerName: "Layers 445")])
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -76,12 +81,10 @@ final class LayersView: UIView {
     
     // MARK: - Helpers
     
-    func show(_ isShow: Bool) {
+    private func appearAnimation() {
         UIViewPropertyAnimator(duration: 0.3, curve: .easeInOut) {
-             self.alpha = isShow ? 1.0 : 0.0
+             self.alpha =  1.0
          }.startAnimation()
-         
-         self.isHidden = !isShow
     }
 }
 
@@ -140,6 +143,26 @@ private extension LayersView {
     }
 }
 
-extension LayersView: LayersCollectionManagerDelegate {
+extension LayersView: LayersViewProtocol {
+    func update(with viewModels: [LayerViewModel], isShow: Bool = false) {
+        collectionManager.displaySquareEditors(viewModels)
+        if isShow {
+            appearAnimation()
+        }
+    }
     
+    func hide() {
+        UIView.animate(withDuration: 0.3) {
+            self.alpha = 0.0
+        } completion: { _ in
+            self.removeFromSuperview()
+        }
+    }
+}
+
+
+extension LayersView: LayersCollectionManagerDelegate {
+    func didSelect(at index: Int) {
+        delegate?.didSelect(at: index)
+    }
 }

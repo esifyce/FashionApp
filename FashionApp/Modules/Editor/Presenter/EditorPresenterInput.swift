@@ -11,4 +11,6 @@ protocol EditorPresenterInput: AnyObject {
     func viewDidLoad()
     func popViewController()
     func updateCollectionByCategory(index: UIImage.Clothes)
+    func layerButtonTapped()
+    func doneButtonTapped()
 }

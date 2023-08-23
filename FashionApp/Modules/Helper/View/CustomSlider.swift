@@ -9,6 +9,8 @@ import UIKit
 
 
 class CustomSlider: UISlider {
+    let gradientLayer = CAGradientLayer()
+    let baseLayer = CALayer()
     
     var gradientColor: UIColor? {
         didSet {
@@ -41,14 +43,13 @@ class CustomSlider: UISlider {
     }
     
     private func createBaseLayer() {
-        let baseLayer = CALayer()
-        //let imageLayer = CALayer()
+        baseLayer.removeFromSuperlayer()
         baseLayer.masksToBounds = true
         baseLayer.frame = .init(x: 0, y: 0, width: frame.width, height: frame.height)
         baseLayer.cornerRadius = baseLayer.frame.height / 2
         self.layer.insertSublayer(baseLayer, at: 0)
         
-        let gradientLayer = CAGradientLayer()
+        gradientLayer.removeFromSuperlayer()
         gradientLayer.frame = baseLayer.frame
         gradientLayer.cornerRadius = baseLayer.frame.height / 2
         if let gradientColor {
@@ -59,10 +60,6 @@ class CustomSlider: UISlider {
             gradientLayer.endPoint = CGPoint(x: 1, y: 0)
             self.layer.insertSublayer(gradientLayer, at: 1)
         }
-        
-//        imageLayer.frame = baseLayer.frame
-//        imageLayer.contents = UIScreen.main.bounds.width < 400 ? UIImage.Base.track.cgImage : UIImage.Base.trackLong.cgImage
-//        self.layer.insertSublayer(imageLayer, at: 1)
         
     }
     

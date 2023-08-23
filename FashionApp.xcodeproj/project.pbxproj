@@ -99,6 +99,8 @@
 		554F30A02A818FAA0077114D /* PriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F309F2A818FAA0077114D /* PriceView.swift */; };
 		554F30A22A81A6CE0077114D /* CustomLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F30A12A81A6CE0077114D /* CustomLineView.swift */; };
 		554F30A62A81B85C0077114D /* TrialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F30A52A81B85C0077114D /* TrialView.swift */; };
+		557341C52A94FBAA00A126A1 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557341C42A94FBAA00A126A1 /* Collection+Extension.swift */; };
+		557341C72A955EA500A126A1 /* IphoneItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557341C62A955EA500A126A1 /* IphoneItemView.swift */; };
 		558D83022A7D660A003EC291 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83012A7D660A003EC291 /* SnapKit */; };
 		558D83052A7D677C003EC291 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83042A7D677C003EC291 /* Realm */; };
 		558D83072A7D677C003EC291 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 558D83062A7D677C003EC291 /* RealmSwift */; };
@@ -253,6 +255,8 @@
 		554F309F2A818FAA0077114D /* PriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceView.swift; sourceTree = "<group>"; };
 		554F30A12A81A6CE0077114D /* CustomLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLineView.swift; sourceTree = "<group>"; };
 		554F30A52A81B85C0077114D /* TrialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialView.swift; sourceTree = "<group>"; };
+		557341C42A94FBAA00A126A1 /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		557341C62A955EA500A126A1 /* IphoneItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneItemView.swift; sourceTree = "<group>"; };
 		55A243232A82813400288046 /* CurrentPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPlanView.swift; sourceTree = "<group>"; };
 		55A243252A82834F00288046 /* CircleWithInnerCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWithInnerCircleView.swift; sourceTree = "<group>"; };
 		55A243272A82B6F900288046 /* UITapGestureRecoginzer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecoginzer+Extension.swift"; sourceTree = "<group>"; };
@@ -565,6 +569,7 @@
 				55A243312A82B7D400288046 /* CGFloat+Extension.swift */,
 				55A243352A82D26000288046 /* UIApplication+Extension.swift */,
 				5511A59A2A926CDF00DC9A8F /* UIView+Extension.swift */,
+				557341C42A94FBAA00A126A1 /* Collection+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -694,6 +699,7 @@
 			children = (
 				5511A5A42A92BB5300DC9A8F /* IphoneSettingsView.swift */,
 				5511A5A62A92BB5D00DC9A8F /* IpadSettingsView.swift */,
+				557341C62A955EA500A126A1 /* IphoneItemView.swift */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -898,6 +904,7 @@
 				082E5E822A7ED7D200CF1776 /* UIImage+Extension.swift in Sources */,
 				554F30A62A81B85C0077114D /* TrialView.swift in Sources */,
 				082E5E202A7D7F3200CF1776 /* MainInteractor.swift in Sources */,
+				557341C72A955EA500A126A1 /* IphoneItemView.swift in Sources */,
 				082E5E1F2A7D7F3200CF1776 /* MainAssembly.swift in Sources */,
 				554F309B2A814B300077114D /* IpadCollectionViewLayout.swift in Sources */,
 				082E5E542A7D842B00CF1776 /* PaywallViewController.swift in Sources */,
@@ -911,6 +918,7 @@
 				082E5E512A7D842B00CF1776 /* PaywallInteractor.swift in Sources */,
 				08A83F942A9270BB00F180C3 /* LayersView.swift in Sources */,
 				082E5E282A7D81BF00CF1776 /* BaseViewController.swift in Sources */,
+				557341C52A94FBAA00A126A1 /* Collection+Extension.swift in Sources */,
 				082E5E6E2A7D851900CF1776 /* TemplatePresenter.swift in Sources */,
 				08A83F9C2A92A91100F180C3 /* LayerCollectionViewCell.swift in Sources */,
 				082E5E3B2A7D842500CF1776 /* EditorViewController.swift in Sources */,

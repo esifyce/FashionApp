@@ -30,7 +30,9 @@ final class LayersSquareConfigurator: LayersCollectionConfiguratorProtocol {
     }
 }
 
-protocol LayersCollectionManagerDelegate: AnyObject {}
+protocol LayersCollectionManagerDelegate: AnyObject {
+    func didSelect(at index: Int)
+}
 
 protocol LayersCollectionManagerProtocol: AnyObject {
     func injectCollection(_ collectionView: UICollectionView)
@@ -50,6 +52,7 @@ final class LayersCollectionManager: NSObject, LayersCollectionManagerProtocol {
         self.collectionView?.collectionViewLayout = LayersCollectionViewLayout.createLayout()
         self.collectionView?.dataSource = self
         self.collectionView?.delegate = self
+        self.collectionView?.allowsMultipleSelection = false
         self.collectionView?.register(LayerCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: LayerCollectionViewCell.self))
     }
     
@@ -83,9 +86,21 @@ extension LayersCollectionManager: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let configurator = configuratorsDataSource[indexPath.row]
+        let configurator = configuratorsDataSource[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: configurator.reuseId, for: indexPath)
         configurator.setupCell(cell)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let configurator = configuratorsDataSource[indexPath.item]
+        guard let cell = collectionView.cellForItem(at: indexPath) as? LayerCollectionViewCell else { return }
+        cell.setSelected()
+        delegate?.didSelect(at: indexPath.item)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? LayerCollectionViewCell else { return }
+        cell.setDeselected()
     }
 }

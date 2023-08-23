@@ -8,13 +8,20 @@
 import UIKit
 import SnapKit
 
+enum EditStyle {
+    case brush
+    case standardBrush
+    case clothes
+    case menu
+}
+
 extension EditorViewController {
     struct Appearance {
         let isIpad = UIDevice.current.userInterfaceIdiom == .pad
         let topOffset: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? -16 : -36
         let trailingOffset: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? -10 : -7
         let widthValue: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 241 : 151
-        let heightValue: CGFloat = 620
+        let heightValue: CGFloat = UIDevice.current.userInterfaceIdiom == .pad ? 700 : CGFloat(666).autoIphoneHeightSize
         let stackClickedIcon: UIImage = UIImage.Base.stackClickedIcon.withRenderingMode(.alwaysOriginal)
         let stackIcon: UIImage = UIImage.Base.stackIcon.withRenderingMode(.alwaysOriginal)
     }
@@ -24,7 +31,20 @@ final class EditorViewController: BaseViewController {
     // MARK: - Property
     private var presenter: EditorPresenterInput
     private var appearance: Appearance
-    private var stackIsClicked: Bool = false
+    
+    var keyWindow: UIWindow? {
+        UIApplication
+            .shared
+            .connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .flatMap { $0.windows }
+            .last { $0.isKeyWindow }
+    }
+    
+    var isLandscape: Bool {
+        UIApplication.shared.isLandscape
+    }
+    
     // MARK: - Init
     
     init(presenter: EditorPresenterInput) {
@@ -38,6 +58,12 @@ final class EditorViewController: BaseViewController {
     }
     
     // MARK: - Views
+    
+    private lazy var backgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black.withAlphaComponent(0.3)
+        return view
+    }()
     
     private lazy var headerView: UIView = {
        let headerView = UIView()
@@ -113,16 +139,28 @@ final class EditorViewController: BaseViewController {
         StatusBar()
     }()
     
-    private lazy var layersView: LayersView = {
-       LayersView()
+    private lazy var layersView: LayersViewProtocol = {
+        let view = LayersView()
+        view.delegate = presenter as? LayersViewDelegate
+        return view
     }()
     
     private lazy var menuListView: MenuListView = {
-       MenuListView()
+       let view = MenuListView()
+        view.delegate = presenter as? MenuListViewDelegate
+        return view
     }()
     
     private lazy var brushListView: BrushListView = {
-        BrushListView()
+        let view = BrushListView()
+        view.delegate = presenter as? BrushListViewDelegate
+        return view
+    }()
+    
+    private lazy var layerCustomizeView: LayerCustomizeView = {
+        let view = LayerCustomizeView()
+        view.delegate = presenter as? LayerCustomizeViewDelegate
+        return view
     }()
     
     // MARK: - Lifecycle
@@ -132,10 +170,17 @@ final class EditorViewController: BaseViewController {
         setupUI()
         addObservers()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        layerCustomizeView.layer.cornerRadius = 20
+        layerCustomizeView.layer.applyFigmaShadow(color: UIColor.blackShadowColor, alpha: 0.2, x: 8, y: 0, blur: 40, spread: 0)
+    }
 }
 
 // MARK: - EditorViewControllerInput
 extension EditorViewController: EditorViewControllerInput {
+    
     func addedItemToManiquen(dressName: String) {
         skinImageView.subviews.forEach({ $0.removeFromSuperview() })
         let imageView = UIImageView()
@@ -144,6 +189,73 @@ extension EditorViewController: EditorViewControllerInput {
         let width = skinImageView.frame.width
         let height = skinImageView.frame.height
         imageView.frame = CGRect(x: 0, y: 0, width: width, height: height)
+    }
+
+    func showLayerView(with viewModel: [LayerViewModel]) {
+        setupLayersViewLayout()
+        layersView.update(with: viewModel, isShow: true)
+    }
+    
+    func updateLayerView(with viewModel: [LayerViewModel]) {
+        hideBackgroundView()
+        layersView.update(with: viewModel, isShow: false)
+    }
+    
+    func hideLayerView() {
+        layersView.hide()
+    }
+    
+    func showLayerCustomizeView(with viewModel: LayerViewModel) {
+        setupLayerCustomizeViewLayout()
+        layerCustomizeView.update(with: viewModel, isShow: true)
+    }
+    
+    func hideLayerCustomizeView() {
+        layerCustomizeView.hide()
+    }
+    
+    func toggleLayerButton(_ isClicked: Bool) {
+        let image = isClicked ? appearance.stackClickedIcon : appearance.stackIcon
+        layersButton.setImage(image ,for: .normal)
+    }
+    
+    func showColorPicker() {
+        let picker = UIColorPickerViewController()
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
+    }
+            
+    func dismiss() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func show(with edit: EditStyle) {
+        switch edit {
+        case .brush:
+            brushListView.isHidden = false
+            menuListView.isHidden = true
+            collectionView.isHidden = true
+            controlBar.isHidden = true
+        case .clothes:
+            brushListView.isHidden = true
+            menuListView.isHidden = true
+            collectionView.isHidden = false
+            controlBar.isHidden = false
+        case .standardBrush:
+            brushListView.isHidden = true
+            menuListView.isHidden = true
+            collectionView.isHidden = true
+            controlBar.isHidden = true
+        case .menu:
+            brushListView.isHidden = true
+            menuListView.isHidden = false
+            collectionView.isHidden = true
+            controlBar.isHidden = true
+        }
+    }
+    
+    func setDoneButton(_ enabled: Bool) {
+        doneButton.isEnabled = !enabled
     }
 }
 
@@ -166,7 +278,8 @@ fileprivate extension EditorViewController {
         controlBar.setup(models: viewModel, index: .zero)
         collectionView.isHidden = true
         controlBar.isHidden = true
-        menuListView.isHidden = true
+        menuListView.isHidden = false
+        brushListView.isHidden = true
     }
     
     func addObservers() {
@@ -176,15 +289,13 @@ fileprivate extension EditorViewController {
     func addSubviews() {
         [skinImageView, headerView,
          layersButton, collectionView,
-         controlBar, layersView,
-         menuListView, brushListView].forEach({ view.addSubview($0) })
+         controlBar, menuListView, brushListView].forEach({ view.addSubview($0) })
         
         [backButton, backTitle,
         stepStackView, doneButton].forEach({ headerView.addSubview($0) })
         
         [headerView, layersButton,
-         collectionView, controlBar,
-         layersView, menuListView, brushListView].forEach({ view.bringSubviewToFront($0) })
+         collectionView, controlBar, menuListView, brushListView].forEach({ view.bringSubviewToFront($0) })
     }
     
     func setConstraints() {
@@ -250,13 +361,6 @@ fileprivate extension EditorViewController {
             make.directionalHorizontalEdges.equalToSuperview()
         }
         
-        layersView.snp.makeConstraints { make in
-            make.top.equalTo(headerView.snp.bottom).offset(appearance.topOffset)
-            make.trailing.equalTo(layersButton.snp.leading).offset(appearance.trailingOffset)
-            make.width.equalTo(appearance.widthValue)
-            make.height.equalTo(appearance.heightValue.autoIphoneHeightSize)
-        }
-        
         menuListView.snp.makeConstraints { make in
             make.height.equalTo(44)
             make.width.equalTo(44 * 3 + 16 * 2)
@@ -290,17 +394,11 @@ fileprivate extension EditorViewController {
         }), for: .touchUpInside)
         
         doneButton.addAction(UIAction(handler: { [weak self] _ in
-            self?.presenter.popViewController()
+            self?.presenter.doneButtonTapped()
         }), for: .touchUpInside)
         
         layersButton.addAction(UIAction(handler: { [weak self] _ in
-            guard let self else { return }
-            self.stackIsClicked.toggle()
-            self.layersButton.setImage(self.stackIsClicked
-                                        ? self.appearance.stackClickedIcon
-                                        : self.appearance.stackIcon,
-                                        for: .normal)
-            self.layersView.show(self.stackIsClicked)
+            self?.presenter.layerButtonTapped()
         }), for: .touchUpInside)
         
         controlBar.didTapCallBack = { [weak self] index in
@@ -321,12 +419,76 @@ fileprivate extension EditorViewController {
         default:
             break
         }
+        changeLayersViewLayout()
+    }
+    
+    func changeLayersViewLayout() {
+        guard let layersView = self.layersView as? UIView else { return }
         
-        layersView.snp.remakeConstraints { make in
+        if layersView.isDescendant(of: view) {
+            layersView.snp.remakeConstraints { make in
+                make.top.equalTo(headerView.snp.bottom).offset(appearance.topOffset)
+                make.trailing.equalTo(layersButton.snp.leading).offset(appearance.trailingOffset)
+                make.width.equalTo(appearance.widthValue)
+                make.height.equalTo(appearance.heightValue)
+            }
+        }
+    }
+}
+
+// MARK: - LayersViewsLayout
+private extension EditorViewController {
+    func setupLayersViewLayout() {
+        guard let layersView = self.layersView as? UIView else { return }
+        view.addSubview(layersView)
+        layersView.snp.makeConstraints { make in
             make.top.equalTo(headerView.snp.bottom).offset(appearance.topOffset)
             make.trailing.equalTo(layersButton.snp.leading).offset(appearance.trailingOffset)
             make.width.equalTo(appearance.widthValue)
-            make.height.equalTo(heightValue)
+            make.height.equalTo(appearance.heightValue)
         }
+    }
+    
+    func setupLayerCustomizeViewLayout() {
+        if traitCollection.horizontalSizeClass == .compact && traitCollection.verticalSizeClass == .regular {
+            keyWindow?.addSubview(backgroundView)
+            backgroundView.frame = view.bounds
+            UIView.animate(withDuration: 0.2) {
+                self.backgroundView.alpha = 1.0
+            }
+            keyWindow?.addSubview(layerCustomizeView)
+            layerCustomizeView.snp.makeConstraints { make in
+                make.centerX.centerY.equalToSuperview()
+                make.height.equalToSuperview().multipliedBy(0.68)
+                make.width.equalToSuperview().multipliedBy(0.7)
+            }
+        } else {
+            view.addSubview(layerCustomizeView)
+            layerCustomizeView.snp.makeConstraints { make in
+                make.centerX.equalToSuperview()
+                make.top.equalToSuperview().offset(110)
+                make.height.equalTo(573)
+                make.width.equalTo(393)
+            }
+        }
+    }
+    
+    func hideBackgroundView() {
+        UIView.animate(withDuration: 0.2) {
+            self.backgroundView.alpha = 0.0
+        } completion: { _ in
+            self.backgroundView.removeFromSuperview()
+        }
+    }
+}
+
+// MARK: - UIColorPickerViewControllerDelegate
+extension EditorViewController: UIColorPickerViewControllerDelegate {
+    func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
+        dismiss(animated: true)
+    }
+    
+    func colorPickerViewController(_ viewController: UIColorPickerViewController, didSelect color: UIColor, continuously: Bool) {
+        brushListView.update(with: color)
     }
 }

@@ -65,7 +65,19 @@ final class LayerCollectionViewCell: UICollectionViewCell {
     }
     
     func configureCell(model: LayerViewModel) {
-        layerName.text = model.layerName
+        layerName.text = model.name
+    }
+    
+    override func prepareForReuse() {
+        containerView.layer.borderColor = UIColor.borderColor.cgColor
+    }
+    
+    func setSelected() {
+        containerView.layer.borderColor =  UIColor.mainColor.cgColor
+    }
+    
+    func setDeselected() {
+        containerView.layer.borderColor =  UIColor.borderColor.cgColor
     }
 }
 

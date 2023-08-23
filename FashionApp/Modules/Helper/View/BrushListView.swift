@@ -14,12 +14,19 @@ extension BrushListView {
     }
 }
 
+protocol BrushListViewDelegate: AnyObject {
+    func colorPickerTapped()
+    func closeTapped()
+}
+
 final class BrushListView: UIView {
     
     // MARK: - Property
     
     private let appearance: Appearance
     private let collectionManager: BrushCollectionManagerProtocol
+    
+    weak var delegate: BrushListViewDelegate?
     
     // MARK: - Views
     
@@ -66,6 +73,10 @@ final class BrushListView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func update(with color: UIColor) {
+        colorPicker.backgroundColor = color
+    }
 }
 
 // MARK: - private BrushListView
@@ -107,12 +118,12 @@ private extension BrushListView {
     }
     
     func addTargets() {
-        closeButton.addAction(UIAction(handler: { _ in
-            
+        closeButton.addAction(UIAction(handler: { [weak self] _ in
+            self?.delegate?.closeTapped()
         }), for: .touchUpInside)
         
-        colorPicker.addAction(UIAction(handler: { _ in
-            
+        colorPicker.addAction(UIAction(handler: { [weak self] _ in
+            self?.delegate?.colorPickerTapped()
         }), for: .touchUpInside)
     }
 }

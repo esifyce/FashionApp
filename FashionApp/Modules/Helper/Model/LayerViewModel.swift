@@ -8,5 +8,25 @@
 import Foundation
 
 struct LayerViewModel {
-    let layerName: String
+    var name: String
+    var color: UIColor
+    var actions: [LayerAction]
+    var opacity: Int
+    
+    init() {
+        name = ""
+        color = .red
+        actions = []
+        opacity = 0
+    }
+    
+    init(name: String,
+         color: UIColor,
+         actions: [LayerAction],
+         opacity: Int) {
+        self.name = name
+        self.color = color
+        self.actions = actions
+        self.opacity = opacity
+    }
 }

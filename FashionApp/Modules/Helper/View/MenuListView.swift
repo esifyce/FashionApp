@@ -8,7 +8,16 @@
 import UIKit
 import SnapKit
 
+
+protocol MenuListViewDelegate: AnyObject {
+    func clothesTapped()
+    func standartBrushTapped()
+    func customBrushTapped()
+}
+
 class MenuListView: UIView {
+    
+    weak var delegate: MenuListViewDelegate?
     
     // MARK: - Views
 
@@ -79,16 +88,16 @@ private extension MenuListView {
     }
     
     func addTargets() {
-        clothesMenuButton.addAction(UIAction(handler: { _ in
-            print("1")
+        clothesMenuButton.addAction(UIAction(handler: { [weak self] _ in
+            self?.delegate?.clothesTapped()
         }), for: .touchUpInside)
         
-        standartBrushMenuButton.addAction(UIAction(handler: { _ in
-            print("2")
+        standartBrushMenuButton.addAction(UIAction(handler: { [weak self] _ in
+            self?.delegate?.standartBrushTapped()
         }), for: .touchUpInside)
         
-        customBrushMenuButton.addAction(UIAction(handler: { _ in
-            print("3")
+        customBrushMenuButton.addAction(UIAction(handler: { [weak self] _ in
+            self?.delegate?.customBrushTapped()
         }), for: .touchUpInside)
     }
 }

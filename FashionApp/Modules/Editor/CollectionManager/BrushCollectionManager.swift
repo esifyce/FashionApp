@@ -49,6 +49,7 @@ final class BrushCollectionManager: NSObject, BrushCollectionManagerProtocol {
         self.collectionView = collectionView
         self.collectionView?.collectionViewLayout = BrushCollectionViewLayout.createLayout()
         self.collectionView?.dataSource = self
+        self.collectionView?.showsHorizontalScrollIndicator = false
         self.collectionView?.delegate = self
         self.collectionView?.register(BrushCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: BrushCollectionViewCell.self))
     }

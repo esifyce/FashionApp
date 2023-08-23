@@ -17,6 +17,10 @@ enum LayerAction {
     case delete
 }
 
+protocol LayerCustomizeViewDelegate: AnyObject {
+    func didTapClose(with viewModel: LayerViewModel)
+}
+
 extension LayerCustomizeView {
     struct Appearance {
         let closeImage = UIImage.PayWall.closeIcon
@@ -25,6 +29,9 @@ extension LayerCustomizeView {
 
 final class LayerCustomizeView: UIView {
     let appearance = Appearance()
+    var viewModel: LayerViewModel = LayerViewModel()
+    weak var delegate: LayerCustomizeViewDelegate?
+    
     private var actions: [LayerAction] = []
     var layerName: String = ""
     
@@ -54,6 +61,7 @@ final class LayerCustomizeView: UIView {
     private lazy var closeButton: UIButton = {
         let button = UIButton()
         button.setImage(appearance.closeImage, for: .normal)
+        button.addTarget(self, action: #selector(didTapCloseButton), for: .touchUpInside)
         return button
     }()
     
@@ -75,7 +83,6 @@ final class LayerCustomizeView: UIView {
         slider.minimumValue = 0
         slider.maximumValue = 100
         slider.value = 0
-        slider.gradientColor = UIColor.mainColor
         slider.addTarget(self, action: #selector(valueChanged(_:)), for: .valueChanged)
         return slider
     }()
@@ -168,12 +175,11 @@ final class LayerCustomizeView: UIView {
     }
     
     func actionTapped(_ action: LayerAction) {
-        if actions.contains(action) {
-            actions.removeAll { $0 == action }
+        if viewModel.actions.contains(action) {
+            viewModel.actions.removeAll { $0 == action }
         } else {
-            actions.append(action)
+            viewModel.actions.append(action)
         }
-        print(actions)
     }
     
     override func layoutSubviews() {
@@ -199,7 +205,8 @@ private extension LayerCustomizeView {
     
     func makeConstraints() {
         titleContainerView.snp.makeConstraints { make in
-            make.leading.trailing.top.equalToSuperview().inset(16)
+            make.top.equalToSuperview().offset(16)
+            make.leading.trailing.equalToSuperview().inset(16)
             make.height.equalTo(54)
         }
         
@@ -277,23 +284,85 @@ private extension LayerCustomizeView {
             make.top.equalTo(mergeAllActionView.snp.bottom).offset(8)
             make.horizontalEdges.equalToSuperview().inset(16)
             make.height.equalTo(55)
-            make.bottom.equalToSuperview().offset(-16)
+        }
+    }
+    
+    func setup(with actions: [LayerAction]) {
+        for action in actions {
+            if action == .hide {
+                hideActionView.isSelected = true
+                hideActionView.setSelected(true)
+            }
+            if action == .lock {
+                lockActionView.isSelected = true
+                lockActionView.setSelected(true)
+            }
+            if action == .duplicate {
+                duplicateActionView.isSelected = true
+                duplicateActionView.setSelected(true)
+            }
+            if action == .mergeAll {
+                 mergeAllActionView.isSelected = true
+                mergeAllActionView.setSelected(true)
+            }
+            if action == .mergePrevious {
+                mergePreviousActionView.isSelected = true
+                mergePreviousActionView.setSelected(true)
+            }
         }
     }
 }
 
 extension LayerCustomizeView {
     @objc func valueChanged(_ slider: UISlider) {
-        percentLabel.text = "\(Int(slider.value))%"
+        let value = Int(slider.value)
+        percentLabel.text = "\(value)%"
+        viewModel.opacity = value
+    }
+    
+    func update(with viewModel: LayerViewModel, isShow: Bool) {
+        self.viewModel = viewModel
+        process()
+        if isShow {
+            show()
+        }
+    }
+    
+    func show() {
+        UIView.animate(withDuration: 0.5) {
+            self.alpha = 1.0
+        }
+    }
+    
+    func hide() {
+        UIView.animate(withDuration: 0.5) {
+            self.alpha = 0.0
+        } completion: { _ in
+            self.removeFromSuperview()
+        }
+    }
+    
+    func process() {
+        slider.gradientColor = viewModel.color
+        nameTextField.text = viewModel.name
+        setup(with: viewModel.actions)
+        percentLabel.text = "\(viewModel.opacity)"
+        slider.value = Float(viewModel.opacity)
     }
 }
 
 extension LayerCustomizeView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let text = textField.text else { return false }
-        layerName = text
-        print(layerName)
+        viewModel.name = text
         textField.resignFirstResponder()
         return true
+    }
+}
+
+extension LayerCustomizeView {
+    @objc func didTapCloseButton() {
+        delegate?.didTapClose(with: viewModel)
+        hide()
     }
 }

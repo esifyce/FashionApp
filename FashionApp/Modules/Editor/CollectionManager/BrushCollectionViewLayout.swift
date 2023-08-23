@@ -22,6 +22,9 @@ final class BrushCollectionViewLayout: UICollectionViewLayout{
         section.interGroupSpacing = 16
         
         let layout = UICollectionViewCompositionalLayout(section: section)
+        let configuration = UICollectionViewCompositionalLayoutConfiguration()
+        configuration.scrollDirection = .horizontal
+        layout.configuration = configuration
         return layout
     }
 }

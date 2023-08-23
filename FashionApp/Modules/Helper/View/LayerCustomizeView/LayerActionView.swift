@@ -10,7 +10,7 @@ import SnapKit
 
 
 final class LayerActionView: UIView {
-    private var isTapped = false
+    var isSelected: Bool = false
     private var callBack: (() -> ())?
     private var normalImage = UIImage()
     
@@ -45,6 +45,18 @@ final class LayerActionView: UIView {
         imageView.image = self.normalImage
         titleLabel.text = text
         self.callBack = callBack
+    }
+    
+    func setSelected(_ isSelected: Bool) {
+        if isSelected {
+            imageView.tintColor = .white
+            titleLabel.textColor = .white
+            backgroundColor = UIColor.darkBlueColor
+        } else {
+            imageView.tintColor = .black
+            titleLabel.textColor = .black
+            backgroundColor = UIColor.lightGrayColor
+        }
     }
 }
 
@@ -83,16 +95,7 @@ private extension LayerActionView {
     
     @objc func tapped() {
         callBack?()
-        isTapped.toggle()
-        
-        if isTapped {
-            imageView.tintColor = .white
-            titleLabel.textColor = .white
-            backgroundColor = UIColor.darkBlueColor
-        } else {
-            imageView.tintColor = .black
-            titleLabel.textColor = .black
-            backgroundColor = UIColor.lightGrayColor
-        }
+        isSelected.toggle()
+        setSelected(isSelected)
     }
 }

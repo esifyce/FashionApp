@@ -8,8 +8,32 @@
 import UIKit
 import FrameBuilder
 
+enum SettingItems: Int, CaseIterable, CustomStringConvertible {
+    case subscribe = 0
+    case community
+    case terms
+    case contactUs
+    case importTo
+    
+    var description: String {
+        switch self {
+        case .subscribe:
+            return "Subscribe Now"
+        case .community:
+            return "Community"
+        case .terms:
+            return "Terms"
+        case .contactUs:
+            return "Contact Us"
+        case .importTo:
+            return "Import"
+        }
+    }
+}
+
 final class IphoneSettingsView: UIView {
     var maskLayer: CAShapeLayer?
+    
     private lazy var backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = .black.withAlphaComponent(0.4)
@@ -99,8 +123,6 @@ private extension IphoneSettingsView {
     func addSubviews() {
         addSubview(backgroundView)
         addSubview(settingView)
-        
-        
     }
     
     func makeConstraints() {
@@ -112,13 +134,31 @@ private extension IphoneSettingsView {
                 .width(frame.size.width)
         )
         
-        for item in 0..<5 {
-            let itemView = UIView()
-            itemView.backgroundColor = .white
+        for item in SettingItems.allCases {
+            let itemView = IphoneItemView()
+            itemView.setTitle(item.description)
             settingView.addSubview(itemView)
-            itemView.tag = item
+            itemView.tag = item.rawValue
+            itemView.isUserInteractionEnabled = true
+            itemView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(itemTapped(_:))))
             itemView.layer.cornerRadius = 10
-            itemView.frame = CGRect(x: 16, y: 60 + (item * 44 + item * 12), width: Int(frame.size.width) - 32, height: 44)
+            itemView.frame = CGRect(x: 16, y: 60 + (item.rawValue * 44 + item.rawValue * 12), width: Int(frame.size.width) - 32, height: 44)
+        }
+    }
+    
+    @objc func itemTapped(_ view: UIView) {
+        guard let item = SettingItems(rawValue: view.tag) else { return }
+        switch item {
+        case .subscribe:
+            print("Subscribe Now")
+        case .community:
+            print("Community")
+        case .terms:
+            print("Terms")
+        case .contactUs:
+            print("Contact Us")
+        case .importTo:
+            print("Import")
         }
     }
 }
