@@ -16,4 +16,9 @@ extension EditorRouter: EditorRouterInput {
     func popViewController() {
         view?.navigationController?.popViewController(animated: true)
     }
+    
+    func shareSkinImage(with image: UIImage?) {
+        let controller = SnapshotAssembly.assemble(skinImage: image)
+        view?.navigationController?.pushViewController(controller, animated: true)
+    }
 }

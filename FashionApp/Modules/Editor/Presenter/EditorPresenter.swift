@@ -35,8 +35,14 @@ extension EditorPresenter: EditorPresenterInput {
     }
     
     func updateCollectionByCategory(index: UIImage.Clothes) {
-        let viewModel = index.getClothes.map({ EditorViewModel(dressName: $0) })
-        collectionManager.displaySquareEditors(viewModel)
+        let clothes = index.getClothes
+        let previewClothes = index.previewClothes
+         
+         let viewModel = zip(clothes, previewClothes).map { (name, preview) in
+             EditorViewModel(nameDress: name, typeDress: index, previewDress: preview, isSelectedImage: false)
+         }
+         
+         collectionManager.displaySquareEditors(viewModel)
     }
     
     func layerButtonTapped() {
@@ -55,7 +61,7 @@ extension EditorPresenter: EditorPresenterInput {
     }
     
     func doneButtonTapped() {
-        
+        router.shareSkinImage(with: view?.snapshotImage())
     }
 }
 
@@ -65,8 +71,8 @@ private extension EditorPresenter {
 
 // MARK: - EditorCollectionManagerDelegate
 extension EditorPresenter: EditorCollectionManagerDelegate {
-    func addedItemToManiquen(dressName: String) {
-        view?.addedItemToManiquen(dressName: dressName)
+    func addedItemToManiquen(viewModel: EditorViewModel) {
+        view?.addedItemToManiquen(viewModel: viewModel)
     }
 }
 

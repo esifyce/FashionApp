@@ -31,6 +31,8 @@ final class EditorViewController: BaseViewController {
     // MARK: - Property
     private var presenter: EditorPresenterInput
     private var appearance: Appearance
+    private var clothesStack: [EditorViewModel] = []
+    private var rendoStack: [EditorViewModel] = []
     
     var keyWindow: UIWindow? {
         UIApplication
@@ -162,7 +164,7 @@ final class EditorViewController: BaseViewController {
         view.delegate = presenter as? LayerCustomizeViewDelegate
         return view
     }()
-    
+        
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -181,14 +183,14 @@ final class EditorViewController: BaseViewController {
 // MARK: - EditorViewControllerInput
 extension EditorViewController: EditorViewControllerInput {
     
-    func addedItemToManiquen(dressName: String) {
-        skinImageView.subviews.forEach({ $0.removeFromSuperview() })
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: dressName)
-        skinImageView.addSubview(imageView)
-        let width = skinImageView.frame.width
-        let height = skinImageView.frame.height
-        imageView.frame = CGRect(x: 0, y: 0, width: width, height: height)
+    func addedItemToManiquen(viewModel: EditorViewModel) {
+        clothesStack.removeAll(where: { $0.typeDress == viewModel.typeDress })
+        clothesStack.append(viewModel)
+        updateSkinClothes()
+    }
+    
+    func snapshotImage() -> UIImage? {
+        takeSnapshotOfView(view: skinImageView)
     }
 
     func showLayerView(with viewModel: [LayerViewModel]) {
@@ -242,7 +244,7 @@ extension EditorViewController: EditorViewControllerInput {
             collectionView.isHidden = false
             controlBar.isHidden = false
         case .standardBrush:
-            brushListView.isHidden = true
+            brushListView.isHidden = false
             menuListView.isHidden = true
             collectionView.isHidden = true
             controlBar.isHidden = true
@@ -385,12 +387,16 @@ fileprivate extension EditorViewController {
             self?.presenter.popViewController()
         }), for: .touchUpInside)
         
-        leftStepButton.addAction(UIAction(handler: { _ in
-            print("Did tap left")
+        leftStepButton.addAction(UIAction(handler: { [weak self] _ in
+            guard let popClothes = self?.clothesStack.popLast() else { return }
+            self?.rendoStack.append(popClothes)
+            self?.updateSkinClothes()
         }), for: .touchUpInside)
         
-        rightStepButton.addAction(UIAction(handler: { _ in
-            print("Did tap right")
+        rightStepButton.addAction(UIAction(handler: { [weak self] _ in
+            guard let popClothes = self?.rendoStack.popLast() else { return }
+            self?.clothesStack.append(popClothes)
+            self?.updateSkinClothes()
         }), for: .touchUpInside)
         
         doneButton.addAction(UIAction(handler: { [weak self] _ in
@@ -479,6 +485,26 @@ private extension EditorViewController {
         } completion: { _ in
             self.backgroundView.removeFromSuperview()
         }
+    }
+    
+    func takeSnapshotOfView(view: UIView) -> UIImage? {
+        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
+        let image = renderer.image { context in
+            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        }
+        return image
+    }
+    
+    func updateSkinClothes() {
+        skinImageView.subviews.forEach({ $0.removeFromSuperview() })
+        clothesStack.forEach({ clothes in
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: clothes.nameDress)
+            skinImageView.addSubview(imageView)
+            let width = skinImageView.frame.width
+            let height = skinImageView.frame.height
+            imageView.frame = CGRect(x: 0, y: 0, width: width, height: height)
+        })
     }
 }
 

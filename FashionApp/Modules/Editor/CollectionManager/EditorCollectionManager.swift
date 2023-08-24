@@ -31,7 +31,7 @@ final class EditorSquareConfigurator: EditorCollectionConfiguratorProtocol {
 }
 
 protocol EditorCollectionManagerDelegate: AnyObject {
-    func addedItemToManiquen(dressName: String)
+    func addedItemToManiquen(viewModel: EditorViewModel)
 }
 
 protocol EditorCollectionManagerProtocol: AnyObject {
@@ -95,7 +95,15 @@ extension EditorCollectionManager: UICollectionViewDelegate, UICollectionViewDat
         let configurator = configuratorsDataSource[indexPath.row]
         switch configurator.cellType {
         case .editorSquare:
-            delegate?.addedItemToManiquen(dressName: configurator.model?.dressName ?? "")
+            guard let currentModel = configurator.model else { return }
+            delegate?.addedItemToManiquen(viewModel: currentModel)
+            configuratorsDataSource = configuratorsDataSource.map { configurator in
+                var mutableConfigurator = configurator
+                mutableConfigurator.model?.isSelectedImage = false
+                return mutableConfigurator
+            }
+            configuratorsDataSource[indexPath.row].model?.isSelectedImage = true
+            collectionView.reloadData()
         }
     }
 }

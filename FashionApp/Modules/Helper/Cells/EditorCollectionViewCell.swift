@@ -8,8 +8,15 @@
 import UIKit
 import SnapKit
 
-class EditorCollectionViewCell: UICollectionViewCell {
+extension EditorCollectionViewCell {
+    struct Appearance {
+        let isIpad = UIDevice.current.userInterfaceIdiom == .pad
+    }
+}
+
+final class EditorCollectionViewCell: UICollectionViewCell {
     // MARK: - Property
+    let appearance: Appearance
     
     // MARK: - Views
     
@@ -18,9 +25,17 @@ class EditorCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
+    private lazy var selectedImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage.Base.ckeckmarkYesIcon
+        imageView.isHidden = true
+         return imageView
+    }()
+    
     // MARK: - Init
     
     override init(frame: CGRect) {
+        appearance = Appearance()
         super.init(frame: frame)
         configureUI()
     }
@@ -30,8 +45,9 @@ class EditorCollectionViewCell: UICollectionViewCell {
     }
     
     func configureCell(model: EditorViewModel) {
-        dressImage.image = UIImage(named: model.dressName)
+        dressImage.image = UIImage(named: model.previewDress)
         dressImage.contentMode = .scaleAspectFill
+        selectedImage.isHidden = !model.isSelectedImage
     }
 }
 
@@ -46,6 +62,7 @@ private extension EditorCollectionViewCell {
     
     func addViews() {
         [dressImage].forEach({ contentView.addSubview($0) })
+        dressImage.addSubview(selectedImage)
     }
     
     func addContraints() {
@@ -54,6 +71,12 @@ private extension EditorCollectionViewCell {
             make.width.equalTo(contentView.bounds.width)
             make.height.equalTo(contentView.bounds.height)
         }
+        
+        selectedImage.snp.makeConstraints { make in
+            make.size.equalTo(appearance.isIpad ? 53 : 43)
+            make.center.equalToSuperview()
+        }
+        
     }
     
     func configStyle() {

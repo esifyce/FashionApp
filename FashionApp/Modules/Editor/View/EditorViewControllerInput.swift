@@ -5,10 +5,10 @@
 //  Created by Krasivo on 04.02.2023.
 //
 
-import Foundation
+import UIKit
 
 protocol EditorViewControllerInput: AnyObject {
-    func addedItemToManiquen(dressName: String)
+    func addedItemToManiquen(viewModel: EditorViewModel)
     func showLayerView(with viewModel: [LayerViewModel])
     func hideLayerView()
     func updateLayerView(with viewModel: [LayerViewModel])
@@ -19,4 +19,5 @@ protocol EditorViewControllerInput: AnyObject {
     func dismiss()
     func setDoneButton(_ enabled: Bool)
     func show(with edit: EditStyle)
+    func snapshotImage() -> UIImage?
 }

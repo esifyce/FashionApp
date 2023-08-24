@@ -21,13 +21,15 @@ extension UIImage {
         public static var stackIcon: UIImage = .init(named: "stack")!
         public static var stackClickedIcon: UIImage = .init(named: "stackClick")!
         public static var backDrawingIcon: UIImage = .init(named: "backDrawing")!
-        public static var ckeckmarkYesIcon: UIImage = .init(named: "ckeckmarkYes")!
+        public static var ckeckmarkYesIcon: UIImage = .init(named: "yesCheckmark")!
         public static var cornerIcon: UIImage = .init(named: "corner")!
         public static var eyeIcon: UIImage = .init(named: "eyeIcon")!
         public static var lineIcon: UIImage = .init(named: "lineIcon")!
         public static var track: UIImage = .init(named: "track")!
         public static var trackLong: UIImage = .init(named: "trackLong")!
         public static var scrubber: UIImage = .init(named: "scrubber")!
+        public static var shareSkinPreview: UIImage = .init(named: "shareSkinPreview")!
+        public static var downloadSkinPreview: UIImage = .init(named: "downloadSkinPreview")!
     }
     
     enum Iphone {
@@ -79,7 +81,20 @@ extension UIImage {
         var getClothes: [String] {
             switch self {
             case .shoes:
-                return ["shoes1", "shoes2", "shoes3", "shoes4", "shoes5"]
+                return ["shoes1", "shoes2", "shoes3", "shoes4"]
+            case .hair:
+                return ["hair1", "hair2", "hair3", "hair4", "hair5"]
+            case .pants:
+                return ["pants1", "pants2", "pants3", "pants4"]
+            case .dress:
+                return ["dress1", "dress2", "dress3", "dress4"]
+            }
+        }
+        
+        var previewClothes: [String] {
+            switch self {
+            case .shoes:
+                return ["previewShoes1", "previewShoes2", "previewShoes3", "previewShoes4"]
             case .hair:
                 return ["hair1", "hair2", "hair3", "hair4", "hair5"]
             case .pants:
