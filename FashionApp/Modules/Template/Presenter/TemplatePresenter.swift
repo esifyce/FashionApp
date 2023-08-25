@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class TemplatePresenter {
     weak var view: TemplateViewControllerInput?
     private var router: TemplateRouterInput
     private var interactor: TemplateInteractorInput
     private var collectionManager: TemplateCollectionManagerProtocol
+    private let dataBase = DataBaseManager()
     
     init(router: TemplateRouterInput,
          interactor: TemplateInteractorInput,
@@ -25,8 +27,14 @@ final class TemplatePresenter {
 // MARK: - TemplatePresenterInput
 extension TemplatePresenter: TemplatePresenterInput {
     func viewDidLoad() {
-        interactor.getViewModel { [weak self] viewModel in
-            self?.collectionManager.displaySquareTemplates(viewModel)
+//        interactor.getViewModel { [weak self] viewModel in
+//            self?.collectionManager.displaySquareTemplates(viewModel)
+//        }
+        
+        if  let object = dataBase.obtain() {
+            let mainModel = MainViewModel(projectName: "Hello", isCanDeleted: true,
+                                          createdAt: Date().timeIntervalSince1970, skin: object.skinPath)
+            collectionManager.displaySquareTemplates([mainModel])
         }
     }
     

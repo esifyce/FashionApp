@@ -13,4 +13,10 @@ protocol EditorPresenterInput: AnyObject {
     func updateCollectionByCategory(index: UIImage.Clothes)
     func layerButtonTapped()
     func doneButtonTapped()
+    func getClothesStack() -> [EditorViewModel]
+    func getRendoStack() -> [EditorViewModel]
+    func setClothesStack(with stack: [EditorViewModel])
+    func setRendoStack(with stack: [EditorViewModel])
+    func popFromClothes() -> EditorViewModel?
+    func popFromRendoClothes() -> EditorViewModel?
 }

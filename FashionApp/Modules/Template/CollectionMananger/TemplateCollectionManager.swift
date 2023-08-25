@@ -25,6 +25,7 @@ final class TemplateSquareConfigurator: TemplateCollectionConfiguratorProtocol {
 
     func setupCell(_ cell: UIView) {
         guard let cell = cell as? TemplateCollectionViewCell else { return }
+        cell.configure(with: model)
         cell.showActionSheetCallback = showActionSheetCallback
     }
 }

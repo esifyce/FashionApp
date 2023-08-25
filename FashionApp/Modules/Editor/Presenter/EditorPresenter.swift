@@ -17,6 +17,9 @@ final class EditorPresenter {
     private var layerViewModels: [LayerViewModel] = []
     private var index: Int = 0
     
+    private var clothesStack: [EditorViewModel] = []
+    private var rendoStack: [EditorViewModel] = []
+    
     init(router: EditorRouterInput,
          interactor: EditorInteractorInput,
          collectionManager: EditorCollectionManagerProtocol) {
@@ -61,7 +64,33 @@ extension EditorPresenter: EditorPresenterInput {
     }
     
     func doneButtonTapped() {
-        router.shareSkinImage(with: view?.snapshotImage())
+        guard let image = view?.snapshotImage() else { return }
+        interactor.saveObject(image: image, name: "skin\(UUID().uuidString)", model: .init(clothes: clothesStack))
+        //router.shareSkinImage(with: view?.snapshotImage())
+    }
+    
+    func getClothesStack() -> [EditorViewModel] {
+        clothesStack
+    }
+    
+    func getRendoStack() -> [EditorViewModel] {
+        rendoStack
+    }
+    
+    func setClothesStack(with stack: [EditorViewModel]) {
+        clothesStack = stack
+    }
+    
+    func setRendoStack(with stack: [EditorViewModel]) {
+        rendoStack = stack
+    }
+    
+    func popFromClothes() -> EditorViewModel? {
+        clothesStack.popLast()
+    }
+    
+    func popFromRendoClothes() -> EditorViewModel? {
+        rendoStack.popLast()
     }
 }
 

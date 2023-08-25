@@ -32,6 +32,12 @@ class TemplateCollectionViewCell: UICollectionViewCell {
         return projectNameLabel
     }()
     
+    private lazy var imageView: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFit
+        return iv
+    }()
+    
     // MARK: - Init
     
     override init(frame: CGRect) {
@@ -41,6 +47,11 @@ class TemplateCollectionViewCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(with model: MainViewModel?) {
+        guard let model else { return }
+        imageView.image = Utils().obtainImage(from: model.skin)
     }
 }
 
@@ -57,7 +68,8 @@ private extension TemplateCollectionViewCell {
     }
     
     func addViews() {
-        [moreButton, projectNameLabel].forEach({ contentView.addSubview($0) })
+        contentView.addSubview(imageView)
+        [moreButton, projectNameLabel].forEach({ imageView.addSubview($0) })
     }
     
     func addContraints() {
@@ -71,6 +83,11 @@ private extension TemplateCollectionViewCell {
         projectNameLabel.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(isIpad ? 24 : 16)
             make.directionalHorizontalEdges.equalToSuperview().inset(8)
+        }
+        
+        imageView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.size.equalTo(contentView.snp.size)
         }
     }
     

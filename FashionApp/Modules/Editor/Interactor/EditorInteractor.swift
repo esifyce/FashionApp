@@ -6,9 +6,17 @@
 //
 
 import Foundation
+import RealmSwift
 
 final class EditorInteractor {
     private let viewModel: [EditorViewModel] = []
+    private let service: UtilsProtocol
+    private let dataBaseService: DataBaseManagerProtocol
+    
+    init(service: UtilsProtocol, dataBaseService: DataBaseManagerProtocol) {
+        self.service = service
+        self.dataBaseService = dataBaseService
+    }
 }
 
 // MARK: - EditorInteractorInput
@@ -29,5 +37,13 @@ extension EditorInteractor: EditorInteractorInput {
                                         .init(name: "Layers 445", color: .red, actions: [], opacity: 100),
                                         .init(name: "Layers 445", color: .red, actions: [], opacity: 100)]
         return models
+    }
+    
+    func saveObject(image: UIImage, name: String, model: ManequenViewModel) {
+        var viewModel = model
+        service.saveImage(image: image, filename: name) { [weak self] path in
+            viewModel.path = path
+            self?.dataBaseService.saveModelToDB(model: viewModel)
+        }
     }
 }

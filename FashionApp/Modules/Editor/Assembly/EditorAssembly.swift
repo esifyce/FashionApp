@@ -11,7 +11,9 @@ final class EditorAssembly {
     static func assemble() -> UIViewController {
         
         let colletionManager: EditorCollectionManagerProtocol = EditorCollectionManager()
-        let interactor = EditorInteractor()
+        let service = Utils()
+        let dataBaseService: DataBaseManagerProtocol = DataBaseManager()
+        let interactor = EditorInteractor(service: service, dataBaseService: dataBaseService)
         let router = EditorRouter()
         let presenter = EditorPresenter(router: router,
                                         interactor: interactor,

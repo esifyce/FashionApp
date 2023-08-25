@@ -30,7 +30,7 @@ final class BrushListView: UIView {
     
     // MARK: - Views
     
-    private lazy var closeButton: UIButton = {
+    lazy var closeButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(.Menu.closeMenu.withRenderingMode(.alwaysOriginal), for: .normal)
         return button

@@ -7,8 +7,9 @@
 
 import UIKit
 import SnapKit
-import KMDrawViewSDK
+//import KMDrawViewSDK
 import FrameBuilder
+import EFColorPicker
 
 enum EditStyle {
     case brush
@@ -29,12 +30,10 @@ extension EditorViewController {
     }
 }
 
-final class EditorViewController: BaseViewController {
+final class EditorViewController: BaseViewController, UIPopoverPresentationControllerDelegate {
     // MARK: - Property
     private var presenter: EditorPresenterInput
     private var appearance: Appearance
-    private var clothesStack: [EditorViewModel] = []
-    private var rendoStack: [EditorViewModel] = []
     
     var keyWindow: UIWindow? {
         UIApplication
@@ -167,15 +166,15 @@ final class EditorViewController: BaseViewController {
         return view
     }()
     
-    private lazy var canvasView: KMDrawView = {
-        let scale = 1.5
-        let canvasView = KMDrawView(frame: .init(x: 0, y: 0, width: 200, height: 300))
-        canvasView.translatesAutoresizingMaskIntoConstraints = false
-        canvasView.backgroundColor = .clear
-        canvasView.renderColor = .blue
-        canvasView.isHidden = true
-        return canvasView
-    }()
+//    private lazy var canvasView: KMDrawView = {
+//        let scale = 1.5
+//        let canvasView = KMDrawView(frame: .init(x: 0, y: 0, width: 200, height: 300))
+//        canvasView.translatesAutoresizingMaskIntoConstraints = false
+//        canvasView.backgroundColor = .clear
+//        canvasView.renderColor = .blue
+//        canvasView.isHidden = true
+//        return canvasView
+//    }()
         
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -196,9 +195,10 @@ final class EditorViewController: BaseViewController {
 extension EditorViewController: EditorViewControllerInput {
     
     func addedItemToManiquen(viewModel: EditorViewModel) {
+        var clothesStack = presenter.getClothesStack()
         clothesStack.removeAll(where: { $0.typeDress == viewModel.typeDress })
         clothesStack.append(viewModel)
-        updateSkinClothes()
+        updateSkinClothes(clothesStack)
     }
     
     func snapshotImage() -> UIImage? {
@@ -236,7 +236,21 @@ extension EditorViewController: EditorViewControllerInput {
     func showColorPicker() {
         let picker = UIColorPickerViewController()
         picker.delegate = self
+        picker.modalPresentationStyle = .popover
+        picker.preferredContentSize = CGSize(width: 200, height: 100)
+        if let presController = picker.presentationController {
+            presController.delegate = self
+        }
         present(picker, animated: true, completion: nil)
+        if let popoverController = picker.popoverPresentationController {
+            popoverController.permittedArrowDirections = .down
+            popoverController.sourceView = brushListView.closeButton
+            popoverController.sourceRect = brushListView.bounds
+        }
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIDevice.current.userInterfaceIdiom == .pad ? .popover : .none
     }
             
     func dismiss() {
@@ -250,25 +264,25 @@ extension EditorViewController: EditorViewControllerInput {
             menuListView.isHidden = true
             collectionView.isHidden = true
             controlBar.isHidden = true
-            canvasView.isHidden = false
+            //canvasView.isHidden = false
         case .clothes:
             brushListView.isHidden = true
             menuListView.isHidden = true
             collectionView.isHidden = false
             controlBar.isHidden = false
-            canvasView.isHidden = true
+            //canvasView.isHidden = true
         case .standardBrush:
             brushListView.isHidden = false
             menuListView.isHidden = true
             collectionView.isHidden = true
             controlBar.isHidden = true
-            canvasView.isHidden = false
+           // canvasView.isHidden = false
         case .menu:
             brushListView.isHidden = true
             menuListView.isHidden = false
             collectionView.isHidden = true
             controlBar.isHidden = true
-            canvasView.isHidden = false
+            //canvasView.isHidden = false
         }
     }
     
@@ -305,10 +319,10 @@ fileprivate extension EditorViewController {
     }
     
     func addSubviews() {
-        defer {
-            view.addSubview(canvasView)
-            view.bringSubviewToFront(canvasView)
-        }
+//        defer {
+//            view.addSubview(canvasView)
+//            view.bringSubviewToFront(canvasView)
+//        }
         [skinImageView, headerView,
          layersButton, collectionView,
          controlBar, menuListView, brushListView].forEach({ view.addSubview($0) })
@@ -397,12 +411,12 @@ fileprivate extension EditorViewController {
             make.bottom.equalToSuperview().inset(44)
         }
         
-        canvasView.buildFrame(FrameBuilder()
-                                .centerXToCenterX(ofView: view)
-                                .centerYToCenterY(ofView: view, offset: -150)
-                                .height(583)
-                                .width(200)
-        )
+//        canvasView.buildFrame(FrameBuilder()
+//                                .centerXToCenterX(ofView: view)
+//                                .centerYToCenterY(ofView: view, offset: -150)
+//                                .height(583)
+//                                .width(200)
+//        )
     }
     
     func configStyle() {
@@ -415,15 +429,18 @@ fileprivate extension EditorViewController {
         }), for: .touchUpInside)
         
         leftStepButton.addAction(UIAction(handler: { [weak self] _ in
-            guard let popClothes = self?.clothesStack.popLast() else { return }
-            self?.rendoStack.append(popClothes)
-            self?.updateSkinClothes()
+            guard let self, let popClothes = self.presenter.popFromClothes() else { return }
+            var rendoStack = self.presenter.getRendoStack()
+            rendoStack.append(popClothes)
+            self.presenter.setRendoStack(with: rendoStack)
+            self.updateSkinClothes(presenter.getClothesStack())
         }), for: .touchUpInside)
         
         rightStepButton.addAction(UIAction(handler: { [weak self] _ in
-            guard let popClothes = self?.rendoStack.popLast() else { return }
-            self?.clothesStack.append(popClothes)
-            self?.updateSkinClothes()
+            guard let self, let popClothes = self.presenter.popFromRendoClothes() else { return }
+            var clothesStack = self.presenter.getClothesStack()
+            clothesStack.append(popClothes)
+            self.updateSkinClothes(clothesStack)
         }), for: .touchUpInside)
         
         doneButton.addAction(UIAction(handler: { [weak self] _ in
@@ -522,7 +539,7 @@ private extension EditorViewController {
         return image
     }
     
-    func updateSkinClothes() {
+    func updateSkinClothes(_ clothesStack: [EditorViewModel]) {
         skinImageView.subviews.forEach({ $0.removeFromSuperview() })
         clothesStack.forEach({ clothes in
             let imageView = UIImageView()
@@ -532,6 +549,7 @@ private extension EditorViewController {
             let height = skinImageView.frame.height
             imageView.frame = CGRect(x: 0, y: 0, width: width, height: height)
         })
+        presenter.setClothesStack(with: clothesStack)
     }
 }
 
@@ -543,6 +561,6 @@ extension EditorViewController: UIColorPickerViewControllerDelegate {
     
     func colorPickerViewController(_ viewController: UIColorPickerViewController, didSelect color: UIColor, continuously: Bool) {
         brushListView.update(with: color)
-        canvasView.renderColor = color
+        //canvasView.renderColor = color
     }
 }

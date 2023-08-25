@@ -123,6 +123,12 @@
 		55A243322A82B7D400288046 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A243312A82B7D400288046 /* CGFloat+Extension.swift */; };
 		55A243362A82D26000288046 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A243352A82D26000288046 /* UIApplication+Extension.swift */; };
 		55A857DA2A85840F001CA72A /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A857D92A85840F001CA72A /* DescriptionView.swift */; };
+		55BDD5BE2A9907630099D14A /* EFColorPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 55BDD5BD2A9907630099D14A /* EFColorPicker */; };
+		55BDD5C12A9932A00099D14A /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDD5C02A9932A00099D14A /* DataBaseManager.swift */; };
+		55BDD5C32A9935590099D14A /* EditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDD5C22A9935590099D14A /* EditorModel.swift */; };
+		55BDD5C52A993CAA0099D14A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDD5C42A993CAA0099D14A /* Utils.swift */; };
+		55BDD5C72A994AB40099D14A /* ManequenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDD5C62A994AB40099D14A /* ManequenViewModel.swift */; };
+		55BDD5CA2A994C5B0099D14A /* ManequenModelDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDD5C92A994C5B0099D14A /* ManequenModelDB.swift */; };
 		55CA4B7D2A7EAEE800B43191 /* FrameBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 55CA4B7C2A7EAEE800B43191 /* FrameBuilder */; };
 		55FEB5A82A826F9400D82B25 /* SelectPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FEB5A72A826F9400D82B25 /* SelectPlanView.swift */; };
 /* End PBXBuildFile section */
@@ -265,7 +271,7 @@
 		5511A59C2A927FB000DC9A8F /* LayerCustomizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerCustomizeView.swift; sourceTree = "<group>"; };
 		5511A59F2A92841300DC9A8F /* LayerActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerActionView.swift; sourceTree = "<group>"; };
 		5511A5A12A92A08200DC9A8F /* PercentLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentLabel.swift; sourceTree = "<group>"; };
-		5511A5A42A92BB5300DC9A8F /* IphoneSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneSettingsView.swift; sourceTree = "<group>"; };
+		5511A5A42A92BB5300DC9A8F /* IphoneSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneSettingsView.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		5511A5A62A92BB5D00DC9A8F /* IpadSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpadSettingsView.swift; sourceTree = "<group>"; };
 		554F30982A814A500077114D /* IphoneCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneCollectionViewLayout.swift; sourceTree = "<group>"; };
 		554F309A2A814B300077114D /* IpadCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpadCollectionViewLayout.swift; sourceTree = "<group>"; };
@@ -285,6 +291,11 @@
 		55A243312A82B7D400288046 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		55A243352A82D26000288046 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		55A857D92A85840F001CA72A /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		55BDD5C02A9932A00099D14A /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManager.swift; sourceTree = "<group>"; };
+		55BDD5C22A9935590099D14A /* EditorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorModel.swift; sourceTree = "<group>"; };
+		55BDD5C42A993CAA0099D14A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		55BDD5C62A994AB40099D14A /* ManequenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManequenViewModel.swift; sourceTree = "<group>"; };
+		55BDD5C92A994C5B0099D14A /* ManequenModelDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManequenModelDB.swift; sourceTree = "<group>"; };
 		55FEB5A72A826F9400D82B25 /* SelectPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlanView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -294,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				558D83072A7D677C003EC291 /* RealmSwift in Frameworks */,
+				55BDD5BE2A9907630099D14A /* EFColorPicker in Frameworks */,
 				558D83052A7D677C003EC291 /* Realm in Frameworks */,
 				08C952D22A7D5843009D501C /* KMDrawViewSDK.framework in Frameworks */,
 				55CA4B7D2A7EAEE800B43191 /* FrameBuilder in Frameworks */,
@@ -570,6 +582,7 @@
 				088928862A828D7100DA8230 /* StatusBarViewModel.swift */,
 				08A83F992A92A83100F180C3 /* LayerViewModel.swift */,
 				08A83FA72A94708500F180C3 /* BrushViewModel.swift */,
+				55BDD5C62A994AB40099D14A /* ManequenViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -821,6 +834,7 @@
 		558D82FC2A7D63BA003EC291 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				55BDD5BF2A99328E0099D14A /* Services */,
 				08A83FA92A96C4FC00F180C3 /* Snapshot */,
 				082E5E732A7EB7C100CF1776 /* Helper */,
 				082E5E572A7D84F800CF1776 /* Template */,
@@ -855,6 +869,25 @@
 			path = SelectPlan;
 			sourceTree = "<group>";
 		};
+		55BDD5BF2A99328E0099D14A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				55BDD5C82A994C3E0099D14A /* DataBaseManager */,
+				55BDD5C42A993CAA0099D14A /* Utils.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		55BDD5C82A994C3E0099D14A /* DataBaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				55BDD5C22A9935590099D14A /* EditorModel.swift */,
+				55BDD5C02A9932A00099D14A /* DataBaseManager.swift */,
+				55BDD5C92A994C5B0099D14A /* ManequenModelDB.swift */,
+			);
+			path = DataBaseManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -877,6 +910,7 @@
 				558D83042A7D677C003EC291 /* Realm */,
 				558D83062A7D677C003EC291 /* RealmSwift */,
 				55CA4B7C2A7EAEE800B43191 /* FrameBuilder */,
+				55BDD5BD2A9907630099D14A /* EFColorPicker */,
 			);
 			productName = FashionApp;
 			productReference = 08C952B32A7D5628009D501C /* FashionApp.app */;
@@ -911,6 +945,7 @@
 				558D83002A7D660A003EC291 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				558D83032A7D677C003EC291 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				55CA4B7B2A7EAEE800B43191 /* XCRemoteSwiftPackageReference "FrameBuilder" */,
+				55BDD5BC2A9907630099D14A /* XCRemoteSwiftPackageReference "EFColorPicker" */,
 			);
 			productRefGroup = 08C952B42A7D5628009D501C /* Products */;
 			projectDirPath = "";
@@ -985,11 +1020,13 @@
 				082E5E202A7D7F3200CF1776 /* MainInteractor.swift in Sources */,
 				557341C72A955EA500A126A1 /* IphoneItemView.swift in Sources */,
 				082E5E1F2A7D7F3200CF1776 /* MainAssembly.swift in Sources */,
+				55BDD5CA2A994C5B0099D14A /* ManequenModelDB.swift in Sources */,
 				554F309B2A814B300077114D /* IpadCollectionViewLayout.swift in Sources */,
 				082E5E542A7D842B00CF1776 /* PaywallViewController.swift in Sources */,
 				082E5E7D2A7EB97D00CF1776 /* TemplateCollectionViewCell.swift in Sources */,
 				55A243262A82834F00288046 /* CircleWithInnerCircleView.swift in Sources */,
 				08C952B72A7D5628009D501C /* AppDelegate.swift in Sources */,
+				55BDD5C32A9935590099D14A /* EditorModel.swift in Sources */,
 				088928822A82883600DA8230 /* EditorCollectionViewLayout.swift in Sources */,
 				082E5E772A7EB8F100CF1776 /* SquareModel.swift in Sources */,
 				55A857DA2A85840F001CA72A /* DescriptionView.swift in Sources */,
@@ -1012,6 +1049,7 @@
 				082E5E1E2A7D7F3200CF1776 /* MainRouter.swift in Sources */,
 				082E5E3D2A7D842500CF1776 /* EditorPresenterInput.swift in Sources */,
 				08A83F9A2A92A83100F180C3 /* LayerViewModel.swift in Sources */,
+				55BDD5C12A9932A00099D14A /* DataBaseManager.swift in Sources */,
 				082E5E1C2A7D7F3200CF1776 /* MainPresenter.swift in Sources */,
 				082E5E7B2A7EB94D00CF1776 /* PaywallCollectionViewCell.swift in Sources */,
 				082E5E6B2A7D851900CF1776 /* TemplateViewController.swift in Sources */,
@@ -1025,9 +1063,11 @@
 				082E5E672A7D851900CF1776 /* TemplateRouter.swift in Sources */,
 				082E5E392A7D842500CF1776 /* EditorAssembly.swift in Sources */,
 				08A83FBF2A96C53B00F180C3 /* SnapshotPresenter.swift in Sources */,
+				55BDD5C52A993CAA0099D14A /* Utils.swift in Sources */,
 				082E5E722A7EB73200CF1776 /* MainCollectionManager.swift in Sources */,
 				08D6EEE62A8815570017768A /* BrushViewController.swift in Sources */,
 				082E5E1B2A7D7F3200CF1776 /* MainPresenterInput.swift in Sources */,
+				55BDD5C72A994AB40099D14A /* ManequenViewModel.swift in Sources */,
 				5511A5A72A92BB5D00DC9A8F /* IpadSettingsView.swift in Sources */,
 				082E5E682A7D851900CF1776 /* TemplateInteractor.swift in Sources */,
 				082E5E3C2A7D842500CF1776 /* EditorPresenter.swift in Sources */,
@@ -1190,7 +1230,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5HDJX97Z93;
+				DEVELOPMENT_TEAM = 49SWRDXJLL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FashionApp",
@@ -1210,7 +1250,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.esifyce;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.zhegalik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "FashionApp/FashionApp-Bridging-Header.h";
@@ -1228,7 +1268,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5HDJX97Z93;
+				DEVELOPMENT_TEAM = 49SWRDXJLL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FashionApp",
@@ -1248,7 +1288,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.esifyce;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.zhegalik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "FashionApp/FashionApp-Bridging-Header.h";
@@ -1297,6 +1337,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		55BDD5BC2A9907630099D14A /* XCRemoteSwiftPackageReference "EFColorPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EFPrefix/EFColorPicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
 		55CA4B7B2A7EAEE800B43191 /* XCRemoteSwiftPackageReference "FrameBuilder" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/weakvar/FrameBuilder.git";
@@ -1322,6 +1370,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 558D83032A7D677C003EC291 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		55BDD5BD2A9907630099D14A /* EFColorPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55BDD5BC2A9907630099D14A /* XCRemoteSwiftPackageReference "EFColorPicker" */;
+			productName = EFColorPicker;
 		};
 		55CA4B7C2A7EAEE800B43191 /* FrameBuilder */ = {
 			isa = XCSwiftPackageProductDependency;
