@@ -17,7 +17,7 @@ struct LayerViewModel {
         name = ""
         color = .red
         actions = []
-        opacity = 0
+        opacity = 100
     }
     
     init(name: String,

@@ -18,16 +18,16 @@ extension EditorInteractor: EditorInteractorInput {
     }
     
     func getLayerViewModels() -> [LayerViewModel] {
-        let models: [LayerViewModel] = [.init(name: "Layers 445", color: .red, actions: [.hide, .duplicate], opacity: 0),
-                                        .init(name: "Layers 445", color: .green, actions: [.mergeAll, .delete], opacity: 0),
-                                        .init(name: "Layers 445", color: .blue, actions: [], opacity: 0),
-                                        .init(name: "Layers 445", color: .yellow, actions: [], opacity: 0),
-                                        .init(name: "Layers 445", color: .red, actions: [], opacity: 0),
-                                        .init(name: "Layers 445", color: .red, actions: [], opacity: 0),
-                                        .init(name: "Layers 445", color: .red, actions: [], opacity: 0),
-                                        .init(name: "Layers 445", color: .gray, actions: [], opacity: 0),
-                                        .init(name: "Layers 445", color: .red, actions: [], opacity: 0),
-                                        .init(name: "Layers 445", color: .red, actions: [], opacity: 0)]
+        let models: [LayerViewModel] = [.init(name: "Layers 445", color: .red, actions: [.hide, .duplicate], opacity: 100),
+                                        .init(name: "Layers 445", color: .green, actions: [.mergeAll, .delete], opacity: 100),
+                                        .init(name: "Layers 445", color: .blue, actions: [], opacity: 100),
+                                        .init(name: "Layers 445", color: .yellow, actions: [], opacity: 100),
+                                        .init(name: "Layers 445", color: .red, actions: [], opacity: 100),
+                                        .init(name: "Layers 445", color: .red, actions: [], opacity: 100),
+                                        .init(name: "Layers 445", color: .red, actions: [], opacity: 100),
+                                        .init(name: "Layers 445", color: .gray, actions: [], opacity: 100),
+                                        .init(name: "Layers 445", color: .red, actions: [], opacity: 100),
+                                        .init(name: "Layers 445", color: .red, actions: [], opacity: 100)]
         return models
     }
 }
