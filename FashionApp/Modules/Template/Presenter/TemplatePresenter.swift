@@ -30,12 +30,6 @@ extension TemplatePresenter: TemplatePresenterInput {
 //        interactor.getViewModel { [weak self] viewModel in
 //            self?.collectionManager.displaySquareTemplates(viewModel)
 //        }
-        
-        if  let object = dataBase.obtain() {
-            let mainModel = MainViewModel(projectName: "Hello", isCanDeleted: true,
-                                          createdAt: Date().timeIntervalSince1970, skin: object.skinPath)
-            collectionManager.displaySquareTemplates([mainModel])
-        }
     }
     
     func updateCollection(with traitCollection: UITraitCollection) {

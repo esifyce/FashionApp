@@ -35,8 +35,8 @@ class Utils: UtilsProtocol {
                 // Use `loadedImage` as needed
                 return loadedImage
             } else {
-                return nil
                 print("Error creating UIImage from data.")
+                return nil
             }
         } else {
             print("Error loading image data from file.")

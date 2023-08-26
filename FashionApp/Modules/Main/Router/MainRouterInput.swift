@@ -8,7 +8,10 @@
 import Foundation
 
 protocol MainRouterInput: AnyObject {
-    func openMore()
+    func openMore(with name: String,
+                  rename: @escaping (String?) -> (),
+                  shareTo: @escaping () -> (),
+                  delete: @escaping () -> ())
     func goToAddTemplate()
     func goToPaywall()
     func settingTapped() 

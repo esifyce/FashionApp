@@ -39,11 +39,11 @@ extension EditorInteractor: EditorInteractorInput {
         return models
     }
     
-    func saveObject(image: UIImage, name: String, model: ManequenViewModel) {
+    func saveObject(image: UIImage, model: ManequenViewModel) {
         var viewModel = model
-        service.saveImage(image: image, filename: name) { [weak self] path in
+        service.saveImage(image: image, filename: model.name) { [weak self] path in
             viewModel.path = path
-            self?.dataBaseService.saveModelToDB(model: viewModel)
+            self?.dataBaseService.save(viewModel)
         }
     }
 }

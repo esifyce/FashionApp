@@ -9,12 +9,14 @@ import Foundation
 import RealmSwift
 
 protocol DataBaseManagerProtocol {
-    func saveModelToDB(model: ManequenViewModel)
-    func obtain() -> ManequenModelDB?
+    func save(_ model: ManequenViewModel)
+    func obtainAll() -> Results<ManequenModelDB>?
+    func remove(_ model: ManequenViewModel)
+    func modify(_ model: MainViewModel)
 }
 
 class DataBaseManager: DataBaseManagerProtocol {
-    func saveModelToDB(model: ManequenViewModel) {
+    func save(_ model: ManequenViewModel) {
         do {
             let realm = try Realm()
             let manequenModel = ManequenModelDB(from: model)
@@ -26,15 +28,44 @@ class DataBaseManager: DataBaseManagerProtocol {
         }
     }
     
-    func obtain() -> ManequenModelDB? {
+    func obtainAll() -> Results<ManequenModelDB>? {
         do {
             let realm = try Realm()
-            let object = realm.objects(ManequenModelDB.self).first
-            return object
+            let objects = realm.objects(ManequenModelDB.self)
+            return objects
         } catch(let error) {
-            
             print(error)
             return nil
+        }
+    }
+    
+    func remove(_ model: ManequenViewModel) {
+        do {
+            let realm = try Realm()
+            let manequenModel = ManequenModelDB(from: model)
+            let objects = realm.objects(ManequenModelDB.self)
+            if let deleteObject = objects.first(where: { $0.id == manequenModel.id }) {
+                try realm.write {
+                    realm.delete(deleteObject)
+                }
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    func modify(_ model: MainViewModel) {
+        do {
+            let realm = try Realm()
+            let objects = realm.objects(ManequenModelDB.self)
+            if let object = objects.first(where: { $0.id == model.id }) {
+                try realm.write {
+                    object.name = model.projectName
+                }
+            }
+            
+        } catch(let error) {
+            
         }
     }
 }

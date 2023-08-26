@@ -41,6 +41,7 @@ final class MainTemplateSquareConfigurator: MainCollectionConfiguratorProtocol {
 
     func setupCell(_ cell: UIView) {
         guard let cell = cell as? TemplateCollectionViewCell else { return }
+        cell.configure(with: model)
         cell.showActionSheetCallback = showActionSheetCallback
     }
 }
@@ -49,7 +50,7 @@ protocol MainCollectionManagerDelegate: AnyObject {
     func addCellTapped()
     func paywallCellTapped()
     func templateCellTapped()
-    func moreTapped()
+    func moreTapped(with model: MainViewModel)
 }
 
 protocol MainCollectionManagerProtocol: AnyObject {
@@ -133,7 +134,7 @@ final class MainCollectionManager: NSObject, MainCollectionManagerProtocol {
         let configurator = MainTemplateSquareConfigurator()
         configurator.model = model
         configurator.showActionSheetCallback = { [weak self] in
-            self?.delegate?.moreTapped()
+            self?.delegate?.moreTapped(with: model)
         }
         return configurator
     }

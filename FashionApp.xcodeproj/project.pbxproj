@@ -123,7 +123,6 @@
 		55A243322A82B7D400288046 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A243312A82B7D400288046 /* CGFloat+Extension.swift */; };
 		55A243362A82D26000288046 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A243352A82D26000288046 /* UIApplication+Extension.swift */; };
 		55A857DA2A85840F001CA72A /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A857D92A85840F001CA72A /* DescriptionView.swift */; };
-		55BDD5BE2A9907630099D14A /* EFColorPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 55BDD5BD2A9907630099D14A /* EFColorPicker */; };
 		55BDD5C12A9932A00099D14A /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDD5C02A9932A00099D14A /* DataBaseManager.swift */; };
 		55BDD5C32A9935590099D14A /* EditorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDD5C22A9935590099D14A /* EditorModel.swift */; };
 		55BDD5C52A993CAA0099D14A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDD5C42A993CAA0099D14A /* Utils.swift */; };
@@ -305,7 +304,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				558D83072A7D677C003EC291 /* RealmSwift in Frameworks */,
-				55BDD5BE2A9907630099D14A /* EFColorPicker in Frameworks */,
 				558D83052A7D677C003EC291 /* Realm in Frameworks */,
 				08C952D22A7D5843009D501C /* KMDrawViewSDK.framework in Frameworks */,
 				55CA4B7D2A7EAEE800B43191 /* FrameBuilder in Frameworks */,
@@ -910,7 +908,6 @@
 				558D83042A7D677C003EC291 /* Realm */,
 				558D83062A7D677C003EC291 /* RealmSwift */,
 				55CA4B7C2A7EAEE800B43191 /* FrameBuilder */,
-				55BDD5BD2A9907630099D14A /* EFColorPicker */,
 			);
 			productName = FashionApp;
 			productReference = 08C952B32A7D5628009D501C /* FashionApp.app */;
@@ -945,7 +942,6 @@
 				558D83002A7D660A003EC291 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				558D83032A7D677C003EC291 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				55CA4B7B2A7EAEE800B43191 /* XCRemoteSwiftPackageReference "FrameBuilder" */,
-				55BDD5BC2A9907630099D14A /* XCRemoteSwiftPackageReference "EFColorPicker" */,
 			);
 			productRefGroup = 08C952B42A7D5628009D501C /* Products */;
 			projectDirPath = "";
@@ -1337,14 +1333,6 @@
 				minimumVersion = 10.0.0;
 			};
 		};
-		55BDD5BC2A9907630099D14A /* XCRemoteSwiftPackageReference "EFColorPicker" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/EFPrefix/EFColorPicker.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.2.2;
-			};
-		};
 		55CA4B7B2A7EAEE800B43191 /* XCRemoteSwiftPackageReference "FrameBuilder" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/weakvar/FrameBuilder.git";
@@ -1370,11 +1358,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 558D83032A7D677C003EC291 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
-		};
-		55BDD5BD2A9907630099D14A /* EFColorPicker */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 55BDD5BC2A9907630099D14A /* XCRemoteSwiftPackageReference "EFColorPicker" */;
-			productName = EFColorPicker;
 		};
 		55CA4B7C2A7EAEE800B43191 /* FrameBuilder */ = {
 			isa = XCSwiftPackageProductDependency;

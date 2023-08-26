@@ -19,6 +19,7 @@ class TemplateCollectionViewCell: UICollectionViewCell {
         let moreButton = UIButton(type: .system)
         moreButton.setImage(UIImage.Base.dotsIcon.withRenderingMode(.alwaysOriginal), for: .normal)
         moreButton.imageView?.tintColor = UIColor.clear
+        moreButton.isUserInteractionEnabled = true
         return moreButton
     }()
     
@@ -35,6 +36,7 @@ class TemplateCollectionViewCell: UICollectionViewCell {
     private lazy var imageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
+        iv.isUserInteractionEnabled = true
         return iv
     }()
     
@@ -52,6 +54,7 @@ class TemplateCollectionViewCell: UICollectionViewCell {
     func configure(with model: MainViewModel?) {
         guard let model else { return }
         imageView.image = Utils().obtainImage(from: model.skin)
+        projectNameLabel.text = model.projectName
     }
 }
 
@@ -100,9 +103,10 @@ private extension TemplateCollectionViewCell {
     
     func addTargets() {
         guard UIDevice.current.userInterfaceIdiom == .pad else {
-            moreButton.addAction(UIAction(handler: { [weak self] _ in
-                self?.showActionSheetCallback?()
-            }), for: .touchUpInside)
+            moreButton.addTarget(self, action: #selector(moreTapped), for: .touchUpInside)
+//            moreButton.addAction(UIAction(handler: { [weak self] _ in
+//                self?.showActionSheetCallback?()
+//            }), for: .touchUpInside)
             return
         }
         
@@ -120,5 +124,9 @@ private extension TemplateCollectionViewCell {
     func configureDevice() {
         let isIpad = UIDevice.current.userInterfaceIdiom == .pad
         projectNameLabel.font = UIFont.systemFont(ofSize: isIpad ? 22 : 18, weight: .semibold)
+    }
+    
+    @objc func moreTapped() {
+        showActionSheetCallback?()
     }
 }

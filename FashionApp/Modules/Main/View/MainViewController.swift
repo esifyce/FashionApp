@@ -45,7 +45,6 @@ final class MainViewController: BaseViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        defer { presenter.viewDidLoad() }
         setupUI()
         presenter.updateCollection(with: traitCollection)
     }
@@ -53,6 +52,7 @@ final class MainViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
+        presenter.viewWillAppear()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

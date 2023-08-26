@@ -9,8 +9,10 @@ import RealmSwift
 import Foundation
 
 class ManequenModelDB: Object {
+    @Persisted var id: String = ""
     @Persisted var clothes = List<EditorModel>()
     @Persisted var skinPath: String = ""
+    @Persisted var name: String = ""
     
     
     convenience init(from viewModel: ManequenViewModel) {
@@ -18,6 +20,8 @@ class ManequenModelDB: Object {
         for wear in viewModel.clothes {
             clothes.append(EditorModel(from: wear))
         }
-        self.skinPath = viewModel.path
+        skinPath = viewModel.path
+        id = UUID().uuidString
+        name = viewModel.name
     }
 }

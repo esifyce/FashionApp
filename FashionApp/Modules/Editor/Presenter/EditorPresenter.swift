@@ -65,7 +65,7 @@ extension EditorPresenter: EditorPresenterInput {
     
     func doneButtonTapped() {
         guard let image = view?.snapshotImage() else { return }
-        interactor.saveObject(image: image, name: "skin\(UUID().uuidString)", model: .init(clothes: clothesStack))
+        interactor.saveObject(image: image , model: .init(clothes: clothesStack, name: "skin\(UUID().uuidString)"))
         //router.shareSkinImage(with: view?.snapshotImage())
     }
     

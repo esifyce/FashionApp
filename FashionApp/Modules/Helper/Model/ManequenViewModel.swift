@@ -11,9 +11,11 @@ import Foundation
 struct ManequenViewModel {
     let clothes: [EditorViewModel]
     var path: String
+    var name: String
     
-    init(clothes: [EditorViewModel], path: String = "") {
+    init(clothes: [EditorViewModel], path: String = "", name: String) {
         self.clothes = clothes
         self.path = path
+        self.name = name
     }
 }

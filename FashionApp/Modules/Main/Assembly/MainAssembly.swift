@@ -11,7 +11,8 @@ final class MainAssembly {
     static func assemble() -> UIViewController {
         
         let collectionManager: MainCollectionManagerProtocol = MainCollectionManager()
-        let interactor = MainInteractor()
+        let manager: DataBaseManagerProtocol = DataBaseManager()
+        let interactor = MainInteractor(dataBaseManager: manager)
         let router = MainRouter()
         let presenter = MainPresenter(router: router,
                                       interactor: interactor,

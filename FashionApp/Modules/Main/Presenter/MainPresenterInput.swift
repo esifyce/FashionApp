@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainPresenterInput: AnyObject {
-    func viewDidLoad()
+    func viewWillAppear()
     func updateCollection(with traitCollection: UITraitCollection)
     func settingTapped()
 }

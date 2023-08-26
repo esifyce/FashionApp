@@ -7,9 +7,8 @@
 
 import UIKit
 import SnapKit
-//import KMDrawViewSDK
+import KMDrawViewSDK
 import FrameBuilder
-import EFColorPicker
 
 enum EditStyle {
     case brush
@@ -166,15 +165,15 @@ final class EditorViewController: BaseViewController, UIPopoverPresentationContr
         return view
     }()
     
-//    private lazy var canvasView: KMDrawView = {
-//        let scale = 1.5
-//        let canvasView = KMDrawView(frame: .init(x: 0, y: 0, width: 200, height: 300))
-//        canvasView.translatesAutoresizingMaskIntoConstraints = false
-//        canvasView.backgroundColor = .clear
-//        canvasView.renderColor = .blue
-//        canvasView.isHidden = true
-//        return canvasView
-//    }()
+    private lazy var canvasView: KMDrawView = {
+        let scale = 1.5
+        let canvasView = KMDrawView(frame: .init(x: 0, y: 0, width: 200, height: 300))
+        canvasView.translatesAutoresizingMaskIntoConstraints = false
+        canvasView.backgroundColor = .clear
+        canvasView.renderColor = .blue
+        canvasView.isHidden = true
+        return canvasView
+    }()
         
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -264,25 +263,25 @@ extension EditorViewController: EditorViewControllerInput {
             menuListView.isHidden = true
             collectionView.isHidden = true
             controlBar.isHidden = true
-            //canvasView.isHidden = false
+            canvasView.isHidden = false
         case .clothes:
             brushListView.isHidden = true
             menuListView.isHidden = true
             collectionView.isHidden = false
             controlBar.isHidden = false
-            //canvasView.isHidden = true
+            canvasView.isHidden = true
         case .standardBrush:
             brushListView.isHidden = false
             menuListView.isHidden = true
             collectionView.isHidden = true
             controlBar.isHidden = true
-           // canvasView.isHidden = false
+            canvasView.isHidden = false
         case .menu:
             brushListView.isHidden = true
             menuListView.isHidden = false
             collectionView.isHidden = true
             controlBar.isHidden = true
-            //canvasView.isHidden = false
+            canvasView.isHidden = false
         }
     }
     
@@ -319,10 +318,10 @@ fileprivate extension EditorViewController {
     }
     
     func addSubviews() {
-//        defer {
-//            view.addSubview(canvasView)
-//            view.bringSubviewToFront(canvasView)
-//        }
+        defer {
+            view.addSubview(canvasView)
+            view.bringSubviewToFront(canvasView)
+        }
         [skinImageView, headerView,
          layersButton, collectionView,
          controlBar, menuListView, brushListView].forEach({ view.addSubview($0) })
@@ -411,12 +410,12 @@ fileprivate extension EditorViewController {
             make.bottom.equalToSuperview().inset(44)
         }
         
-//        canvasView.buildFrame(FrameBuilder()
-//                                .centerXToCenterX(ofView: view)
-//                                .centerYToCenterY(ofView: view, offset: -150)
-//                                .height(583)
-//                                .width(200)
-//        )
+        canvasView.buildFrame(FrameBuilder()
+                                .centerXToCenterX(ofView: view)
+                                .centerYToCenterY(ofView: view, offset: -150)
+                                .height(583)
+                                .width(200)
+        )
     }
     
     func configStyle() {

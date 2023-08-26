@@ -10,5 +10,5 @@ import Foundation
 protocol EditorInteractorInput: AnyObject {
     func getViewModel(completion: ([EditorViewModel]) -> Void)
     func getLayerViewModels() -> [LayerViewModel]
-    func saveObject(image: UIImage, name: String, model: ManequenViewModel)
+    func saveObject(image: UIImage, model: ManequenViewModel)
 }
