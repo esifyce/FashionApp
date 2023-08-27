@@ -48,9 +48,9 @@ extension MainPresenter: MainCollectionManagerDelegate {
         router.openMore(with: model.projectName) { [weak self] name in
             self?.rename(with: name, in: model)
         } shareTo: { [weak self] in
-            
+            print("share")
         } delete: { [weak self] in
-            
+            self?.deleteModel(model)
         }
     }
     
@@ -64,8 +64,15 @@ extension MainPresenter: MainCollectionManagerDelegate {
                                          skin: model.skin,
                                          id: model.id)
             self.models[index] = newModel
-            interactor
+            interactor.modify(model: newModel)
+            collectionManager.displaySquareTemplates(models, isShowAddTemplate: true, isShowPaywallTemplate: true)
         }
+    }
+    
+    private func deleteModel(_ model: MainViewModel) {
+        models.removeAll(where: { $0.id == model.id })
+        interactor.remove(by: model.id)
+        collectionManager.displaySquareTemplates(models, isShowAddTemplate: true, isShowPaywallTemplate: true)
     }
     
     func addCellTapped() {

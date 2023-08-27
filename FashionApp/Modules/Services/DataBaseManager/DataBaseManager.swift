@@ -11,7 +11,7 @@ import RealmSwift
 protocol DataBaseManagerProtocol {
     func save(_ model: ManequenViewModel)
     func obtainAll() -> Results<ManequenModelDB>?
-    func remove(_ model: ManequenViewModel)
+    func remove(by id: String)
     func modify(_ model: MainViewModel)
 }
 
@@ -39,12 +39,11 @@ class DataBaseManager: DataBaseManagerProtocol {
         }
     }
     
-    func remove(_ model: ManequenViewModel) {
+    func remove(by id: String) {
         do {
             let realm = try Realm()
-            let manequenModel = ManequenModelDB(from: model)
             let objects = realm.objects(ManequenModelDB.self)
-            if let deleteObject = objects.first(where: { $0.id == manequenModel.id }) {
+            if let deleteObject = objects.first(where: { $0.id == id }) {
                 try realm.write {
                     realm.delete(deleteObject)
                 }
@@ -65,7 +64,7 @@ class DataBaseManager: DataBaseManagerProtocol {
             }
             
         } catch(let error) {
-            
+            print(error)
         }
     }
 }

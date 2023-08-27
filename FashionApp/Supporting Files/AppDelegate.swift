@@ -12,9 +12,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let key = "UOXTifzXaYqdiMMJ1dYKAFQI6jkFAJqGFnKQvQ449ZmpPmvddkLYh2+0E/OO9cfhA6mRlFl4VT0hb4Ck/75VF0BiT2zWwoPUNDmicCV0HMGG24DMOy/3+ztNsMQTVywzoalIdfEi0ElEj5162EpVSJr3PSb8n+sN2kQzrdCIG/U="
-        let secret = "mG0c3O3Mzeu5dkZJW3gpql8+jBucojBtBSjI3YJz2gD2+npCHPsRIaudygv4mh5sYO/ySqSv6AUgTZsNIoAsL6pnTt6NY7gprvL71PkpglJhrp9sGpqfp0B228KI+IMTu4aGVjtYuk+Uxs/kosIBw93X8SHDFCyvJ+qFKnTEkm/0cldTJDmVDtLY8IhR1UfN"
-        CDrawKit.setLicenseKey(key, secret: secret)
+//        let key = "UOXTifzXaYqdiMMJ1dYKAFQI6jkFAJqGFnKQvQ449ZmpPmvddkLYh2+0E/OO9cfhA6mRlFl4VT0hb4Ck/75VF0BiT2zWwoPUNDmicCV0HMGG24DMOy/3+ztNsMQTVywzoalIdfEi0ElEj5162EpVSJr3PSb8n+sN2kQzrdCIG/U="
+//        let secret = "mG0c3O3Mzeu5dkZJW3gpql8+jBucojBtBSjI3YJz2gD2+npCHPsRIaudygv4mh5sYO/ySqSv6AUgTZsNIoAsL6pnTt6NY7gprvL71PkpglJhrp9sGpqfp0B228KI+IMTu4aGVjtYuk+Uxs/kosIBw93X8SHDFCyvJ+qFKnTEkm/0cldTJDmVDtLY8IhR1UfN"
+//        CDrawKit.setLicenseKey(key, secret: secret)
         return true
     }
 

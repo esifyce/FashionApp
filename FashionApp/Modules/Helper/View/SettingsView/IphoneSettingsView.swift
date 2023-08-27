@@ -170,7 +170,7 @@ private extension IphoneSettingsView {
         subscribeView.buildFrame(
             FrameBuilder()
                 .x(16)
-                .y(20)
+                .y(40)
                 .height(44)
                 .width(containerView.frame.size.width - 32)
         )
@@ -178,7 +178,7 @@ private extension IphoneSettingsView {
         communityView.buildFrame(
             FrameBuilder()
                 .x(16)
-                .y(76)
+                .y(96)
                 .height(44)
                 .width(containerView.frame.size.width - 32)
         )
@@ -186,7 +186,7 @@ private extension IphoneSettingsView {
         termsView.buildFrame(
             FrameBuilder()
                 .x(16)
-                .y(132)
+                .y(152)
                 .height(44)
                 .width(containerView.frame.size.width - 32)
         )
@@ -194,7 +194,7 @@ private extension IphoneSettingsView {
         contactView.buildFrame(
             FrameBuilder()
                 .x(16)
-                .y(188)
+                .y(208)
                 .height(44)
                 .width(containerView.frame.size.width - 32)
         )
@@ -202,7 +202,7 @@ private extension IphoneSettingsView {
         importView.buildFrame(
             FrameBuilder()
                 .x(16)
-                .y(244)
+                .y(264)
                 .height(44)
                 .width(containerView.frame.size.width - 32)
         )

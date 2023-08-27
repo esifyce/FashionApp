@@ -64,4 +64,8 @@ extension MainInteractor: MainInteractorInput {
     func modify(model: MainViewModel) {
         dataBaseManager.modify(model)
     }
+    
+    func remove(by id: String) {
+        dataBaseManager.remove(by: id)
+    }
 }

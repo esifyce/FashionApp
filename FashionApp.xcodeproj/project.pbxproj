@@ -101,7 +101,6 @@
 		5511A5A02A92841300DC9A8F /* LayerActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A59F2A92841300DC9A8F /* LayerActionView.swift */; };
 		5511A5A22A92A08200DC9A8F /* PercentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A5A12A92A08200DC9A8F /* PercentLabel.swift */; };
 		5511A5A52A92BB5300DC9A8F /* IphoneSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A5A42A92BB5300DC9A8F /* IphoneSettingsView.swift */; };
-		5511A5A72A92BB5D00DC9A8F /* IpadSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A5A62A92BB5D00DC9A8F /* IpadSettingsView.swift */; };
 		554F30992A814A500077114D /* IphoneCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F30982A814A500077114D /* IphoneCollectionViewLayout.swift */; };
 		554F309B2A814B300077114D /* IpadCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F309A2A814B300077114D /* IpadCollectionViewLayout.swift */; };
 		554F309E2A818C850077114D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554F309D2A818C850077114D /* MenuView.swift */; };
@@ -271,7 +270,7 @@
 		5511A59F2A92841300DC9A8F /* LayerActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerActionView.swift; sourceTree = "<group>"; };
 		5511A5A12A92A08200DC9A8F /* PercentLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentLabel.swift; sourceTree = "<group>"; };
 		5511A5A42A92BB5300DC9A8F /* IphoneSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneSettingsView.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		5511A5A62A92BB5D00DC9A8F /* IpadSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpadSettingsView.swift; sourceTree = "<group>"; };
+		5511A5A62A92BB5D00DC9A8F /* IpadPopOverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpadPopOverController.swift; sourceTree = "<group>"; };
 		554F30982A814A500077114D /* IphoneCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneCollectionViewLayout.swift; sourceTree = "<group>"; };
 		554F309A2A814B300077114D /* IpadCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpadCollectionViewLayout.swift; sourceTree = "<group>"; };
 		554F309D2A818C850077114D /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -783,7 +782,7 @@
 			isa = PBXGroup;
 			children = (
 				5511A5A42A92BB5300DC9A8F /* IphoneSettingsView.swift */,
-				5511A5A62A92BB5D00DC9A8F /* IpadSettingsView.swift */,
+				5511A5A62A92BB5D00DC9A8F /* IpadPopOverController.swift */,
 				557341C62A955EA500A126A1 /* IphoneItemView.swift */,
 			);
 			path = SettingsView;
@@ -1064,7 +1063,6 @@
 				08D6EEE62A8815570017768A /* BrushViewController.swift in Sources */,
 				082E5E1B2A7D7F3200CF1776 /* MainPresenterInput.swift in Sources */,
 				55BDD5C72A994AB40099D14A /* ManequenViewModel.swift in Sources */,
-				5511A5A72A92BB5D00DC9A8F /* IpadSettingsView.swift in Sources */,
 				082E5E682A7D851900CF1776 /* TemplateInteractor.swift in Sources */,
 				082E5E3C2A7D842500CF1776 /* EditorPresenter.swift in Sources */,
 				5511A59D2A927FB000DC9A8F /* LayerCustomizeView.swift in Sources */,

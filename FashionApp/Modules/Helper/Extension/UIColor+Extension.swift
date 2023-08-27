@@ -23,6 +23,7 @@ extension UIColor {
     static var blackShadowColor: UIColor = UIColor(rgb: 0x051C39)
     static var systemWhiteColor: UIColor = UIColor(rgb: 0xF2F2F7)
     static var secondBlackColor: UIColor = UIColor(rgb: 0x060606)
+    static var whiteColor: UIColor = UIColor(rgb: 0xFDFDFD).withAlphaComponent(0.92)
 
     convenience init(rgb: UInt) {
         self.init(

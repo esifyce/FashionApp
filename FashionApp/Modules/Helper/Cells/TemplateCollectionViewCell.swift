@@ -79,7 +79,7 @@ private extension TemplateCollectionViewCell {
         let isIpad = UIDevice.current.userInterfaceIdiom == .pad
 
         moreButton.snp.makeConstraints { make in
-            make.size.equalTo(24)
+            make.size.equalTo(44)
             make.top.trailing.equalToSuperview().inset(16)
         }
         

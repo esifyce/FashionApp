@@ -8,5 +8,7 @@
 import Foundation
 
 protocol MainInteractorInput: AnyObject {
-    func getModels() -> [MainViewModel] 
+    func getModels() -> [MainViewModel]
+    func modify(model: MainViewModel)
+    func remove(by id: String)
 }

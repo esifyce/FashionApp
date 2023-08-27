@@ -15,13 +15,13 @@ final class IphoneItemView: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.textColor = UIColor.blackColor
-        
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
+        addSubview(titleLabel)
     }
     
     required init?(coder: NSCoder) {
@@ -34,13 +34,8 @@ final class IphoneItemView: UIView {
     }
     
     private func setupUI() {
-        addSubview(titleLabel)
-        titleLabel.buildFrame(
-            FrameBuilder()
-                .x(16)
-                .height(20)
-                .centerYToCenterY(ofView: self)
-        )
+        titleLabel.frame = CGRect(x: 16, y: 12, width: bounds.width - 32, height: 20)
+        layer.cornerRadius = 13
     }
     
     func setTitle(_ title: String) {
