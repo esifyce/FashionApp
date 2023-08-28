@@ -214,7 +214,8 @@ extension EditorViewController: EditorViewControllerInput {
     }
     
     func snapshotImage() -> UIImage? {
-        takeSnapshotOfView(view: skinImageView)
+        guard let drawImage = canvasView?.image(), let skinImage = takeSnapshotOfView(view: skinImageView) else { return nil }
+        return overlayImages(backgroundImage: skinImage, overlayImage: drawImage)
     }
 
     func showLayerView(with viewModel: [LayerViewModel]) {
@@ -323,13 +324,13 @@ extension EditorViewController: EditorViewControllerInput {
       //  canvasView?.resetParams()
         switch type {
         case .pen:
-            canvasView?.brushType = ESBrushTypeLeaf
-            canvasView?.blendType = ESLayerBlendTypeNormal
+            canvasView?.brushType = ESBrushTypePencil
+            canvasView?.blendType = ESLayerBlendTypeMultiply
             canvasView?.radius = 5
             break
         case .pencil:
             canvasView?.brushType = ESBrushTypePencil
-            canvasView?.blendType = ESLayerBlendTypeNormal
+            canvasView?.blendType = ESLayerBlendTypeDissolution
             canvasView?.radius = 15
         case .erasse:
             canvasView?.brushType = ESBrushTypeNormal
@@ -337,7 +338,7 @@ extension EditorViewController: EditorViewControllerInput {
             canvasView?.radius = 100
         case .marker:
             canvasView?.brushType = ESBrushTypeSmudge
-            canvasView?.blendType = ESLayerBlendTypeNormal
+            canvasView?.blendType = ESLayerBlendTypeMultiply
             canvasView?.minRadius = 0.08
             canvasView?.maxRadius = 1
             canvasView?.sensitivity = 49
@@ -348,7 +349,7 @@ extension EditorViewController: EditorViewControllerInput {
             break
         case .flomaster:
             canvasView?.brushType = ESBrushTypeSmudge
-            canvasView?.blendType = ESLayerBlendTypeNormal
+            canvasView?.blendType = ESLayerBlendTypeMultiply
             canvasView?.radius = 50
             canvasView?.smoothEnabled = true
             break
@@ -508,15 +509,26 @@ fileprivate extension EditorViewController {
         }), for: .touchUpInside)
         
         leftStepButton.addAction(UIAction(handler: { [weak self] _ in
+//            let undoManager = self?.canvasView?.undoManager
+            self?.canvasView?.loadUndoManager()
             
+            self?.canvasView?.canRedo()
             self?.canvasView?.canUndo()
-            self?.canvasView?.undo()
+
+
             
-            guard let self, let popClothes = self.presenter.popFromClothes() else { return }
-            var rendoStack = self.presenter.getRendoStack()
-            rendoStack.append(popClothes)
-            self.presenter.setRendoStack(with: rendoStack)
-            self.updateSkinClothes(presenter.getClothesStack())
+            let img = self?.canvasView?.resetUndoManager()
+            
+//            self?.canvasView?.drawImage(UIImage(data: img!), in: self!.view.bounds)
+//            self?.canvasView?.canUndo()
+//            self?.canvasView?.undo()
+            
+            
+//            guard let self, let popClothes = self.presenter.popFromClothes() else { return }
+//            var rendoStack = self.presenter.getRendoStack()
+//            rendoStack.append(popClothes)
+//            self.presenter.setRendoStack(with: rendoStack)
+//            self.updateSkinClothes(presenter.getClothesStack())
         }), for: .touchUpInside)
         
         rightStepButton.addAction(UIAction(handler: { [weak self] _ in
@@ -622,6 +634,18 @@ private extension EditorViewController {
         return image
     }
     
+    func overlayImages(backgroundImage: UIImage, overlayImage: UIImage) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(backgroundImage.size, false, 0.0)
+        
+        backgroundImage.draw(in: CGRect(x: 0, y: 0, width: backgroundImage.size.width, height: backgroundImage.size.height))
+        overlayImage.draw(in: CGRect(x: 0, y: 0, width: backgroundImage.size.width, height: backgroundImage.size.height))
+        
+        let mergedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return mergedImage
+    }
+    
     func updateSkinClothes(_ clothesStack: [EditorViewModel]) {
         skinImageView.subviews.forEach({ $0.removeFromSuperview() })
         clothesStack.forEach({ clothes in
@@ -651,6 +675,15 @@ extension EditorViewController: UIColorPickerViewControllerDelegate {
 
 // MARK: - KMDrawViewDelegate
 extension EditorViewController: KMDrawViewDelegate {
+    
+    func drawView(_ drawView: KMDrawView!, didDrawBegin point: CGPoint) {
+        print("drawBegin \(point)")
+    }
+    
+    func drawView(_ drawView: KMDrawView!, didDrawEnd point: CGPoint) {
+        print("drawEnd \(point)")
+    }
+    
     func drawView(_ drawView: KMDrawView!, didUpdateUndoStatus enable: Bool) {
         print(enable)
     }
