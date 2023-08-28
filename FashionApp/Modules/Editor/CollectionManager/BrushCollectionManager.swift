@@ -22,15 +22,19 @@ final class BrushSquareConfigurator: BrushCollectionConfiguratorProtocol {
     var reuseId: String { String(describing: BrushCollectionViewCell.self) }
     var cellType: BrushCollectionCellType = .pen
     var model: BrushViewModel?
+    var penTapCallBack: ((BrushViewModel) -> Void)?
     
     func setupCell(_ cell: UIView) {
         guard let cell = cell as? BrushCollectionViewCell,
               let sectionModel = model else { return }
         cell.configureCell(viewModel: sectionModel)
+        cell.penTapCallBack = penTapCallBack
     }
 }
 
-protocol BrushCollectionManagerDelegate: AnyObject {}
+protocol BrushCollectionManagerDelegate: AnyObject {
+    func didTapBrush(model: BrushViewModel)
+}
 
 protocol BrushCollectionManagerProtocol: AnyObject {
     func injectCollection(_ collectionView: UICollectionView)
@@ -74,6 +78,9 @@ final class BrushCollectionManager: NSObject, BrushCollectionManagerProtocol {
     private func brushListConfigurator(with model: BrushViewModel) -> BrushCollectionConfiguratorProtocol {
         let configurator = BrushSquareConfigurator()
         configurator.model = model
+        configurator.penTapCallBack = { [weak self] viewModel in
+            self?.delegate?.didTapBrush(model: viewModel)
+        }
         return configurator
     }
 }

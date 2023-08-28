@@ -7,25 +7,21 @@
 
 import UIKit
 
-enum TemplateCollectionCellType {
-    case templateSquare
-}
-
 protocol TemplateCollectionConfiguratorProtocol {
     var reuseId: String { get } // переменная для ячейки с reuse id
-    var cellType: TemplateCollectionCellType { get } // тип ячейки для отработки нажатия
+    var cellType: MainCollectionCellType { get } // тип ячейки для отработки нажатия
     func setupCell(_ cell: UIView) // конфиг ячейки
 }
 
 final class TemplateSquareConfigurator: TemplateCollectionConfiguratorProtocol {
     var reuseId: String { String(describing: TemplateCollectionViewCell.self) }
-    var cellType: TemplateCollectionCellType = .templateSquare
+    var cellType: MainCollectionCellType = .mannequinSquare
     var model: MainViewModel?
     var showActionSheetCallback: (() -> Void)?
 
     func setupCell(_ cell: UIView) {
         guard let cell = cell as? TemplateCollectionViewCell else { return }
-        cell.configure(with: model)
+        cell.configure(with: model, type: cellType)
         cell.showActionSheetCallback = showActionSheetCallback
     }
 }
@@ -120,6 +116,12 @@ extension TemplateCollectionManager: UICollectionViewDelegate, UICollectionViewD
         let configurator = configuratorsDataSource[indexPath.row]
         switch configurator.cellType {
         case .templateSquare:
+            break
+        case .addSquare:
+            break
+        case .paywallSquare:
+            break
+        case .mannequinSquare:
             delegate?.templateCellTapped()
         }
     }

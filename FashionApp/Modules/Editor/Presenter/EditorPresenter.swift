@@ -65,8 +65,8 @@ extension EditorPresenter: EditorPresenterInput {
     
     func doneButtonTapped() {
         guard let image = view?.snapshotImage() else { return }
-        interactor.saveObject(image: image , model: .init(clothes: clothesStack, name: "skin\(UUID().uuidString)"))
-        //router.shareSkinImage(with: view?.snapshotImage())
+        interactor.saveObject(image: image , model: .init(clothes: clothesStack, name: "skin \(UUID().uuidString)"))
+        router.shareSkinImage(with: view?.snapshotImage())
     }
     
     func getClothesStack() -> [EditorViewModel] {
@@ -124,6 +124,10 @@ extension EditorPresenter: LayerCustomizeViewDelegate {
 
 // MARK: - BrushListViewDelegate
 extension EditorPresenter: BrushListViewDelegate {
+    func didTapBrush(with viewModel: BrushViewModel) {
+        view?.showConfigPen(with: viewModel)
+    }
+    
     func colorPickerTapped() {
         view?.showColorPicker()
     }
@@ -148,3 +152,22 @@ extension EditorPresenter: MenuListViewDelegate {
     }
 }
 
+// MARK: - PencilViewDelegate
+extension EditorPresenter: PencilViewDelegate {
+    func didTapApply(opacity: Int, size: Int) {
+        view?.configurePen(with: Float(opacity) / 100.0, size: Float(size))
+    }
+    
+    func didTapClose() {
+        view?.hidePencilView()
+    }
+    
+    func didTapApply() {
+        view?.hidePencilView()
+
+    }
+}
+
+// MARK: - ClothesViewDelegate
+
+extension EditorPresenter: ClothesViewDelegate {}

@@ -11,6 +11,7 @@ enum MainCollectionCellType {
     case addSquare
     case paywallSquare
     case templateSquare
+    case mannequinSquare
 }
 
 protocol MainCollectionConfiguratorProtocol {
@@ -41,7 +42,7 @@ final class MainTemplateSquareConfigurator: MainCollectionConfiguratorProtocol {
 
     func setupCell(_ cell: UIView) {
         guard let cell = cell as? TemplateCollectionViewCell else { return }
-        cell.configure(with: model)
+        cell.configure(with: model, type: cellType)
         cell.showActionSheetCallback = showActionSheetCallback
     }
 }
@@ -162,6 +163,8 @@ extension MainCollectionManager: UICollectionViewDelegate, UICollectionViewDataS
             delegate?.paywallCellTapped()
         case .templateSquare:
             delegate?.templateCellTapped()
+        case .mannequinSquare:
+            break
         }
     }
 }

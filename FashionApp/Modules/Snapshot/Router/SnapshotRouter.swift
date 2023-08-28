@@ -24,6 +24,7 @@ extension SnapshotRouter: SnapshotRouterInput {
     func shareImage(with image: UIImage) {
         let imageToShare = [ image ]
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+        activityViewController.overrideUserInterfaceStyle = .light
         activityViewController.popoverPresentationController?.sourceView = self.view?.view
         
         activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]

@@ -18,8 +18,9 @@ final class BrushCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Property
     
-    var penTapCallBack: (() -> Void)?
+    var penTapCallBack: ((BrushViewModel) -> Void)?
     let appearance: Appearance
+    var brushViewModel: BrushViewModel?
     
     // MARK: - Views
     
@@ -42,6 +43,10 @@ final class BrushCollectionViewCell: UICollectionViewCell {
     
     func configureCell(viewModel: BrushViewModel) {
         penButton.setImage(viewModel.image.withRenderingMode(.alwaysOriginal), for: .normal)
+        self.layer.borderWidth = viewModel.isSelected ? 2 : 0
+        self.layer.borderColor = viewModel.isSelected ? UIColor.black.cgColor : UIColor.clear.cgColor
+        self.layer.cornerRadius = 14
+        brushViewModel = viewModel
     }
 }
 
@@ -65,6 +70,9 @@ private extension BrushCollectionViewCell {
     }
     
     func addTargets() {
-
+        penButton.addAction(UIAction(handler: { [weak self] _ in
+            guard let brushViewModel = self?.brushViewModel else { return }
+            self?.penTapCallBack?(brushViewModel)
+        }), for: .touchUpInside)
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KMDrawViewSDK
 
 final class TemplateRouter {
     weak var view: UIViewController?
@@ -41,8 +42,8 @@ extension TemplateRouter: TemplateRouterInput {
         view?.navigationController?.popViewController(animated: true)
     }
     
-    func goToEditor() {
-        let controller = EditorAssembly.assemble()
+    func goToEditor(kmDrawView: KMDrawView) {
+        let controller = EditorAssembly.assemble(kmDrawView: kmDrawView)
         view?.navigationController?.pushViewController(controller, animated: true)
     }
 }

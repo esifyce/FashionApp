@@ -8,7 +8,7 @@
 import UIKit
 
 final class TemplateAssembly {
-    static func assemble() -> UIViewController {
+    static func assemble(kmDrawView: KMDrawView) -> UIViewController {
         
         let collectionManager: TemplateCollectionManagerProtocol = TemplateCollectionManager()
         let interactor = TemplateInteractor()
@@ -16,8 +16,7 @@ final class TemplateAssembly {
         let presenter = TemplatePresenter(router: router,
                                           interactor: interactor,
                                           collectionManager: collectionManager)
-        let viewController = TemplateViewController(presenter: presenter)
-
+        let viewController = TemplateViewController(presenter: presenter, kmDrawView: kmDrawView)
         collectionManager.injectCollection(viewController.collectionView)
         collectionManager.injectDelegate(presenter)
         

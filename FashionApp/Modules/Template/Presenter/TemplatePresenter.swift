@@ -27,9 +27,9 @@ final class TemplatePresenter {
 // MARK: - TemplatePresenterInput
 extension TemplatePresenter: TemplatePresenterInput {
     func viewDidLoad() {
-//        interactor.getViewModel { [weak self] viewModel in
-//            self?.collectionManager.displaySquareTemplates(viewModel)
-//        }
+        interactor.getViewModel { [weak self] viewModel in
+            self?.collectionManager.displaySquareTemplates(viewModel)
+        }
     }
     
     func updateCollection(with traitCollection: UITraitCollection) {
@@ -41,7 +41,9 @@ extension TemplatePresenter: TemplatePresenterInput {
     }
     
     func goToEditor() {
-        router.goToEditor()
+        guard let view else { return }
+        let drawView = view.getCanvas()
+        router.goToEditor(kmDrawView: drawView)
     }
 }
 

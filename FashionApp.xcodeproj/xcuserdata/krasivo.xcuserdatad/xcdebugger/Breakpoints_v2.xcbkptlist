@@ -7,60 +7,93 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "961CE029-7564-45F3-8AAB-6A900AF3BDAD"
+            uuid = "F8F1472E-CCB2-44FD-BDD3-7D43AA73A616"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Main/CollectionManager/MainCollectionManager.swift"
+            filePath = "FashionApp/Modules/Editor/View/EditorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190">
+            startingLineNumber = "205"
+            endingLineNumber = "205"
+            landmarkName = "configurePen(with:size:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "61BB601F-58A1-4D31-8275-D56314CD8AD2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FashionApp/Modules/Editor/View/EditorViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "514"
+            endingLineNumber = "514"
+            landmarkName = "addTargets()"
+            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "961CE029-7564-45F3-8AAB-6A900AF3BDAD - 3a557a2603026569"
+                  uuid = "61BB601F-58A1-4D31-8275-D56314CD8AD2 - 5145d1527bc0a409"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.MainCollectionManager.collectionItemLayout() -&gt; __C.UICollectionViewLayout"
+                  symbolName = "closure #2 (__C.UIAction) -&gt; () in FashionApp.EditorViewController.addTargets() -&gt; ()"
                   moduleName = "FashionApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krasivo/Desktop/FashionApp/FashionApp/Modules/Main/CollectionManager/MainCollectionManager.swift"
+                  urlString = "file:///Users/krasivo/Desktop/FashionApp/FashionApp/Modules/Editor/View/EditorViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "201"
-                  endingLineNumber = "201"
-                  offsetFromSymbolStart = "1520">
+                  startingLineNumber = "514"
+                  endingLineNumber = "514"
+                  offsetFromSymbolStart = "1068">
                </Location>
                <Location
-                  uuid = "961CE029-7564-45F3-8AAB-6A900AF3BDAD - 3a557a2603026569"
+                  uuid = "61BB601F-58A1-4D31-8275-D56314CD8AD2 - 5145d1527bc0a42e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.MainCollectionManager.collectionItemLayout() -&gt; __C.UICollectionViewLayout"
+                  symbolName = "closure #2 (__C.UIAction) -&gt; () in FashionApp.EditorViewController.addTargets() -&gt; ()"
                   moduleName = "FashionApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krasivo/Desktop/FashionApp/FashionApp/Modules/Main/CollectionManager/MainCollectionManager.swift"
+                  urlString = "file:///Users/krasivo/Desktop/FashionApp/FashionApp/Modules/Editor/View/EditorViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "201"
-                  endingLineNumber = "201"
-                  offsetFromSymbolStart = "1530">
+                  startingLineNumber = "515"
+                  endingLineNumber = "515"
+                  offsetFromSymbolStart = "788">
                </Location>
                <Location
-                  uuid = "961CE029-7564-45F3-8AAB-6A900AF3BDAD - 3a557a2603026569"
+                  uuid = "61BB601F-58A1-4D31-8275-D56314CD8AD2 - 5145d1527bc0a42e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.MainCollectionManager.collectionItemLayout() -&gt; __C.UICollectionViewLayout"
+                  symbolName = "closure #2 (__C.UIAction) -&gt; () in FashionApp.EditorViewController.addTargets() -&gt; ()"
                   moduleName = "FashionApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krasivo/Desktop/FashionApp/FashionApp/Modules/Main/CollectionManager/MainCollectionManager.swift"
+                  urlString = "file:///Users/krasivo/Desktop/FashionApp/FashionApp/Modules/Editor/View/EditorViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "201"
-                  endingLineNumber = "201"
-                  offsetFromSymbolStart = "1543">
+                  startingLineNumber = "515"
+                  endingLineNumber = "515"
+                  offsetFromSymbolStart = "848">
+               </Location>
+               <Location
+                  uuid = "61BB601F-58A1-4D31-8275-D56314CD8AD2 - 5145d1527bc0a42e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAction) -&gt; () in FashionApp.EditorViewController.addTargets() -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/krasivo/Desktop/FashionApp/FashionApp/Modules/Editor/View/EditorViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "515"
+                  endingLineNumber = "515"
+                  offsetFromSymbolStart = "1004">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -68,16 +101,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B55C1635-7FDE-4415-9F1D-8EDE38F23E0B"
-            shouldBeEnabled = "No"
+            uuid = "95CFC0AC-9962-4019-9DAE-A55DCC0426B5"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Editor/CollectionManager/EditorCollectionManager.swift"
+            filePath = "FashionApp/Modules/Editor/View/EditorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "setupCell(_:)"
+            startingLineNumber = "655"
+            endingLineNumber = "655"
+            landmarkName = "drawView(_:didUpdateUndoStatus:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "11F4939A-0936-4D10-9616-3EA3A4B3F291"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FashionApp/Modules/Editor/View/EditorViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "659"
+            endingLineNumber = "659"
+            landmarkName = "drawView(_:didUpdateRedoStatus:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

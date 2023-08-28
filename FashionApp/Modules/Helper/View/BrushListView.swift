@@ -17,6 +17,7 @@ extension BrushListView {
 protocol BrushListViewDelegate: AnyObject {
     func colorPickerTapped()
     func closeTapped()
+    func didTapBrush(with viewModel: BrushViewModel)
 }
 
 final class BrushListView: UIView {
@@ -27,6 +28,20 @@ final class BrushListView: UIView {
     private let collectionManager: BrushCollectionManagerProtocol
     
     weak var delegate: BrushListViewDelegate?
+    var viewModels: [BrushViewModel] = [
+        .init(image: .Pen.penMenu, isSelected: false, opacity: 100, size: 34, type: .pen, color: .mainColor),
+        .init(image: .Pen.pencilMenu, isSelected: false, opacity: 100, size: 34, type: .pencil, color: .mainColor),
+        .init(image: .Pen.markerMenu, isSelected: false, opacity: 100, size: 34, type: .marker, color: .mainColor),
+        .init(image: .Pen.feltMenu, isSelected: false, opacity: 100, size: 34, type: .flomaster, color: .mainColor),
+        .init(image: .Pen.easicMenu, isSelected: false, opacity: 100, size: 34, type: .erasse, color: .mainColor),
+    ]
+    
+    var customViewModels: [BrushViewModel] = [
+        .init(image: .Pen.pencilMenu, isSelected: false, opacity: 100, size: 34, type: .pencil, color: .mainColor),
+        .init(image: .Pen.pencilMenu, isSelected: false, opacity: 100, size: 34, type: .pencil, color: .mainColor),
+        .init(image: .Pen.pencilMenu, isSelected: false, opacity: 100, size: 34, type: .pencil, color: .mainColor),
+        .init(image: .Pen.pencilMenu, isSelected: false, opacity: 100, size: 34, type: .pencil, color: .mainColor)
+    ]
     
     // MARK: - Views
     
@@ -63,19 +78,31 @@ final class BrushListView: UIView {
         super.init(frame: frame)
         configureUI()
         injectCollection()
-        collectionManager.displaySquareEditors([.init(image: .Pen.penMenu),
-                                                .init(image: .Pen.pencilMenu),
-                                                .init(image: .Pen.markerMenu),
-                                                .init(image: .Pen.feltMenu),
-                                                .init(image: .Pen.easicMenu)])
+        
+        collectionManager.displaySquareEditors(viewModels)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func updateBrush(with viewModel: BrushViewModel) {
+        if let index = viewModels.firstIndex(where: { $0 == viewModel }) {
+            for (i, _) in viewModels.enumerated() {
+                viewModels[i].isSelected = false
+            }
+            viewModels[index] = viewModel
+            viewModels[index].isSelected = true
+        }
+        collectionManager.displaySquareEditors(viewModels)
+    }
+    
     func update(with color: UIColor) {
         colorPicker.backgroundColor = color
+    }
+    
+    func setCustomBrush() {
+        collectionManager.displaySquareEditors(customViewModels)
     }
 }
 
@@ -129,5 +156,7 @@ private extension BrushListView {
 }
 
 extension BrushListView: BrushCollectionManagerDelegate {
-    
+    func didTapBrush(model: BrushViewModel) {
+        delegate?.didTapBrush(with: model)
+    }
 }

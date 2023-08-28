@@ -7,20 +7,12 @@
 
 import UIKit
 import SnapKit
+import KMDrawViewSDK
 
 final class TemplateViewController: BaseViewController {
     // MARK: - Property
     var presenter: TemplatePresenterInput
-    
-    // MARK: - Init
-    init(presenter: TemplatePresenterInput) {
-        self.presenter = presenter
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    weak var canvasView: KMDrawView? = nil
     
     // MARK: - Views
     
@@ -83,6 +75,18 @@ final class TemplateViewController: BaseViewController {
         return collectionView
     }()
     
+    // MARK: - Init
+    init(presenter: TemplatePresenterInput,
+         kmDrawView: KMDrawView) {
+        self.presenter = presenter
+        self.canvasView = kmDrawView
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,7 +108,9 @@ final class TemplateViewController: BaseViewController {
 
 // MARK: - TemplateViewControllerInput
 extension TemplateViewController: TemplateViewControllerInput {
-
+    func getCanvas() -> KMDrawView {
+        return canvasView!
+    }
 }
 
 // MARK: - fileprivate TemplateViewController

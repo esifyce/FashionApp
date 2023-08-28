@@ -7,7 +7,7 @@
 
 import UIKit
 import SnapKit
-//import KMDrawViewSDK
+import KMDrawViewSDK
 import FrameBuilder
 
 enum EditStyle {
@@ -33,6 +33,7 @@ final class EditorViewController: BaseViewController, UIPopoverPresentationContr
     // MARK: - Property
     private var presenter: EditorPresenterInput
     private var appearance: Appearance
+    weak var canvasView: KMDrawView? = nil
     
     var keyWindow: UIWindow? {
         UIApplication
@@ -45,18 +46,6 @@ final class EditorViewController: BaseViewController, UIPopoverPresentationContr
     
     var isLandscape: Bool {
         UIApplication.shared.isLandscape
-    }
-    
-    // MARK: - Init
-    
-    init(presenter: EditorPresenterInput) {
-        self.presenter = presenter
-        self.appearance = Appearance()
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Views
@@ -110,7 +99,7 @@ final class EditorViewController: BaseViewController, UIPopoverPresentationContr
 
     private lazy var skinImageView: UIImageView = {
        let imageView = UIImageView()
-        imageView.image = .Base.skinIcon2
+        imageView.image = .Mannequin.skinIcon2
         return imageView
     }()
     
@@ -137,8 +126,10 @@ final class EditorViewController: BaseViewController, UIPopoverPresentationContr
         return collectionView
     }()
     
-    private let controlBar: StatusBar = {
-        StatusBar()
+    private lazy var clothesView: ClothesView = {
+        let view = ClothesView()
+        view.delegate = presenter as? ClothesViewDelegate
+        return view
     }()
     
     private lazy var layersView: LayersViewProtocol = {
@@ -165,17 +156,28 @@ final class EditorViewController: BaseViewController, UIPopoverPresentationContr
         return view
     }()
     
-//    private lazy var canvasView: KMDrawView = {
-//        let scale = 1.5
-//        let canvasView = KMDrawView(frame: .init(x: 0, y: 0, width: 200, height: 300))
-//        canvasView.translatesAutoresizingMaskIntoConstraints = false
-//        canvasView.backgroundColor = .clear
-//        canvasView.renderColor = .blue
-//        canvasView.isHidden = true
-//        return canvasView
-//    }()
+    private lazy var pencilView: PencilView = {
+        let view = PencilView()
+        view.delegate = presenter as? PencilViewDelegate
+        return view
+    }()
+        
+    // MARK: - Init
+    
+    init(presenter: EditorPresenterInput,
+         kmDrawView: KMDrawView) {
+        self.presenter = presenter
+        self.canvasView = kmDrawView
+        self.appearance = Appearance()
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
         
     // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         defer { presenter.viewDidLoad() }
@@ -188,10 +190,21 @@ final class EditorViewController: BaseViewController, UIPopoverPresentationContr
         layerCustomizeView.layer.cornerRadius = 20
         layerCustomizeView.layer.applyFigmaShadow(color: UIColor.blackShadowColor, alpha: 0.2, x: 8, y: 0, blur: 40, spread: 0)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        canvasView?.clear()
+        canvasView?.renderColor = .blue
+    }
 }
 
 // MARK: - EditorViewControllerInput
 extension EditorViewController: EditorViewControllerInput {
+    
+    func configurePen(with opacity: Float, size: Float) {
+        canvasView?.opacity = opacity
+        canvasView?.radius = size
+    }
     
     func addedItemToManiquen(viewModel: EditorViewModel) {
         var clothesStack = presenter.getClothesStack()
@@ -232,6 +245,22 @@ extension EditorViewController: EditorViewControllerInput {
         layersButton.setImage(image ,for: .normal)
     }
     
+    func showConfigPen(with viewModel: BrushViewModel) {
+        if viewModel.type == .erasse {
+            pencilView.isHidden = true
+        } else {
+            pencilView.isHidden = false
+            pencilView.configure(with: viewModel)
+        }
+ 
+        changeBrushType(with: viewModel.type)
+        brushListView.updateBrush(with: viewModel)
+    }
+    
+    func hidePencilView() {
+        pencilView.isHidden = true
+    }
+    
     func showColorPicker() {
         let picker = UIColorPickerViewController()
         picker.delegate = self
@@ -262,31 +291,83 @@ extension EditorViewController: EditorViewControllerInput {
             brushListView.isHidden = false
             menuListView.isHidden = true
             collectionView.isHidden = true
-            controlBar.isHidden = true
-            //canvasView.isHidden = false
+            clothesView.isHidden = true
+            canvasView?.isHidden = false
+            brushListView.setCustomBrush()
         case .clothes:
             brushListView.isHidden = true
             menuListView.isHidden = true
             collectionView.isHidden = false
-            controlBar.isHidden = false
-            //canvasView.isHidden = true
+            clothesView.isHidden = false
+            canvasView?.isHidden = true
         case .standardBrush:
             brushListView.isHidden = false
             menuListView.isHidden = true
             collectionView.isHidden = true
-            controlBar.isHidden = true
-            //canvasView.isHidden = false
+            clothesView.isHidden = true
+            canvasView?.isHidden = false
         case .menu:
             brushListView.isHidden = true
             menuListView.isHidden = false
             collectionView.isHidden = true
-            controlBar.isHidden = true
-            //canvasView.isHidden = false
+            clothesView.isHidden = true
+            canvasView?.isHidden = false
         }
     }
     
     func setDoneButton(_ enabled: Bool) {
         doneButton.isEnabled = !enabled
+    }
+    
+    func changeBrushType(with type: BrushType) {
+      //  canvasView?.resetParams()
+        switch type {
+        case .pen:
+            canvasView?.brushType = ESBrushTypeLeaf
+            canvasView?.blendType = ESLayerBlendTypeNormal
+            canvasView?.radius = 5
+            break
+        case .pencil:
+            canvasView?.brushType = ESBrushTypePencil
+            canvasView?.blendType = ESLayerBlendTypeNormal
+            canvasView?.radius = 15
+        case .erasse:
+            canvasView?.brushType = ESBrushTypeNormal
+            canvasView?.blendType = ESLayerBlendTypeErase
+            canvasView?.radius = 100
+        case .marker:
+            canvasView?.brushType = ESBrushTypeSmudge
+            canvasView?.blendType = ESLayerBlendTypeNormal
+            canvasView?.minRadius = 0.08
+            canvasView?.maxRadius = 1
+            canvasView?.sensitivity = 49
+            canvasView?.speedSencitive = 0.41
+            canvasView?.minFlow = 0.02
+            canvasView?.maxFlow = 1
+            canvasView?.radius = 25
+            break
+        case .flomaster:
+            canvasView?.brushType = ESBrushTypeSmudge
+            canvasView?.blendType = ESLayerBlendTypeNormal
+            canvasView?.radius = 50
+            canvasView?.smoothEnabled = true
+            break
+        case .texture:
+            self.canvasView?.resetParams()
+            self.canvasView?.brushType = ESBrushTypeNormal
+            self.canvasView?.blendType = ESLayerBlendTypeNormal
+            self.canvasView?.textureImages = [UIImage(named: "Texture.png") as Any]
+            self.canvasView?.pointsDistanceEnabled = true
+            self.canvasView?.pointsDistance = 0.01
+            self.canvasView?.smoothEnabled = true
+            self.canvasView?.minRadius = 0.08
+            self.canvasView?.maxRadius = 1
+            self.canvasView?.sensitivity = 49
+            self.canvasView?.speedSencitive = 0.41
+            self.canvasView?.minFlow = 0.02
+            self.canvasView?.maxFlow = 1
+            self.canvasView?.radius = 25
+        }
     }
 }
 
@@ -299,18 +380,17 @@ fileprivate extension EditorViewController {
         addTargets()
         
         let temp: [UIImage.Clothes] = [.hair, .pants, .shoes, .dress]
-        
         var viewModel: [StatusBarViewModel] = []
         
         temp.enumerated().forEach { index, element in
             viewModel.append(StatusBarViewModel(name: element.description, id: index))
         }
         
-        controlBar.setup(models: viewModel, index: .zero)
-        collectionView.isHidden = true
-        controlBar.isHidden = true
-        menuListView.isHidden = false
-        brushListView.isHidden = true
+        clothesView.categoryClothes.setup(models: viewModel, index: .zero)
+        [collectionView, clothesView, brushListView, pencilView, canvasView!].forEach({ $0.isHidden = true })
+        [menuListView].forEach({ $0.isHidden = false })
+        
+        canvasView?.delegate = self
     }
     
     func addObservers() {
@@ -318,22 +398,22 @@ fileprivate extension EditorViewController {
     }
     
     func addSubviews() {
-//        defer {
-//            view.addSubview(canvasView)
-//            view.bringSubviewToFront(canvasView)
-//        }
         [skinImageView, headerView,
+         canvasView!,
          layersButton, collectionView,
-         controlBar, menuListView, brushListView].forEach({ view.addSubview($0) })
+         clothesView, menuListView,
+         pencilView, brushListView].forEach({ view.addSubview($0) })
         
         [backButton, backTitle,
         stepStackView, doneButton].forEach({ headerView.addSubview($0) })
         
         [headerView, layersButton,
-         collectionView, controlBar, menuListView, brushListView].forEach({ view.bringSubviewToFront($0) })
+         collectionView, clothesView, menuListView,
+         brushListView].forEach({ view.bringSubviewToFront($0) })
     }
     
     func setConstraints() {
+        guard let canvasView else { return }
         skinImageView.snp.makeConstraints { make in
             make.center.equalToSuperview()
             make.height.equalTo(583)
@@ -390,7 +470,7 @@ fileprivate extension EditorViewController {
             make.centerY.equalToSuperview()
         }
         
-        controlBar.snp.makeConstraints { make in
+        clothesView.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(36)
             make.height.equalTo(45)
             make.directionalHorizontalEdges.equalToSuperview()
@@ -403,6 +483,11 @@ fileprivate extension EditorViewController {
             make.bottom.equalToSuperview().inset(44)
         }
         
+        pencilView.snp.makeConstraints { make in
+            make.height.equalTo(254)
+            make.directionalHorizontalEdges.bottom.equalToSuperview()
+        }
+        
         brushListView.snp.makeConstraints { make in
             make.height.equalTo(44)
             make.width.equalTo(44 * 5 + 16 * 4)
@@ -410,12 +495,7 @@ fileprivate extension EditorViewController {
             make.bottom.equalToSuperview().inset(44)
         }
         
-//        canvasView.buildFrame(FrameBuilder()
-//                                .centerXToCenterX(ofView: view)
-//                                .centerYToCenterY(ofView: view, offset: -150)
-//                                .height(583)
-//                                .width(200)
-//        )
+        canvasView.frame = view.bounds
     }
     
     func configStyle() {
@@ -428,6 +508,10 @@ fileprivate extension EditorViewController {
         }), for: .touchUpInside)
         
         leftStepButton.addAction(UIAction(handler: { [weak self] _ in
+            
+            self?.canvasView?.canUndo()
+            self?.canvasView?.undo()
+            
             guard let self, let popClothes = self.presenter.popFromClothes() else { return }
             var rendoStack = self.presenter.getRendoStack()
             rendoStack.append(popClothes)
@@ -450,11 +534,11 @@ fileprivate extension EditorViewController {
             self?.presenter.layerButtonTapped()
         }), for: .touchUpInside)
         
-        controlBar.didTapCallBack = { [weak self] index in
+        clothesView.categoryClothes.didTapCallBack = { [weak self] index in
             self?.presenter.updateCollectionByCategory(index: index)
         }
     }
-    
+     
     @objc func orientationChanged() {
         guard appearance.isIpad else { return }
         
@@ -560,6 +644,18 @@ extension EditorViewController: UIColorPickerViewControllerDelegate {
     
     func colorPickerViewController(_ viewController: UIColorPickerViewController, didSelect color: UIColor, continuously: Bool) {
         brushListView.update(with: color)
-        //canvasView.renderColor = color
+        canvasView?.renderColor = color
+        pencilView.updateColor(with: color)
+    }
+}
+
+// MARK: - KMDrawViewDelegate
+extension EditorViewController: KMDrawViewDelegate {
+    func drawView(_ drawView: KMDrawView!, didUpdateUndoStatus enable: Bool) {
+        print(enable)
+    }
+    
+    func drawView(_ drawView: KMDrawView!, didUpdateRedoStatus enable: Bool) {
+        print(enable)
     }
 }

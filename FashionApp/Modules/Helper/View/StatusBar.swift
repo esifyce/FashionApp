@@ -23,7 +23,7 @@ class StatusBar: UIView {
         scroll.showsHorizontalScrollIndicator = false
         scroll.showsVerticalScrollIndicator = false
         scroll.backgroundColor = .clear
-        scroll.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        scroll.contentInset = UIEdgeInsets(top: 0, left: 4, bottom: 0, right: 20)
         return scroll
     }()
     

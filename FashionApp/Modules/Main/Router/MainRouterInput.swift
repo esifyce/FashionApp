@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import KMDrawViewSDK
 
 protocol MainRouterInput: AnyObject {
     func openMore(with name: String,
                   rename: @escaping (String?) -> (),
                   shareTo: @escaping () -> (),
                   delete: @escaping () -> ())
-    func goToAddTemplate()
+    func goToAddTemplate(kmDrawView: KMDrawView)
     func goToPaywall()
     func settingTapped() 
 }

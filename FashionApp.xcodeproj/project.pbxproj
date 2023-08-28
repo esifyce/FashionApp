@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080BB8F52A9B95A100D53860 /* PencilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080BB8F42A9B95A100D53860 /* PencilView.swift */; };
+		080BB8F92A9CA09B00D53860 /* ClothesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080BB8F82A9CA09B00D53860 /* ClothesView.swift */; };
 		082E5E1B2A7D7F3200CF1776 /* MainPresenterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E0B2A7D7F3200CF1776 /* MainPresenterInput.swift */; };
 		082E5E1C2A7D7F3200CF1776 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E0C2A7D7F3200CF1776 /* MainPresenter.swift */; };
 		082E5E1D2A7D7F3200CF1776 /* MainRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082E5E0E2A7D7F3200CF1776 /* MainRouterInput.swift */; };
@@ -145,6 +147,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		080BB8F42A9B95A100D53860 /* PencilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilView.swift; sourceTree = "<group>"; };
+		080BB8F82A9CA09B00D53860 /* ClothesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesView.swift; sourceTree = "<group>"; };
 		082E5E0B2A7D7F3200CF1776 /* MainPresenterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenterInput.swift; sourceTree = "<group>"; };
 		082E5E0C2A7D7F3200CF1776 /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		082E5E0E2A7D7F3200CF1776 /* MainRouterInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouterInput.swift; sourceTree = "<group>"; };
@@ -634,6 +638,8 @@
 				08A83F9F2A94695900F180C3 /* BrushListView.swift */,
 				5511A5962A926AEE00DC9A8F /* CustomSlider.swift */,
 				5511A5982A926B0900DC9A8F /* ThumbView.swift */,
+				080BB8F42A9B95A100D53860 /* PencilView.swift */,
+				080BB8F82A9CA09B00D53860 /* ClothesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1041,6 +1047,7 @@
 				08A83FA02A94695900F180C3 /* BrushListView.swift in Sources */,
 				08C952B92A7D5628009D501C /* SceneDelegate.swift in Sources */,
 				08A83F982A92A6BB00F180C3 /* LayersCollectionViewLayout.swift in Sources */,
+				080BB8F52A9B95A100D53860 /* PencilView.swift in Sources */,
 				082E5E1E2A7D7F3200CF1776 /* MainRouter.swift in Sources */,
 				082E5E3D2A7D842500CF1776 /* EditorPresenterInput.swift in Sources */,
 				08A83F9A2A92A83100F180C3 /* LayerViewModel.swift in Sources */,
@@ -1053,6 +1060,7 @@
 				088928802A82860B00DA8230 /* EditorViewModel.swift in Sources */,
 				082E5E4F2A7D842B00CF1776 /* PaywallPresenterInput.swift in Sources */,
 				08A83FBD2A96C53B00F180C3 /* SnapshotViewControllerInput.swift in Sources */,
+				080BB8F92A9CA09B00D53860 /* ClothesView.swift in Sources */,
 				08A83F962A92A6A700F180C3 /* LayersCollectionManager.swift in Sources */,
 				5511A5A52A92BB5300DC9A8F /* IphoneSettingsView.swift in Sources */,
 				082E5E672A7D851900CF1776 /* TemplateRouter.swift in Sources */,
@@ -1224,7 +1232,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 49SWRDXJLL;
+				DEVELOPMENT_TEAM = 5HDJX97Z93;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FashionApp",
@@ -1244,7 +1252,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.zhegalik;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esifyce;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "FashionApp/FashionApp-Bridging-Header.h";
@@ -1262,7 +1270,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 49SWRDXJLL;
+				DEVELOPMENT_TEAM = 5HDJX97Z93;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FashionApp",
@@ -1282,7 +1290,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.zhegalik;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esifyce;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "FashionApp/FashionApp-Bridging-Header.h";

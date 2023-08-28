@@ -14,8 +14,6 @@ extension UIImage {
         public static var settingIcon: UIImage = .init(named: "settingBar")!
         public static var dotsIcon: UIImage = .init(named: "threeDots")!
         public static var plusIcon: UIImage = .init(named: "plus")!
-        public static var skinIcon: UIImage = .init(named: "skinTemplate")!
-        public static var skinIcon2: UIImage = .init(named: "skinTemplate2")!
         public static var leftStepIcon: UIImage = .init(named: "leftStep")!
         public static var rightStepIcon: UIImage = .init(named: "rightStep")!
         public static var stackIcon: UIImage = .init(named: "stack")!
@@ -30,6 +28,12 @@ extension UIImage {
         public static var scrubber: UIImage = .init(named: "scrubber")!
         public static var shareSkinPreview: UIImage = .init(named: "shareSkinPreview")!
         public static var downloadSkinPreview: UIImage = .init(named: "downloadSkinPreview")!
+        public static var pixel: UIImage = .init(named: "pixel")!
+    }
+    
+    enum Mannequin {
+        public static var skinIcon: UIImage = .init(named: "skinTemplate")!
+        public static var skinIcon2: UIImage = .init(named: "skinTemplate2")!
     }
     
     enum Iphone {

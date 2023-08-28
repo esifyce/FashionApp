@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import KMDrawViewSDK
 
 protocol TemplateRouterInput: AnyObject {
     func openMore()
     func popViewController()
-    func goToEditor()
+    func goToEditor(kmDrawView: KMDrawView)
 }

@@ -55,8 +55,12 @@ extension MainInteractor: MainInteractorInput {
         guard let objects = dataBaseManager.obtainAll() else { return [] }
         var models: [MainViewModel] = []
         for object in objects {
-            models.append(MainViewModel(projectName: "Hello \(object.id)", isCanDeleted: true,
-                                        createdAt: Date().timeIntervalSince1970, skin: object.skinPath, id: object.id))
+            models.append(MainViewModel(projectName: object.name, isCanDeleted: true,
+                                        skin: object.skinPath, id: object.id))
+        }
+        
+        for _ in 1...6 {
+            models.append(MainViewModel(projectName: "Project Name"))
         }
         return models
     }

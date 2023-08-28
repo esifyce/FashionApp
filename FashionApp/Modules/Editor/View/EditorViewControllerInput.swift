@@ -20,4 +20,7 @@ protocol EditorViewControllerInput: AnyObject {
     func setDoneButton(_ enabled: Bool)
     func show(with edit: EditStyle)
     func snapshotImage() -> UIImage?
+    func showConfigPen(with viewModel: BrushViewModel)
+    func hidePencilView()
+    func configurePen(with opacity: Float, size: Float)
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import KMDrawViewSDK
 
 final class MainViewController: BaseViewController {
     // MARK: - Property
@@ -40,7 +41,8 @@ final class MainViewController: BaseViewController {
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }()
-
+    
+    let canvasView = KMDrawView(frame: .init(x: 0, y: 250, width: 200, height: 300))
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -63,7 +65,9 @@ final class MainViewController: BaseViewController {
 
 // MARK: - MainViewControllerInput
 extension MainViewController: MainViewControllerInput {
-
+    func getCanvas() -> KMDrawView {
+        return canvasView
+    }
 }
 
 // MARK: - fileprivate MainViewController

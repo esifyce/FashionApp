@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import KMDrawViewSDK
 
 protocol TemplateViewControllerInput: AnyObject {
+    func getCanvas() -> KMDrawView
 }

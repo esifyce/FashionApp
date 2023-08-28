@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import KMDrawViewSDK
 
 final class EditorAssembly {
-    static func assemble() -> UIViewController {
+    static func assemble(kmDrawView: KMDrawView) -> UIViewController {
         
         let colletionManager: EditorCollectionManagerProtocol = EditorCollectionManager()
         let service = Utils()
@@ -18,7 +19,7 @@ final class EditorAssembly {
         let presenter = EditorPresenter(router: router,
                                         interactor: interactor,
                                         collectionManager: colletionManager)
-        let viewController = EditorViewController(presenter: presenter)
+        let viewController = EditorViewController(presenter: presenter, kmDrawView: kmDrawView)
         colletionManager.injectCollection(viewController.collectionView)
         colletionManager.injectDelegate(presenter)
         router.view = viewController

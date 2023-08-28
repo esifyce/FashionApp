@@ -38,7 +38,7 @@ typedef struct {
 
 typedef enum {
     ESBrushTypeNormal           = 0x0000,   //Default Brush
-//    ESBrushTypePencil           = 0x0001,   //Pencil Tool
+    ESBrushTypePencil           = 0x0001,   //Pencil Tool
 //    ESBrushTypeColorReplace     = 0x0002,   //Color substitution tool
     ESBrushTypeSmudge           = 0x0003,    //Smudge tool
     ESBrushTypeLeaf             = 0x0004,   //Willow leaf pen

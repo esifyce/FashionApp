@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import KMDrawViewSDK
 
 final class MainRouter {
     weak var view: UIViewController?
@@ -59,8 +60,8 @@ extension MainRouter: MainRouterInput {
         })
     }
     
-    func goToAddTemplate() {
-        let controller = TemplateAssembly.assemble()
+    func goToAddTemplate(kmDrawView: KMDrawView) {
+        let controller = TemplateAssembly.assemble(kmDrawView: kmDrawView)
         view?.navigationController?.pushViewController(controller, animated: true)
     }
     

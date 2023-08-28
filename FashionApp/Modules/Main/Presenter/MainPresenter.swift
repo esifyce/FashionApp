@@ -76,7 +76,8 @@ extension MainPresenter: MainCollectionManagerDelegate {
     }
     
     func addCellTapped() {
-        router.goToAddTemplate()
+        guard let view else { return }
+        router.goToAddTemplate(kmDrawView: view.getCanvas())
     }
     
     func paywallCellTapped() {

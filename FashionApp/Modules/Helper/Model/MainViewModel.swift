@@ -15,8 +15,9 @@ struct MainViewModel {
     var skin: String
     let id: String
     
-    init(projectName: String, isCanDeleted: Bool,
-         createdAt: Double,
+    init(projectName: String,
+         isCanDeleted: Bool = false,
+         createdAt: Double = Date().timeIntervalSince1970,
          skin: String = "",
          id: String = UUID().uuidString) {
         self.projectName = projectName

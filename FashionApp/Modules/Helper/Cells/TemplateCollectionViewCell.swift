@@ -51,10 +51,15 @@ class TemplateCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with model: MainViewModel?) {
+    func configure(with model: MainViewModel?, type: MainCollectionCellType) {
         guard let model else { return }
-        imageView.image = Utils().obtainImage(from: model.skin)
+        if type == .mannequinSquare {
+            imageView.image = UIImage(named: model.skin)
+        } else {
+            imageView.image = Utils().obtainImage(from: model.skin)
+        }
         projectNameLabel.text = model.projectName
+        moreButton.isHidden = !model.isCanDeleted
     }
 }
 

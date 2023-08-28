@@ -81,6 +81,8 @@ final class LayerCustomizeView: UIView {
         let slider = CustomSlider()
         slider.thumbImage = UIImage.Base.scrubber
         slider.minimumValue = 0
+        slider.baseLayer.contents = UIImage.Base.pixel.cgImage
+        slider.baseLayer.contentsGravity = .resizeAspectFill
         slider.maximumValue = 100
         slider.value = 0
         slider.addTarget(self, action: #selector(valueChanged(_:)), for: .valueChanged)
