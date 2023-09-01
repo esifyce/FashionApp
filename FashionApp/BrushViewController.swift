@@ -13,11 +13,13 @@
 import UIKit
 //import KMDrawViewSDK
 import SnapKit
+import Firebase
+import FirebaseStorage
 
 final class BrushViewController: UIViewController {
-    private lazy var customView: LayerCustomizeView = {
-        let view = LayerCustomizeView()
-        view.layer.cornerRadius = 20
+    private lazy var imageView: UIImageView = {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
@@ -26,6 +28,26 @@ final class BrushViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupUI()
+        
+        let storage = Storage.storage()
+        let imageRef = storage.reference().child("images/tortuga.jpg")
+        
+        imageRef.getData(maxSize: 1 * 1024 * 1024) { [weak self] data, error in
+            if let error {
+                print(error)
+                return
+            }
+            
+            guard let data else {
+                print("No Data")
+                return
+            }
+            
+            let image = UIImage(data: data)
+            DispatchQueue.main.async {
+                self?.imageView.image = image
+            }
+        }
     }
     
     func setupUI() {
@@ -34,27 +56,17 @@ final class BrushViewController: UIViewController {
     }
     
     func addSubviews() {
-        view.addSubview(customView)
+        view.addSubview(imageView)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        customView.layer.applyFigmaShadow(color: UIColor.blackShadowColor, alpha: 0.2, x: 8, y: 0, blur: 40, spread: 0)
     }
     
     func makeConstraints() {
-        if traitCollection.horizontalSizeClass == .compact && traitCollection.verticalSizeClass == .regular {
-            customView.snp.makeConstraints { make in
-                make.centerX.centerY.equalToSuperview()
-                make.height.equalToSuperview().multipliedBy(0.68)
-                make.width.equalToSuperview().multipliedBy(0.7)
-            }
-        } else {
-            customView.snp.makeConstraints { make in
-                make.centerX.centerY.equalToSuperview()
-                make.height.equalTo(573)
-                make.width.equalTo(393)
-            }
+        imageView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.size.equalTo(200)
         }
     }
 }

@@ -16,4 +16,13 @@ extension UIView {
         }
         return capturedImage
     }
+    
+    func setAnchorPoint(anchorPoint: CGPoint) {
+        let oldOrigin = frame.origin
+        layer.anchorPoint = anchorPoint
+        let newOrigin = frame.origin
+        
+        let transition: CGPoint = CGPoint(x: newOrigin.x - oldOrigin.x, y: newOrigin.y - oldOrigin.y)
+        center = CGPoint(x: center.x - transition.x, y: center.y - transition.y)
+    }
 }

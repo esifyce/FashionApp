@@ -96,6 +96,11 @@
 		08C952D22A7D5843009D501C /* KMDrawViewSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C952D12A7D5843009D501C /* KMDrawViewSDK.framework */; };
 		08D6EEE62A8815570017768A /* BrushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D6EEE52A8815570017768A /* BrushViewController.swift */; };
 		08EECAF42A81721F00EE8385 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08EECAF32A81721F00EE8385 /* UIColor+Extension.swift */; };
+		55038CDE2AA2536900F902D7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55038CDD2AA2536900F902D7 /* GoogleService-Info.plist */; };
+		55038CE62AA25F7800F902D7 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 55038CE52AA25F7800F902D7 /* FirebaseAuth */; };
+		55038CE82AA25F7800F902D7 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 55038CE72AA25F7800F902D7 /* FirebaseDatabase */; };
+		55038CEA2AA25F7800F902D7 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 55038CE92AA25F7800F902D7 /* FirebaseStorage */; };
+		55038CED2AA2611500F902D7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 55038CEC2AA2611500F902D7 /* Kingfisher */; };
 		5511A5972A926AEE00DC9A8F /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A5962A926AEE00DC9A8F /* CustomSlider.swift */; };
 		5511A5992A926B0900DC9A8F /* ThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A5982A926B0900DC9A8F /* ThumbView.swift */; };
 		5511A59B2A926CDF00DC9A8F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A59A2A926CDF00DC9A8F /* UIView+Extension.swift */; };
@@ -267,6 +272,7 @@
 		08D6EF062A881DEE0017768A /* T1PogoDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T1PogoDelegate.h; sourceTree = "<group>"; };
 		08D6EF072A881DEE0017768A /* ImageRenderFSHs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageRenderFSHs.h; sourceTree = "<group>"; };
 		08EECAF32A81721F00EE8385 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		55038CDD2AA2536900F902D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5511A5962A926AEE00DC9A8F /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		5511A5982A926B0900DC9A8F /* ThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbView.swift; sourceTree = "<group>"; };
 		5511A59A2A926CDF00DC9A8F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -307,9 +313,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				558D83072A7D677C003EC291 /* RealmSwift in Frameworks */,
+				55038CE62AA25F7800F902D7 /* FirebaseAuth in Frameworks */,
 				558D83052A7D677C003EC291 /* Realm in Frameworks */,
+				55038CED2AA2611500F902D7 /* Kingfisher in Frameworks */,
 				08C952D22A7D5843009D501C /* KMDrawViewSDK.framework in Frameworks */,
 				55CA4B7D2A7EAEE800B43191 /* FrameBuilder in Frameworks */,
+				55038CEA2AA25F7800F902D7 /* FirebaseStorage in Frameworks */,
+				55038CE82AA25F7800F902D7 /* FirebaseDatabase in Frameworks */,
 				558D83022A7D660A003EC291 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -726,6 +736,7 @@
 				558D82F82A7D6350003EC291 /* Supporting Files */,
 				08C952C42A7D562A009D501C /* Info.plist */,
 				08D6EEE52A8815570017768A /* BrushViewController.swift */,
+				55038CDD2AA2536900F902D7 /* GoogleService-Info.plist */,
 				08D6EEEA2A881D5D0017768A /* FashionApp-Bridging-Header.h */,
 			);
 			path = FashionApp;
@@ -913,6 +924,10 @@
 				558D83042A7D677C003EC291 /* Realm */,
 				558D83062A7D677C003EC291 /* RealmSwift */,
 				55CA4B7C2A7EAEE800B43191 /* FrameBuilder */,
+				55038CE52AA25F7800F902D7 /* FirebaseAuth */,
+				55038CE72AA25F7800F902D7 /* FirebaseDatabase */,
+				55038CE92AA25F7800F902D7 /* FirebaseStorage */,
+				55038CEC2AA2611500F902D7 /* Kingfisher */,
 			);
 			productName = FashionApp;
 			productReference = 08C952B32A7D5628009D501C /* FashionApp.app */;
@@ -947,6 +962,8 @@
 				558D83002A7D660A003EC291 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				558D83032A7D677C003EC291 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				55CA4B7B2A7EAEE800B43191 /* XCRemoteSwiftPackageReference "FrameBuilder" */,
+				55038CE42AA25F7800F902D7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				55038CEB2AA2611500F902D7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 08C952B42A7D5628009D501C /* Products */;
 			projectDirPath = "";
@@ -967,6 +984,7 @@
 				08A83F8E2A92494500F180C3 /* Unknown.jpeg in Resources */,
 				08C952C32A7D562A009D501C /* LaunchScreen.storyboard in Resources */,
 				08A83F8C2A9242D500F180C3 /* test3.jpg in Resources */,
+				55038CDE2AA2536900F902D7 /* GoogleService-Info.plist in Resources */,
 				08A83F902A9249AA00F180C3 /* test5.jpg in Resources */,
 				08A83F922A924B0E00F180C3 /* 312.jpg in Resources */,
 				08C952C02A7D562A009D501C /* Assets.xcassets in Resources */,
@@ -1232,7 +1250,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5HDJX97Z93;
+				DEVELOPMENT_TEAM = 49SWRDXJLL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FashionApp",
@@ -1252,7 +1270,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.esifyce;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.fashionApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "FashionApp/FashionApp-Bridging-Header.h";
@@ -1270,7 +1288,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5HDJX97Z93;
+				DEVELOPMENT_TEAM = 49SWRDXJLL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FashionApp",
@@ -1290,7 +1308,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.esifyce;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andrew.fashionApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "FashionApp/FashionApp-Bridging-Header.h";
@@ -1323,6 +1341,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		55038CE42AA25F7800F902D7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+		55038CEB2AA2611500F902D7 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		558D83002A7D660A003EC291 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1350,6 +1384,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		55038CE52AA25F7800F902D7 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55038CE42AA25F7800F902D7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		55038CE72AA25F7800F902D7 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55038CE42AA25F7800F902D7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		55038CE92AA25F7800F902D7 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55038CE42AA25F7800F902D7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		55038CEC2AA2611500F902D7 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55038CEB2AA2611500F902D7 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		558D83012A7D660A003EC291 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 558D83002A7D660A003EC291 /* XCRemoteSwiftPackageReference "SnapKit" */;

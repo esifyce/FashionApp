@@ -100,6 +100,7 @@ final class EditorViewController: BaseViewController, UIPopoverPresentationContr
     private lazy var skinImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.image = .Mannequin.skinIcon2
+        imageView.isUserInteractionEnabled = true
         return imageView
     }()
     
@@ -183,6 +184,7 @@ final class EditorViewController: BaseViewController, UIPopoverPresentationContr
         defer { presenter.viewDidLoad() }
         setupUI()
         addObservers()
+        addTouches()
     }
     
     override func viewDidLayoutSubviews() {
@@ -399,8 +401,9 @@ fileprivate extension EditorViewController {
     }
     
     func addSubviews() {
-        [skinImageView, headerView,
-         canvasView!,
+        guard let canvasView else { return }
+        [headerView,
+         skinImageView,
          layersButton, collectionView,
          clothesView, menuListView,
          pencilView, brushListView].forEach({ view.addSubview($0) })
@@ -411,15 +414,12 @@ fileprivate extension EditorViewController {
         [headerView, layersButton,
          collectionView, clothesView, menuListView,
          brushListView].forEach({ view.bringSubviewToFront($0) })
+        
+        skinImageView.addSubview(canvasView)
     }
     
     func setConstraints() {
         guard let canvasView else { return }
-        skinImageView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.height.equalTo(583)
-            make.width.equalTo(390)
-        }
         
         headerView.snp.makeConstraints { make in
             make.directionalHorizontalEdges.equalToSuperview()
@@ -496,7 +496,15 @@ fileprivate extension EditorViewController {
             make.bottom.equalToSuperview().inset(44)
         }
         
-        canvasView.frame = view.bounds
+        skinImageView.buildFrame(
+            FrameBuilder()
+                .x(0)
+                .y(0)
+                .height(583)
+                .width(390)
+        )
+        
+        canvasView.frame = skinImageView.bounds
     }
     
     func configStyle() {
@@ -515,20 +523,8 @@ fileprivate extension EditorViewController {
             self?.canvasView?.canRedo()
             self?.canvasView?.canUndo()
 
-
             
             let img = self?.canvasView?.resetUndoManager()
-            
-//            self?.canvasView?.drawImage(UIImage(data: img!), in: self!.view.bounds)
-//            self?.canvasView?.canUndo()
-//            self?.canvasView?.undo()
-            
-            
-//            guard let self, let popClothes = self.presenter.popFromClothes() else { return }
-//            var rendoStack = self.presenter.getRendoStack()
-//            rendoStack.append(popClothes)
-//            self.presenter.setRendoStack(with: rendoStack)
-//            self.updateSkinClothes(presenter.getClothesStack())
         }), for: .touchUpInside)
         
         rightStepButton.addAction(UIAction(handler: { [weak self] _ in
@@ -657,6 +653,66 @@ private extension EditorViewController {
             imageView.frame = CGRect(x: 0, y: 0, width: width, height: height)
         })
         presenter.setClothesStack(with: clothesStack)
+    }
+}
+
+// MARK: - Add Touches Extension
+private extension EditorViewController {
+    func addTouches() {
+        skinImageView.transform = .identity
+        let scaleGesture = UIPinchGestureRecognizer(target: self, action: #selector(handleScale(_:)))
+        let moveGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        moveGesture.minimumNumberOfTouches = 2
+        moveGesture.maximumNumberOfTouches = 2
+        let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate(_:)))
+        
+        skinImageView.addGestureRecognizer(scaleGesture)
+        skinImageView.addGestureRecognizer(moveGesture)
+        skinImageView.addGestureRecognizer(rotateGesture)
+    }
+    
+    @objc func handleScale(_ sender: UIPinchGestureRecognizer) {
+        var lastScale = sender.scale
+        var onePoint: CGPoint = .zero
+        var twoPoint: CGPoint = .zero
+        var anchorPoint: CGPoint = .zero
+        
+        if sender.state == .began {
+            lastScale = sender.scale
+            if sender.numberOfTouches == 2 {
+                onePoint = sender.location(ofTouch: 0, in: skinImageView)
+                twoPoint = sender.location(ofTouch: 1, in: skinImageView)
+            }
+            anchorPoint.x = (onePoint.x + twoPoint.x) / 2 / skinImageView.bounds.size.width
+            anchorPoint.y = (onePoint.y + twoPoint.y) / 2 / skinImageView.bounds.size.height
+            skinImageView.setAnchorPoint(anchorPoint: anchorPoint)
+        }
+        
+        if sender.numberOfTouches == 2 && sender.state == .changed {
+            lastScale = sender.scale
+            skinImageView.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
+        }
+    }
+    
+    @objc func handlePan(_ sender: UIPanGestureRecognizer) {
+        if !sender.isEnabled {
+            return
+        }
+        
+        if sender.numberOfTouches == 2 && sender.state == .changed {
+            let translation = sender.translation(in: skinImageView.superview)
+            skinImageView.center = CGPoint(x: skinImageView.center.x + translation.x, y: skinImageView.center.y + translation.y)
+            sender.setTranslation(.zero, in: skinImageView.superview)
+        }
+    }
+    
+    @objc func handleRotate(_ sender: UIRotationGestureRecognizer) {
+        guard sender.view != nil else { return }
+        
+        if sender.state == .began || sender.state == .changed {
+            sender.view?.transform = sender.view!.transform.rotated(by: sender.rotation)
+            sender.rotation = 0
+        }
     }
 }
 
