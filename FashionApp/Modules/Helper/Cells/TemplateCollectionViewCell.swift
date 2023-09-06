@@ -54,7 +54,7 @@ class TemplateCollectionViewCell: UICollectionViewCell {
     func configure(with model: MainViewModel?, type: MainCollectionCellType) {
         guard let model else { return }
         if type == .mannequinSquare {
-            imageView.image = UIImage(named: model.skin)
+            imageView.image = model.image
         } else {
             imageView.image = Utils().obtainImage(from: model.skin)
         }

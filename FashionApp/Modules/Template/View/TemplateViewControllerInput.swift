@@ -10,4 +10,6 @@ import KMDrawViewSDK
 
 protocol TemplateViewControllerInput: AnyObject {
     func getCanvas() -> KMDrawView
+    func showLoader()
+    func hideLoader() 
 }

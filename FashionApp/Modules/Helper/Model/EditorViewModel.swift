@@ -9,12 +9,12 @@ import UIKit
 
 struct EditorViewModel {
     let nameDress: String
-    let typeDress: UIImage.Clothes
+    let typeDress: Clothes
     let previewDress: String
     var isSelectedImage: Bool
     var path: String
     
-    init(nameDress: String, typeDress: UIImage.Clothes, previewDress: String, isSelectedImage: Bool, path: String = "") {
+    init(nameDress: String, typeDress: Clothes, previewDress: String, isSelectedImage: Bool, path: String = "") {
         self.nameDress = nameDress
         self.typeDress = typeDress
         self.previewDress = previewDress

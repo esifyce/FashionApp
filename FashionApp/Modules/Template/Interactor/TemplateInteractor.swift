@@ -6,21 +6,24 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseStorage
 
 final class TemplateInteractor {
-    private let viewModel: [MainViewModel] = [
-        .init(projectName: "Mannequin 1", skin: "skinTemplate2"),
-        .init(projectName: "Mannequin 2", skin: "skinTemplate"),
-        .init(projectName: "Mannequin 3", skin: "skinTemplate2"),
-        .init(projectName: "Mannequin 4", skin: "skinTemplate"),
-        .init(projectName: "Mannequin 5", skin: "skinTemplate"),
-        .init(projectName: "Mannequin 6", skin: "skinTemplate2"),
-    ]
+
 }
 
 // MARK: - TemplateInteractorInput
 extension TemplateInteractor: TemplateInteractorInput {
-    func getViewModel(completion: ([MainViewModel]) -> Void) {
-        completion(viewModel)
+    func getViewModel(completion: @escaping ([MainViewModel]) -> Void) {
+        FirebaseManager.shared.getImages(clothes: nil, from: .templates) { [weak self] result in
+            switch result {
+            case .success(let model):
+                let images = model.map{ MainViewModel(projectName: $0.name, image: $0.image)}
+                completion(images)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }

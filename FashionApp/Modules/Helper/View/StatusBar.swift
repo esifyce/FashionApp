@@ -14,7 +14,7 @@ class StatusBar: UIView {
     
     var items = [UIButton]()
     var selectedItem = UIButton()
-    var didTapCallBack: ((UIImage.Clothes) -> Void)?
+    var didTapCallBack: ((Clothes) -> Void)?
     
     // MARK: - Views
     
@@ -74,7 +74,7 @@ class StatusBar: UIView {
         sender.setStatusBar(backgroundColor: .white, titleColor: .mainColor, borderWidth: 0)
         let buttonFrame = sender.superview?.convert(sender.frame, from: scrollView)
         scrollView.scrollRectToVisible(buttonFrame ?? .zero, animated: true)
-        didTapCallBack?(UIImage.Clothes(rawValue: sender.tag) ?? .hair)
+        didTapCallBack?(Clothes(rawValue: sender.tag) ?? .hair)
     }
     
     // MARK: - Helpers

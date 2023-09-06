@@ -22,7 +22,7 @@ class EditorModel: Object {
     
     var editorViewModel: EditorViewModel {
         return EditorViewModel(nameDress: dress,
-                               typeDress: UIImage.Clothes(rawValue: dressType) ?? .dress,
+                               typeDress: Clothes(rawValue: dressType) ?? .dress,
                                previewDress: preview,
                                isSelectedImage: true)
     }

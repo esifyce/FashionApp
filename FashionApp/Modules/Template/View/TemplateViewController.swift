@@ -60,7 +60,7 @@ final class TemplateViewController: BaseViewController {
         return segmentControl
     }()
 
-    private lazy var divaderView: UIView = {
+    private lazy var dividerView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.separatorColor
         return view
@@ -111,6 +111,14 @@ extension TemplateViewController: TemplateViewControllerInput {
     func getCanvas() -> KMDrawView {
         return canvasView!
     }
+    
+    func showLoader() {
+        showActivityIndicator()
+    }
+    
+    func hideLoader() {
+        hideActivityIndicator()
+    }
 }
 
 // MARK: - fileprivate TemplateViewController
@@ -125,7 +133,7 @@ fileprivate extension TemplateViewController {
     func addSubviews() {
         [headerView, collectionView].forEach({ view.addSubview($0) })
         [backButton, titleLabel,
-        segmentControl, divaderView].forEach({ headerView.addSubview($0) })
+        segmentControl, dividerView].forEach({ headerView.addSubview($0) })
     }
     
     func setConstraints() {
@@ -146,13 +154,13 @@ fileprivate extension TemplateViewController {
         }
         
         segmentControl.snp.makeConstraints { make in
-            make.bottom.equalTo(divaderView.snp.top).offset(-9)
+            make.bottom.equalTo(dividerView.snp.top).offset(-9)
             make.width.equalTo(321)
             make.height.equalTo(43)
             make.centerX.equalToSuperview()
         }
         
-        divaderView.snp.makeConstraints { make in
+        dividerView.snp.makeConstraints { make in
             make.height.equalTo(0.5)
             make.directionalHorizontalEdges.bottom.equalToSuperview()
         }

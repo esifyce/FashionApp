@@ -157,6 +157,21 @@
                   endingLineNumber = "179"
                   offsetFromSymbolStart = "36">
                </Location>
+               <Location
+                  uuid = "501C9B6C-9968-4842-8AA5-DC3EA95F08A0 - 84895e169b7eb456"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FashionApp.LayerCustomizeView.actionTapped(FashionApp.LayerAction) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Helper/View/LayerCustomizeView/LayerCustomizeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "180"
+                  endingLineNumber = "180"
+                  offsetFromSymbolStart = "60">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -235,6 +250,36 @@
                   endingLineNumber = "181"
                   offsetFromSymbolStart = "420">
                </Location>
+               <Location
+                  uuid = "CFDA95C4-A1EB-416E-ACE7-2A8E20A83C1F - 84895e169b7eb437"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FashionApp.LayerCustomizeView.actionTapped(FashionApp.LayerAction) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Helper/View/LayerCustomizeView/LayerCustomizeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "181"
+                  endingLineNumber = "181"
+                  offsetFromSymbolStart = "284">
+               </Location>
+               <Location
+                  uuid = "CFDA95C4-A1EB-416E-ACE7-2A8E20A83C1F - cbfac79eccfd023f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (FashionApp.LayerAction) -&gt; Swift.Bool in FashionApp.LayerCustomizeView.actionTapped(FashionApp.LayerAction) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Helper/View/LayerCustomizeView/LayerCustomizeView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "181"
+                  endingLineNumber = "181"
+                  offsetFromSymbolStart = "36">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -289,718 +334,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "10614EF7-2986-4633-883B-7226693C0CD8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Helper/Cells/TemplateCollectionViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "configure(with:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "10614EF7-2986-4633-883B-7226693C0CD8 - 71e09c3c2992d85b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.TemplateCollectionViewCell.configure(with: Swift.Optional&lt;FashionApp.MainViewModel&gt;) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Helper/Cells/TemplateCollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "244">
-               </Location>
-               <Location
-                  uuid = "10614EF7-2986-4633-883B-7226693C0CD8 - 71e09c3c2992d85b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.TemplateCollectionViewCell.configure(with: Swift.Optional&lt;FashionApp.MainViewModel&gt;) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Helper/Cells/TemplateCollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "108">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B8A108E3-B18C-4D6D-84BA-525F727FF5CE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Services/Utils.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "filePath(for:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "158F8AD6-8452-4272-BAAD-D3D6D176A744"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Services/Utils.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "obtainImage(from:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "158F8AD6-8452-4272-BAAD-D3D6D176A744 - 89d174615be847c3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.obtainImage(from: Swift.String) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "416">
-               </Location>
-               <Location
-                  uuid = "158F8AD6-8452-4272-BAAD-D3D6D176A744 - 89d174615be847c3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.obtainImage(from: Swift.String) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "424">
-               </Location>
-               <Location
-                  uuid = "158F8AD6-8452-4272-BAAD-D3D6D176A744 - 89d174615be847c3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.obtainImage(from: Swift.String) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "646">
-               </Location>
-               <Location
-                  uuid = "158F8AD6-8452-4272-BAAD-D3D6D176A744 - 89d174615be847c3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.obtainImage(from: Swift.String) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "644">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A18EE393-C742-4CE1-969E-3F94D3343509"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Services/Utils.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "obtainImage(from:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A18EE393-C742-4CE1-969E-3F94D3343509 - 89d174615be846bd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.obtainImage(from: Swift.String) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "788">
-               </Location>
-               <Location
-                  uuid = "A18EE393-C742-4CE1-969E-3F94D3343509 - 89d174615be846bd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.obtainImage(from: Swift.String) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "1012">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E3F18142-8F6E-4101-861C-64B15C6F8774"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Services/Utils.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "saveImage(image:filename:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E3F18142-8F6E-4101-861C-64B15C6F8774 - 3d0f9fe22da48754"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.saveImage(image: __C.UIImage, filename: Swift.String, completion: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "1125">
-               </Location>
-               <Location
-                  uuid = "E3F18142-8F6E-4101-861C-64B15C6F8774 - 3d0f9fe22da48754"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.saveImage(image: __C.UIImage, filename: Swift.String, completion: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "1232">
-               </Location>
-               <Location
-                  uuid = "E3F18142-8F6E-4101-861C-64B15C6F8774 - 3d0f9fe22da48754"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.saveImage(image: __C.UIImage, filename: Swift.String, completion: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "1117">
-               </Location>
-               <Location
-                  uuid = "E3F18142-8F6E-4101-861C-64B15C6F8774 - 3d0f9fe22da48754"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.saveImage(image: __C.UIImage, filename: Swift.String, completion: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "1228">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "33B9DC58-03DD-431D-8607-A71E800D8C84"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Services/Utils.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "saveImage(image:filename:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "33B9DC58-03DD-431D-8607-A71E800D8C84 - 3d0f9fe22da48696"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.saveImage(image: __C.UIImage, filename: Swift.String, completion: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "1738">
-               </Location>
-               <Location
-                  uuid = "33B9DC58-03DD-431D-8607-A71E800D8C84 - 3d0f9fe22da48696"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.saveImage(image: __C.UIImage, filename: Swift.String, completion: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "1836">
-               </Location>
-               <Location
-                  uuid = "33B9DC58-03DD-431D-8607-A71E800D8C84 - 3d0f9fe22da48696"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.saveImage(image: __C.UIImage, filename: Swift.String, completion: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "1730">
-               </Location>
-               <Location
-                  uuid = "33B9DC58-03DD-431D-8607-A71E800D8C84 - 3d0f9fe22da48696"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.saveImage(image: __C.UIImage, filename: Swift.String, completion: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "1832">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "89CF69D0-7538-4C42-88FD-F783FF04E0A5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Services/Utils.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "obtainImage(from:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "89CF69D0-7538-4C42-88FD-F783FF04E0A5 - 89d174615be84466"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.obtainImage(from: Swift.String) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "197">
-               </Location>
-               <Location
-                  uuid = "89CF69D0-7538-4C42-88FD-F783FF04E0A5 - 89d174615be84466"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.obtainImage(from: Swift.String) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "493">
-               </Location>
-               <Location
-                  uuid = "89CF69D0-7538-4C42-88FD-F783FF04E0A5 - 89d174615be84466"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.obtainImage(from: Swift.String) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "260">
-               </Location>
-               <Location
-                  uuid = "89CF69D0-7538-4C42-88FD-F783FF04E0A5 - 89d174615be84466"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.Utils.obtainImage(from: Swift.String) -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Services/Utils.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "484">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "76370E3D-EBE1-477A-A7C1-36E2A6EE10A3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Main/Presenter/MainPresenter.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "viewWillAppear()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "76370E3D-EBE1-477A-A7C1-36E2A6EE10A3 - 4ca44b430cddbcf7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.MainPresenter.updateCollection(with: __C.UITraitCollection) -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Main/Presenter/MainPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "76370E3D-EBE1-477A-A7C1-36E2A6EE10A3 - b3c3ba8c3ae84b0e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.MainPresenter.viewWillAppear() -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Main/Presenter/MainPresenter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "196">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "685CE740-6056-41E9-BB1F-F0EE9FD76D07"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Main/Interactor/MainInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "getModels()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "685CE740-6056-41E9-BB1F-F0EE9FD76D07 - 910da83554d92363"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.MainInteractor.getModels() -&gt; Swift.Array&lt;FashionApp.MainViewModel&gt;"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Main/Interactor/MainInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "1412">
-               </Location>
-               <Location
-                  uuid = "685CE740-6056-41E9-BB1F-F0EE9FD76D07 - 910da83554d92363"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.MainInteractor.getModels() -&gt; Swift.Array&lt;FashionApp.MainViewModel&gt;"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Main/Interactor/MainInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "1408">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AFF356F7-76B7-44F9-ACCA-3AB05897B7F5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Services/Utils.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "obtainImage(from:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FC37A6D7-A708-4628-B073-9F9ED1CD9BFE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Helper/Cells/TemplateCollectionViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "addTargets()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FC37A6D7-A708-4628-B073-9F9ED1CD9BFE - 2bcd381b8057a68c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.TemplateCollectionViewCell.addTargets() -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Helper/Cells/TemplateCollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "109"
-                  endingLineNumber = "109"
-                  offsetFromSymbolStart = "1088">
-               </Location>
-               <Location
-                  uuid = "FC37A6D7-A708-4628-B073-9F9ED1CD9BFE - 2bcd381b8057a6b3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.TemplateCollectionViewCell.addTargets() -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Helper/Cells/TemplateCollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "110"
-                  endingLineNumber = "110"
-                  offsetFromSymbolStart = "1088">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CE79848D-1D9F-44B6-B62D-36338EF05EAB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Main/Interactor/MainInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "modify(model:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "16F2A5D0-B817-4C88-A72C-4307A661775B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Helper/Cells/TemplateCollectionViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "addTargets()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "16F2A5D0-B817-4C88-A72C-4307A661775B - 2bcd381b8057a708"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.TemplateCollectionViewCell.addTargets() -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Helper/Cells/TemplateCollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "1028">
-               </Location>
-               <Location
-                  uuid = "16F2A5D0-B817-4C88-A72C-4307A661775B - 2bcd381b8057a708"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.TemplateCollectionViewCell.addTargets() -&gt; ()"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Helper/Cells/TemplateCollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4AA50B65-64A5-475D-B5A5-EDD117F1E714"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Helper/Cells/TemplateCollectionViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "init(frame:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4AA50B65-64A5-475D-B5A5-EDD117F1E714 - 3e3d8a55d2bd0563"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.TemplateCollectionViewCell.init(frame: __C.CGRect) -&gt; FashionApp.TemplateCollectionViewCell"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Helper/Cells/TemplateCollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "356">
-               </Location>
-               <Location
-                  uuid = "4AA50B65-64A5-475D-B5A5-EDD117F1E714 - 3e3d8a55d2bd0563"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.TemplateCollectionViewCell.init(frame: __C.CGRect) -&gt; FashionApp.TemplateCollectionViewCell"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Helper/Cells/TemplateCollectionViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "348">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6DD3CF4A-8C53-49D4-9DD4-F1DB7D02AEFC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Main/CollectionManager/MainCollectionManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "templatesListConfigurator(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "9399D3D4-002E-4075-95B5-CCE85072C6C4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1012,6 +345,53 @@
             endingLineNumber = "34"
             landmarkName = "openMore(with:rename:shareTo:delete:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9399D3D4-002E-4075-95B5-CCE85072C6C4 - 83383619da44ff8a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in FashionApp.MainRouter.openMore(with: Swift.String, rename: (Swift.Optional&lt;Swift.String&gt;) -&gt; (), shareTo: () -&gt; (), delete: () -&gt; ()) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Main/Router/MainRouter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "340">
+               </Location>
+               <Location
+                  uuid = "9399D3D4-002E-4075-95B5-CCE85072C6C4 - 83383619da44ff8a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in FashionApp.MainRouter.openMore(with: Swift.String, rename: (Swift.Optional&lt;Swift.String&gt;) -&gt; (), shareTo: () -&gt; (), delete: () -&gt; ()) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Main/Router/MainRouter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "448">
+               </Location>
+               <Location
+                  uuid = "9399D3D4-002E-4075-95B5-CCE85072C6C4 - 336c7ff86ff13c92"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in closure #2 (__C.UIAlertAction) -&gt; () in FashionApp.MainRouter.openMore(with: Swift.String, rename: (Swift.Optional&lt;Swift.String&gt;) -&gt; (), shareTo: () -&gt; (), delete: () -&gt; ()) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Main/Router/MainRouter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1028,6 +408,38 @@
             endingLineNumber = "58"
             landmarkName = "rename(with:in:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "31621276-FABC-49BE-B07C-4A387D18852D - b69a290448f012f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FashionApp.MainPresenter.rename(with: Swift.Optional&lt;Swift.String&gt;, in: FashionApp.MainViewModel) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Main/Presenter/MainPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "224">
+               </Location>
+               <Location
+                  uuid = "31621276-FABC-49BE-B07C-4A387D18852D - b69a290448f012f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FashionApp.MainPresenter.rename(with: Swift.Optional&lt;Swift.String&gt;, in: FashionApp.MainViewModel) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Main/Presenter/MainPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "232">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1105,6 +517,51 @@
                   endingLineNumber = "60"
                   offsetFromSymbolStart = "44">
                </Location>
+               <Location
+                  uuid = "A2E3B226-8D8F-4624-867A-BEFB076E80BF - b69a290448f012b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FashionApp.MainPresenter.rename(with: Swift.Optional&lt;Swift.String&gt;, in: FashionApp.MainViewModel) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Main/Presenter/MainPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "308">
+               </Location>
+               <Location
+                  uuid = "A2E3B226-8D8F-4624-867A-BEFB076E80BF - b69a290448f012b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FashionApp.MainPresenter.rename(with: Swift.Optional&lt;Swift.String&gt;, in: FashionApp.MainViewModel) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Main/Presenter/MainPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "552">
+               </Location>
+               <Location
+                  uuid = "A2E3B226-8D8F-4624-867A-BEFB076E80BF - b69a290448f012b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FashionApp.MainPresenter.rename(with: Swift.Optional&lt;Swift.String&gt;, in: FashionApp.MainViewModel) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Main/Presenter/MainPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "864">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1122,6 +579,86 @@
             endingLineNumber = "61"
             landmarkName = "rename(with:in:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8C888595-AF48-43AB-AA03-85AD62A7EE3D - b69a290448f01295"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FashionApp.MainPresenter.rename(with: Swift.Optional&lt;Swift.String&gt;, in: FashionApp.MainViewModel) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Main/Presenter/MainPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "964">
+               </Location>
+               <Location
+                  uuid = "8C888595-AF48-43AB-AA03-85AD62A7EE3D - b69a290448f01295"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FashionApp.MainPresenter.rename(with: Swift.Optional&lt;Swift.String&gt;, in: FashionApp.MainViewModel) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Main/Presenter/MainPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "1000">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5EF13E74-1990-4E86-B870-EB4FF1899611"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FashionApp/Modules/Template/Interactor/TemplateInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "getViewModel(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5EF13E74-1990-4E86-B870-EB4FF1899611 - fa1d1c51d3187c42"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;FashionApp.ImageModel&gt;, Swift.Error&gt;) -&gt; () in FashionApp.TemplateInteractor.getViewModel(completion: (Swift.Array&lt;FashionApp.MainViewModel&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Template/Interactor/TemplateInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "5EF13E74-1990-4E86-B870-EB4FF1899611 - 38608595e0943881"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (FashionApp.ImageModel) -&gt; FashionApp.MainViewModel in closure #1 (Swift.Result&lt;Swift.Array&lt;FashionApp.ImageModel&gt;, Swift.Error&gt;) -&gt; () in FashionApp.TemplateInteractor.getViewModel(completion: (Swift.Array&lt;FashionApp.MainViewModel&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "FashionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Template/Interactor/TemplateInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

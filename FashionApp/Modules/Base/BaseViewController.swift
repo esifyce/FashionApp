@@ -8,6 +8,11 @@
 import UIKit
 
 class BaseViewController: UIViewController {
+    
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        return indicator
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +23,17 @@ class BaseViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         edgesForExtendedLayout = .all
         extendedLayoutIncludesOpaqueBars = true
+    }
+    
+    func showActivityIndicator() {
+        view.addSubview(activityIndicator)
+        activityIndicator.center = view.center
+        activityIndicator.startAnimating()
+    }
+    
+    func hideActivityIndicator() {
+        activityIndicator.stopAnimating()
+        activityIndicator.removeFromSuperview()
     }
 }
 

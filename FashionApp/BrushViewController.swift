@@ -29,25 +29,30 @@ final class BrushViewController: UIViewController {
         view.backgroundColor = .white
         setupUI()
         
-        let storage = Storage.storage()
-        let imageRef = storage.reference().child("images/tortuga.jpg")
+//        let storage = Storage.storage()
+//        let imageRef = storage.reference().child("images/tortuga.jpg")
+//
+//        imageRef.getData(maxSize: 1 * 1024 * 1024) { [weak self] data, error in
+//            if let error {
+//                print(error)
+//                return
+//            }
+//
+//            guard let data else {
+//                print("No Data")
+//                return
+//            }
+//
+//            let image = UIImage(data: data)
+//            DispatchQueue.main.async {
+//                self?.imageView.image = image
+//            }
+//        }
         
-        imageRef.getData(maxSize: 1 * 1024 * 1024) { [weak self] data, error in
-            if let error {
-                print(error)
-                return
-            }
-            
-            guard let data else {
-                print("No Data")
-                return
-            }
-            
-            let image = UIImage(data: data)
-            DispatchQueue.main.async {
-                self?.imageView.image = image
-            }
-        }
+//        FirebaseManger.shared.getClothes(clothes: .shoes, from: .clothes) { [weak self] urlArray in
+//            print(urlArray)
+//            print("End")
+//        }
     }
     
     func setupUI() {

@@ -21,4 +21,17 @@ extension String {
 
         return ceil(boundingBox.width)
     }
+    
+    func truncateAfterDot() -> String {
+        if let dotRange = self.range(of: ".") {
+            let dotIndex = self.distance(from: self.startIndex, to: dotRange.upperBound)
+            
+            if dotIndex < self.count {
+                let endIndex = self.index(self.startIndex, offsetBy: dotIndex)
+                return String(self[..<endIndex])
+            }
+        }
+        
+        return self
+    }
 }

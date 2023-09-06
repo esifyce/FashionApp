@@ -35,6 +35,8 @@ final class EditorViewController: BaseViewController, UIPopoverPresentationContr
     private var appearance: Appearance
     weak var canvasView: KMDrawView? = nil
     
+    private var layers: [UIImage] = []
+    
     var keyWindow: UIWindow? {
         UIApplication
             .shared
@@ -53,6 +55,12 @@ final class EditorViewController: BaseViewController, UIPopoverPresentationContr
     private lazy var backgroundView: UIView = {
         let view = UIView()
         view.backgroundColor = .black.withAlphaComponent(0.3)
+        return view
+    }()
+    
+    private lazy var containerView: UIImageView = {
+        let view = UIImageView()
+        view.isUserInteractionEnabled = true
         return view
     }()
     
@@ -100,6 +108,12 @@ final class EditorViewController: BaseViewController, UIPopoverPresentationContr
     private lazy var skinImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.image = .Mannequin.skinIcon2
+        imageView.isUserInteractionEnabled = true
+        return imageView
+    }()
+    
+    private lazy var layerImageView: UIImageView = {
+       let imageView = UIImageView()
         imageView.isUserInteractionEnabled = true
         return imageView
     }()
@@ -185,6 +199,7 @@ final class EditorViewController: BaseViewController, UIPopoverPresentationContr
         setupUI()
         addObservers()
         addTouches()
+        self.canvasView?.radius = 34
     }
     
     override func viewDidLayoutSubviews() {
@@ -382,7 +397,7 @@ fileprivate extension EditorViewController {
         configStyle()
         addTargets()
         
-        let temp: [UIImage.Clothes] = [.hair, .pants, .shoes, .dress]
+        let temp: [Clothes] = [.hair, .pants, .shoes, .dress]
         var viewModel: [StatusBarViewModel] = []
         
         temp.enumerated().forEach { index, element in
@@ -402,8 +417,9 @@ fileprivate extension EditorViewController {
     
     func addSubviews() {
         guard let canvasView else { return }
+        [skinImageView, layerImageView, canvasView].forEach({ containerView.addSubview($0) })
         [headerView,
-         skinImageView,
+         containerView,
          layersButton, collectionView,
          clothesView, menuListView,
          pencilView, brushListView].forEach({ view.addSubview($0) })
@@ -414,8 +430,6 @@ fileprivate extension EditorViewController {
         [headerView, layersButton,
          collectionView, clothesView, menuListView,
          brushListView].forEach({ view.bringSubviewToFront($0) })
-        
-        skinImageView.addSubview(canvasView)
     }
     
     func setConstraints() {
@@ -496,7 +510,7 @@ fileprivate extension EditorViewController {
             make.bottom.equalToSuperview().inset(44)
         }
         
-        skinImageView.buildFrame(
+        containerView.buildFrame(
             FrameBuilder()
                 .x(0)
                 .y(0)
@@ -504,6 +518,8 @@ fileprivate extension EditorViewController {
                 .width(390)
         )
         
+        skinImageView.frame = containerView.bounds
+        layerImageView.frame = containerView.bounds
         canvasView.frame = skinImageView.bounds
     }
     
@@ -517,21 +533,11 @@ fileprivate extension EditorViewController {
         }), for: .touchUpInside)
         
         leftStepButton.addAction(UIAction(handler: { [weak self] _ in
-//            let undoManager = self?.canvasView?.undoManager
-            self?.canvasView?.loadUndoManager()
-            
-            self?.canvasView?.canRedo()
-            self?.canvasView?.canUndo()
-
-            
-            let img = self?.canvasView?.resetUndoManager()
+            self?.leftStepButtonTapped()
         }), for: .touchUpInside)
         
         rightStepButton.addAction(UIAction(handler: { [weak self] _ in
-            guard let self, let popClothes = self.presenter.popFromRendoClothes() else { return }
-            var clothesStack = self.presenter.getClothesStack()
-            clothesStack.append(popClothes)
-            self.updateSkinClothes(clothesStack)
+            self?.rightStepButtonTapped()
         }), for: .touchUpInside)
         
         doneButton.addAction(UIAction(handler: { [weak self] _ in
@@ -539,7 +545,8 @@ fileprivate extension EditorViewController {
         }), for: .touchUpInside)
         
         layersButton.addAction(UIAction(handler: { [weak self] _ in
-            self?.presenter.layerButtonTapped()
+            self?.newLayerTapped()
+            //self?.presenter.layerButtonTapped()
         }), for: .touchUpInside)
         
         clothesView.categoryClothes.didTapCallBack = { [weak self] index in
@@ -574,6 +581,41 @@ fileprivate extension EditorViewController {
                 make.height.equalTo(appearance.heightValue)
             }
         }
+    }
+    
+    func leftStepButtonTapped() {
+       guard let popClothes = self.presenter.popFromClothes(),
+            let canvasView else { return }
+
+        var rendoStack = self.presenter.getRendoStack()
+        rendoStack.append(popClothes)
+        presenter.setRendoStack(with: rendoStack)
+        updateSkinClothes(presenter.getClothesStack())
+
+        if canvasView.canUndo() {
+            canvasView.undo()
+        }
+        
+        canvasView.clear()
+    }
+    
+    func rightStepButtonTapped() {
+        guard  let popClothes = self.presenter.popFromRendoClothes(),
+               let canvasView else { return }
+        var clothesStack = self.presenter.getClothesStack()
+        clothesStack.append(popClothes)
+        updateSkinClothes(clothesStack)
+        
+        if canvasView.canRedo() {
+            canvasView.redo()
+        }
+    }
+    
+    func newLayerTapped() {
+        guard let canvasView else { return }
+        layers.append(canvasView.image())
+        canvasView.clear()
+        updateLayers()
     }
 }
 
@@ -647,12 +689,26 @@ private extension EditorViewController {
         clothesStack.forEach({ clothes in
             let imageView = UIImageView()
             imageView.image = UIImage(named: clothes.nameDress)
+            imageView.isUserInteractionEnabled = true
             skinImageView.addSubview(imageView)
             let width = skinImageView.frame.width
             let height = skinImageView.frame.height
             imageView.frame = CGRect(x: 0, y: 0, width: width, height: height)
         })
         presenter.setClothesStack(with: clothesStack)
+    }
+    
+    func updateLayers() {
+        layerImageView.subviews.forEach({ $0.removeFromSuperview() })
+        layers.forEach({ layer in
+            let imageView = UIImageView()
+            imageView.image = layer
+            imageView.isUserInteractionEnabled = true
+            layerImageView.addSubview(imageView)
+            let width = layerImageView.frame.width
+            let height = layerImageView.frame.height
+            imageView.frame = CGRect(x: 0, y: 0, width: width, height: height)
+        })
     }
 }
 
@@ -672,13 +728,11 @@ private extension EditorViewController {
     }
     
     @objc func handleScale(_ sender: UIPinchGestureRecognizer) {
-        var lastScale = sender.scale
         var onePoint: CGPoint = .zero
         var twoPoint: CGPoint = .zero
         var anchorPoint: CGPoint = .zero
         
         if sender.state == .began {
-            lastScale = sender.scale
             if sender.numberOfTouches == 2 {
                 onePoint = sender.location(ofTouch: 0, in: skinImageView)
                 twoPoint = sender.location(ofTouch: 1, in: skinImageView)
@@ -689,7 +743,6 @@ private extension EditorViewController {
         }
         
         if sender.numberOfTouches == 2 && sender.state == .changed {
-            lastScale = sender.scale
             skinImageView.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
         }
     }
@@ -737,14 +790,6 @@ extension EditorViewController: KMDrawViewDelegate {
     }
     
     func drawView(_ drawView: KMDrawView!, didDrawEnd point: CGPoint) {
-        print("drawEnd \(point)")
-    }
-    
-    func drawView(_ drawView: KMDrawView!, didUpdateUndoStatus enable: Bool) {
-        print(enable)
-    }
-    
-    func drawView(_ drawView: KMDrawView!, didUpdateRedoStatus enable: Bool) {
-        print(enable)
+        drawView.markAction()
     }
 }

@@ -37,7 +37,7 @@ extension EditorPresenter: EditorPresenterInput {
         router.popViewController()
     }
     
-    func updateCollectionByCategory(index: UIImage.Clothes) {
+    func updateCollectionByCategory(index: Clothes) {
         let clothes = index.getClothes
         let previewClothes = index.previewClothes
          

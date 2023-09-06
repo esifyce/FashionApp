@@ -8,5 +8,5 @@
 import Foundation
 
 protocol TemplateInteractorInput: AnyObject {
-    func getViewModel(completion: ([MainViewModel]) -> Void)
+    func getViewModel(completion: @escaping ([MainViewModel]) -> Void) 
 }

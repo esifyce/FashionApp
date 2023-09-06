@@ -27,7 +27,9 @@ final class TemplatePresenter {
 // MARK: - TemplatePresenterInput
 extension TemplatePresenter: TemplatePresenterInput {
     func viewDidLoad() {
+        view?.showLoader()
         interactor.getViewModel { [weak self] viewModel in
+            self?.view?.hideLoader()
             self?.collectionManager.displaySquareTemplates(viewModel)
         }
     }

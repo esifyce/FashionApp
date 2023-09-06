@@ -101,6 +101,8 @@
 		55038CE82AA25F7800F902D7 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 55038CE72AA25F7800F902D7 /* FirebaseDatabase */; };
 		55038CEA2AA25F7800F902D7 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 55038CE92AA25F7800F902D7 /* FirebaseStorage */; };
 		55038CED2AA2611500F902D7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 55038CEC2AA2611500F902D7 /* Kingfisher */; };
+		550F5E492AA8D16100A8B3EA /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F5E482AA8D16100A8B3EA /* FirebaseManager.swift */; };
+		550F5E4B2AA8D1C000A8B3EA /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F5E4A2AA8D1C000A8B3EA /* Clothes.swift */; };
 		5511A5972A926AEE00DC9A8F /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A5962A926AEE00DC9A8F /* CustomSlider.swift */; };
 		5511A5992A926B0900DC9A8F /* ThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A5982A926B0900DC9A8F /* ThumbView.swift */; };
 		5511A59B2A926CDF00DC9A8F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A59A2A926CDF00DC9A8F /* UIView+Extension.swift */; };
@@ -273,6 +275,8 @@
 		08D6EF072A881DEE0017768A /* ImageRenderFSHs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageRenderFSHs.h; sourceTree = "<group>"; };
 		08EECAF32A81721F00EE8385 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		55038CDD2AA2536900F902D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		550F5E482AA8D16100A8B3EA /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		550F5E4A2AA8D1C000A8B3EA /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 		5511A5962A926AEE00DC9A8F /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		5511A5982A926B0900DC9A8F /* ThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbView.swift; sourceTree = "<group>"; };
 		5511A59A2A926CDF00DC9A8F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -594,6 +598,7 @@
 				08A83F992A92A83100F180C3 /* LayerViewModel.swift */,
 				08A83FA72A94708500F180C3 /* BrushViewModel.swift */,
 				55BDD5C62A994AB40099D14A /* ManequenViewModel.swift */,
+				550F5E4A2AA8D1C000A8B3EA /* Clothes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -785,6 +790,14 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		550F5E472AA8D14F00A8B3EA /* FirebaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				550F5E482AA8D16100A8B3EA /* FirebaseManager.swift */,
+			);
+			path = FirebaseManager;
+			sourceTree = "<group>";
+		};
 		5511A59E2A927FC100DC9A8F /* LayerCustomizeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -886,6 +899,7 @@
 		55BDD5BF2A99328E0099D14A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				550F5E472AA8D14F00A8B3EA /* FirebaseManager */,
 				55BDD5C82A994C3E0099D14A /* DataBaseManager */,
 				55BDD5C42A993CAA0099D14A /* Utils.swift */,
 			);
@@ -1051,6 +1065,7 @@
 				55A857DA2A85840F001CA72A /* DescriptionView.swift in Sources */,
 				08A83FA82A94708500F180C3 /* BrushViewModel.swift in Sources */,
 				082E5E512A7D842B00CF1776 /* PaywallInteractor.swift in Sources */,
+				550F5E492AA8D16100A8B3EA /* FirebaseManager.swift in Sources */,
 				08A83F942A9270BB00F180C3 /* LayersView.swift in Sources */,
 				082E5E282A7D81BF00CF1776 /* BaseViewController.swift in Sources */,
 				557341C52A94FBAA00A126A1 /* Collection+Extension.swift in Sources */,
@@ -1058,6 +1073,7 @@
 				08A83FC02A96C53B00F180C3 /* SnapshotInteractor.swift in Sources */,
 				08A83F9C2A92A91100F180C3 /* LayerCollectionViewCell.swift in Sources */,
 				08A83FBC2A96C53B00F180C3 /* SnapshotViewController.swift in Sources */,
+				550F5E4B2AA8D1C000A8B3EA /* Clothes.swift in Sources */,
 				082E5E3B2A7D842500CF1776 /* EditorViewController.swift in Sources */,
 				082E5E502A7D842B00CF1776 /* PaywallAssembly.swift in Sources */,
 				55A243282A82B6F900288046 /* UITapGestureRecoginzer+Extension.swift in Sources */,
