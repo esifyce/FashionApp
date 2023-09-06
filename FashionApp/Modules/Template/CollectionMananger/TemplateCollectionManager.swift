@@ -85,9 +85,7 @@ final class TemplateCollectionManager: NSObject, TemplateCollectionManagerProtoc
         })
         
         configuratorsDataSource = output.compactMap { $0 }
-        DispatchQueue.main.async {
-            self.collectionView?.reloadData()
-        }
+        collectionView?.reloadData()
     }
     
     // MARK: - Private functions
