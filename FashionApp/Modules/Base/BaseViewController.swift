@@ -7,10 +7,18 @@
 
 import UIKit
 
+extension BaseViewController {
+    struct BaseAppearance {
+        let size: CGFloat = 50
+    }
+}
+
 class BaseViewController: UIViewController {
+    let baseAppearance = BaseAppearance()
     
-    private lazy var activityIndicator: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView()
+    private lazy var activityIndicator: CustomActivityIndicator = {
+        let indicator = CustomActivityIndicator(frame: CGRect(x: 0, y: 0, width: baseAppearance.size, height: baseAppearance.size))
+        indicator.tintColor = .black
         return indicator
     }()
 
@@ -26,14 +34,13 @@ class BaseViewController: UIViewController {
     }
     
     func showActivityIndicator() {
-        view.addSubview(activityIndicator)
         activityIndicator.center = view.center
-        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
+        activityIndicator.animate()
     }
     
     func hideActivityIndicator() {
-        activityIndicator.stopAnimating()
-        activityIndicator.removeFromSuperview()
+        activityIndicator.stopAnimation()
     }
 }
 

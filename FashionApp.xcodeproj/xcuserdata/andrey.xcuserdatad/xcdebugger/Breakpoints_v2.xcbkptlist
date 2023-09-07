@@ -616,47 +616,93 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5EF13E74-1990-4E86-B870-EB4FF1899611"
+            uuid = "71D7F35D-DAEF-466B-8161-681D6A82C516"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Template/Interactor/TemplateInteractor.swift"
+            filePath = "FashionApp/Modules/Editor/View/EditorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "getViewModel(completion:)"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
+            landmarkName = "EditorViewController"
+            landmarkType = "21">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6EAA9C9E-D6CE-4E29-AC5E-1C6CA293C133"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FashionApp/Modules/Editor/View/EditorViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
+            landmarkName = "toggleLayerButton(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D396065B-5DE9-4BFC-93C0-4B07CD001F0A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FashionApp/Modules/Editor/View/EditorViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
+            landmarkName = "toggleLayerButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6E7E19F3-F352-40AB-87AC-23B22674E625"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FashionApp/Modules/Helper/View/PencilView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "276"
+            endingLineNumber = "276">
             <Locations>
                <Location
-                  uuid = "5EF13E74-1990-4E86-B870-EB4FF1899611 - fa1d1c51d3187c42"
+                  uuid = "6E7E19F3-F352-40AB-87AC-23B22674E625 - c6553e5152625bd2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;FashionApp.ImageModel&gt;, Swift.Error&gt;) -&gt; () in FashionApp.TemplateInteractor.getViewModel(completion: (Swift.Array&lt;FashionApp.MainViewModel&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "FashionApp.PencilView.backTapped() -&gt; ()"
                   moduleName = "FashionApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Template/Interactor/TemplateInteractor.swift"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Helper/View/PencilView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "168">
+                  startingLineNumber = "275"
+                  endingLineNumber = "275"
+                  offsetFromSymbolStart = "28">
                </Location>
                <Location
-                  uuid = "5EF13E74-1990-4E86-B870-EB4FF1899611 - 38608595e0943881"
+                  uuid = "6E7E19F3-F352-40AB-87AC-23B22674E625 - c6553e5152625bd2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (FashionApp.ImageModel) -&gt; FashionApp.MainViewModel in closure #1 (Swift.Result&lt;Swift.Array&lt;FashionApp.ImageModel&gt;, Swift.Error&gt;) -&gt; () in FashionApp.TemplateInteractor.getViewModel(completion: (Swift.Array&lt;FashionApp.MainViewModel&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "FashionApp.PencilView.backTapped() -&gt; ()"
                   moduleName = "FashionApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Template/Interactor/TemplateInteractor.swift"
+                  urlString = "file:///Users/andrey/FashionApp/FashionApp/Modules/Helper/View/PencilView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "44">
+                  startingLineNumber = "275"
+                  endingLineNumber = "275"
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>

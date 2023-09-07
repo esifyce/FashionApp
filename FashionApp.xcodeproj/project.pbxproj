@@ -103,6 +103,8 @@
 		55038CED2AA2611500F902D7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 55038CEC2AA2611500F902D7 /* Kingfisher */; };
 		550F5E492AA8D16100A8B3EA /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F5E482AA8D16100A8B3EA /* FirebaseManager.swift */; };
 		550F5E4B2AA8D1C000A8B3EA /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F5E4A2AA8D1C000A8B3EA /* Clothes.swift */; };
+		550F5E4D2AA8FEF900A8B3EA /* CustomActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F5E4C2AA8FEF900A8B3EA /* CustomActivityIndicator.swift */; };
+		550F5E4F2AA91F4900A8B3EA /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F5E4E2AA91F4900A8B3EA /* Enums.swift */; };
 		5511A5972A926AEE00DC9A8F /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A5962A926AEE00DC9A8F /* CustomSlider.swift */; };
 		5511A5992A926B0900DC9A8F /* ThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A5982A926B0900DC9A8F /* ThumbView.swift */; };
 		5511A59B2A926CDF00DC9A8F /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5511A59A2A926CDF00DC9A8F /* UIView+Extension.swift */; };
@@ -277,6 +279,8 @@
 		55038CDD2AA2536900F902D7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		550F5E482AA8D16100A8B3EA /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		550F5E4A2AA8D1C000A8B3EA /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
+		550F5E4C2AA8FEF900A8B3EA /* CustomActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicator.swift; sourceTree = "<group>"; };
+		550F5E4E2AA91F4900A8B3EA /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		5511A5962A926AEE00DC9A8F /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		5511A5982A926B0900DC9A8F /* ThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbView.swift; sourceTree = "<group>"; };
 		5511A59A2A926CDF00DC9A8F /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -599,6 +603,7 @@
 				08A83FA72A94708500F180C3 /* BrushViewModel.swift */,
 				55BDD5C62A994AB40099D14A /* ManequenViewModel.swift */,
 				550F5E4A2AA8D1C000A8B3EA /* Clothes.swift */,
+				550F5E4E2AA91F4900A8B3EA /* Enums.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -655,6 +660,7 @@
 				5511A5982A926B0900DC9A8F /* ThumbView.swift */,
 				080BB8F42A9B95A100D53860 /* PencilView.swift */,
 				080BB8F82A9CA09B00D53860 /* ClothesView.swift */,
+				550F5E4C2AA8FEF900A8B3EA /* CustomActivityIndicator.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1050,6 +1056,7 @@
 				082E5E822A7ED7D200CF1776 /* UIImage+Extension.swift in Sources */,
 				08A83FC32A96C53B00F180C3 /* SnapshotRouter.swift in Sources */,
 				554F30A62A81B85C0077114D /* TrialView.swift in Sources */,
+				550F5E4D2AA8FEF900A8B3EA /* CustomActivityIndicator.swift in Sources */,
 				082E5E202A7D7F3200CF1776 /* MainInteractor.swift in Sources */,
 				557341C72A955EA500A126A1 /* IphoneItemView.swift in Sources */,
 				082E5E1F2A7D7F3200CF1776 /* MainAssembly.swift in Sources */,
@@ -1060,6 +1067,7 @@
 				55A243262A82834F00288046 /* CircleWithInnerCircleView.swift in Sources */,
 				08C952B72A7D5628009D501C /* AppDelegate.swift in Sources */,
 				55BDD5C32A9935590099D14A /* EditorModel.swift in Sources */,
+				550F5E4F2AA91F4900A8B3EA /* Enums.swift in Sources */,
 				088928822A82883600DA8230 /* EditorCollectionViewLayout.swift in Sources */,
 				082E5E772A7EB8F100CF1776 /* SquareModel.swift in Sources */,
 				55A857DA2A85840F001CA72A /* DescriptionView.swift in Sources */,
