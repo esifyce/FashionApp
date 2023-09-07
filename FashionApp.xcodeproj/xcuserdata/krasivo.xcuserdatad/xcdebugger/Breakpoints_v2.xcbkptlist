@@ -14,9 +14,9 @@
             filePath = "FashionApp/Modules/Editor/View/EditorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "688"
-            endingLineNumber = "688"
-            landmarkName = "drawView(_:didUpdateUndoStatus:)"
+            startingLineNumber = "701"
+            endingLineNumber = "701"
+            landmarkName = "updateSkinClothes(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -30,25 +30,9 @@
             filePath = "FashionApp/Modules/Editor/View/EditorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "692"
-            endingLineNumber = "692"
-            landmarkName = "drawView(_:didUpdateRedoStatus:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "52ED41F8-E512-4BE7-9E95-4948A75F2B58"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FashionApp/Modules/Editor/View/EditorViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "521"
-            endingLineNumber = "521"
-            landmarkName = "addTargets()"
+            startingLineNumber = "705"
+            endingLineNumber = "705"
+            landmarkName = "updateSkinClothes(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -64,40 +48,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "218"
             endingLineNumber = "218"
-            landmarkName = "snapshotImage()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "92D6B1FB-E386-4EA7-9BD9-C28222E60848 - 6f5aebbe4c5ede84"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.EditorViewController.snapshotImage() -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krasivo/Desktop/FashionApp/FashionApp/Modules/Editor/View/EditorViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "219"
-                  endingLineNumber = "219"
-                  offsetFromSymbolStart = "180">
-               </Location>
-               <Location
-                  uuid = "92D6B1FB-E386-4EA7-9BD9-C28222E60848 - 6f5aebbe4c5edee3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FashionApp.EditorViewController.snapshotImage() -&gt; Swift.Optional&lt;__C.UIImage&gt;"
-                  moduleName = "FashionApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/krasivo/Desktop/FashionApp/FashionApp/Modules/Editor/View/EditorViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "218"
-                  endingLineNumber = "218"
-                  offsetFromSymbolStart = "344">
-               </Location>
-            </Locations>
+            landmarkName = "EditorViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

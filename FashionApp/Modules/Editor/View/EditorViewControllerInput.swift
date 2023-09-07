@@ -23,4 +23,5 @@ protocol EditorViewControllerInput: AnyObject {
     func showConfigPen(with viewModel: BrushViewModel)
     func hidePencilView()
     func configurePen(with opacity: Float, size: Float)
+    func createNewLayer() -> LayerViewModel?
 }

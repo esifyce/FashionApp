@@ -107,6 +107,12 @@ extension EditorPresenter: EditorCollectionManagerDelegate {
 
 // MARK: - LayersViewDelegate
 extension EditorPresenter: LayersViewDelegate {
+    func createLayer() {
+        guard let newLayer = view?.createNewLayer() else { return }
+        layerViewModels.append(newLayer)
+        view?.showLayerView(with: layerViewModels)
+    }
+    
     func didSelect(at index: Int) {
         self.index = index
         guard let viewModel = layerViewModels[safe: index] else { return }
@@ -118,6 +124,24 @@ extension EditorPresenter: LayersViewDelegate {
 extension EditorPresenter: LayerCustomizeViewDelegate {
     func didTapClose(with viewModel: LayerViewModel) {
         layerViewModels[index] = viewModel
+        
+        viewModel.actions.forEach { actionType in
+            switch actionType {
+            case .hide:
+                break
+            case .lock:
+                break
+            case .duplicate:
+                layerViewModels.insert(viewModel, at: index + 1)
+            case .mergePrevious:
+                break
+            case .mergeAll:
+                break
+            case .delete:
+                layerViewModels.remove(at: index)
+            }
+        }
+        
         view?.updateLayerView(with: layerViewModels)
     }
 }

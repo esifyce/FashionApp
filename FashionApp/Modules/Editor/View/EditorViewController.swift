@@ -387,6 +387,18 @@ extension EditorViewController: EditorViewControllerInput {
             self.canvasView?.radius = 25
         }
     }
+    
+    func createNewLayer() -> LayerViewModel? {
+        guard let canvasView else { return nil }
+        layers.append(canvasView.image())
+        canvasView.clear()
+        updateLayers()
+        return .init(name: "Layers 445", color: canvasView.renderColor, actions: [], opacity: 100)
+    }
+    
+    func hideLayer() {
+    
+    }
 }
 
 // MARK: - fileprivate EditorViewController
@@ -513,7 +525,7 @@ fileprivate extension EditorViewController {
         containerView.buildFrame(
             FrameBuilder()
                 .x(0)
-                .y(0)
+                .y(120)
                 .height(583)
                 .width(390)
         )
@@ -612,10 +624,11 @@ fileprivate extension EditorViewController {
     }
     
     func newLayerTapped() {
-        guard let canvasView else { return }
-        layers.append(canvasView.image())
-        canvasView.clear()
-        updateLayers()
+        presenter.layerButtonTapped()
+//        guard let canvasView else { return }
+//        layers.append(canvasView.image())
+//        canvasView.clear()
+//        updateLayers()
     }
 }
 
@@ -715,16 +728,16 @@ private extension EditorViewController {
 // MARK: - Add Touches Extension
 private extension EditorViewController {
     func addTouches() {
-        skinImageView.transform = .identity
+        containerView.transform = .identity
         let scaleGesture = UIPinchGestureRecognizer(target: self, action: #selector(handleScale(_:)))
         let moveGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         moveGesture.minimumNumberOfTouches = 2
         moveGesture.maximumNumberOfTouches = 2
         let rotateGesture = UIRotationGestureRecognizer(target: self, action: #selector(handleRotate(_:)))
         
-        skinImageView.addGestureRecognizer(scaleGesture)
-        skinImageView.addGestureRecognizer(moveGesture)
-        skinImageView.addGestureRecognizer(rotateGesture)
+        containerView.addGestureRecognizer(scaleGesture)
+        containerView.addGestureRecognizer(moveGesture)
+        containerView.addGestureRecognizer(rotateGesture)
     }
     
     @objc func handleScale(_ sender: UIPinchGestureRecognizer) {
@@ -734,16 +747,16 @@ private extension EditorViewController {
         
         if sender.state == .began {
             if sender.numberOfTouches == 2 {
-                onePoint = sender.location(ofTouch: 0, in: skinImageView)
-                twoPoint = sender.location(ofTouch: 1, in: skinImageView)
+                onePoint = sender.location(ofTouch: 0, in: containerView)
+                twoPoint = sender.location(ofTouch: 1, in: containerView)
             }
-            anchorPoint.x = (onePoint.x + twoPoint.x) / 2 / skinImageView.bounds.size.width
-            anchorPoint.y = (onePoint.y + twoPoint.y) / 2 / skinImageView.bounds.size.height
-            skinImageView.setAnchorPoint(anchorPoint: anchorPoint)
+            anchorPoint.x = (onePoint.x + twoPoint.x) / 2 / containerView.bounds.size.width
+            anchorPoint.y = (onePoint.y + twoPoint.y) / 2 / containerView.bounds.size.height
+            containerView.setAnchorPoint(anchorPoint: anchorPoint)
         }
         
         if sender.numberOfTouches == 2 && sender.state == .changed {
-            skinImageView.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
+            containerView.transform = CGAffineTransform(scaleX: sender.scale, y: sender.scale)
         }
     }
     
@@ -753,9 +766,9 @@ private extension EditorViewController {
         }
         
         if sender.numberOfTouches == 2 && sender.state == .changed {
-            let translation = sender.translation(in: skinImageView.superview)
-            skinImageView.center = CGPoint(x: skinImageView.center.x + translation.x, y: skinImageView.center.y + translation.y)
-            sender.setTranslation(.zero, in: skinImageView.superview)
+            let translation = sender.translation(in: containerView.superview)
+            containerView.center = CGPoint(x: containerView.center.x + translation.x, y: containerView.center.y + translation.y)
+            sender.setTranslation(.zero, in: containerView.superview)
         }
     }
     

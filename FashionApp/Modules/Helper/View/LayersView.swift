@@ -20,6 +20,7 @@ protocol LayersViewProtocol: AnyObject {
 }
 
 protocol LayersViewDelegate: AnyObject {
+    func createLayer()
     func didSelect(at index: Int)
 }
 
@@ -137,8 +138,8 @@ private extension LayersView {
     }
     
     func addTargets() {
-        plusLayerButton.addAction(UIAction(handler: { _ in
-            print("addLayer")
+        plusLayerButton.addAction(UIAction(handler: { [weak self] _ in
+            self?.delegate?.createLayer()
         }), for: .touchUpInside)
     }
 }
